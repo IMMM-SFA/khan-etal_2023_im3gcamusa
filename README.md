@@ -7,7 +7,8 @@ _zenodo badge to go here_
 Zarrar Khan<sup>1\*</sup>, Gokul Iyer<sup>1</sup>, Jennie Rice<sup>2</sup>, Chris Vernon<sup>2</sup>
 
 <sup>1 </sup> Joint Global Change Research Institute (JGCRI), Pacific Northwest National Laboratory (PNNL), 5825 University Research Ct, College Park, MD 20740
-<sup>1 </sup> Pacific Northwest National Laboratory (PNNL), 902 Battelle Blvd, Richland, WA 99354
+
+<sup>2 </sup> Pacific Northwest National Laboratory (PNNL), 902 Battelle Blvd, Richland, WA 99354
 
 \* corresponding author:  zarrar.khan@pnnl.gov
 
