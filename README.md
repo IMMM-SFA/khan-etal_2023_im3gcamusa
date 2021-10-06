@@ -4,7 +4,7 @@ _zenodo badge to go here_
 
 **Comparing the evolution of human vs earth system drivers on water, energy and land resources across the United States**
 
-Zarrar Khan<sup>1\*</sup>, Gokul Iyer<sup>1</sup>, Jennie Rice<sup>2</sup>, Chris Vernon<sup>2</sup>
+Zarrar Khan<sup>1\*</sup>, Paul Wolfram<sup>1</sup>, Gokul Iyer<sup>1</sup>, Jennie Rice<sup>2</sup>, Chris Vernon<sup>2</sup>
 
 <sup>1 </sup> Joint Global Change Research Institute (JGCRI), Pacific Northwest National Laboratory (PNNL), 5825 University Research Ct, College Park, MD 20740
 
