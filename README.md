@@ -54,7 +54,7 @@ Workflow 1 can be divided into three parts:
 |wrf_to_xanthos| wrf_to_xanthos_process| |
 |wrf_to_xanthos| wrf_to_xanthos_process| |
 
-![Workflow 1: Climate impacts on Runoff](im3_gcamusa_workflow - 1. Climate Impacts - Runoff.jpg)
+![Workflow 1: Climate impacts on Runoff](figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg)
 
 ### Work flow 2
 
