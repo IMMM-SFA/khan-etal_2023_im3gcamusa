@@ -24,8 +24,11 @@ CITATION to be added.
 
 ## Work flows
 
-<img src="figures/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="100px">
-<p align="center">* Figure 1: Summary of experiment workflows*</p>
+<p align="center">
+<img src="figures/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="500px">
+<br>
+Figure 1: Summary of experiment workflows
+</p>
 
 This experiment can be divided into 7 different sub-workflows as shown in Figure 1:
 
@@ -41,8 +44,12 @@ Each workflow is described in more detail in the following sections.
 
 ### Work flow 1: Climate impacts on Runoff
 
-<img src="figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="100px">
-<p align="center">* Figure 2: Workflow 1: Climate impacts on Runoff*</p>
+
+<p align="center">
+<img src="figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="500px">
+<br>
+Figure 2: Workflow 1: Climate impacts on Runoff
+</p>
 
 Workflow 1 can be divided into three parts: 
 
