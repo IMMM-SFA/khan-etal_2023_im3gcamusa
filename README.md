@@ -24,7 +24,9 @@ CITATION to be added.
 
 ## Work flows
 
-The following figure shows the overall workflow for this experiment divided into 7 different sub-workflows:
+![Summary of experiment workflows](figures/im3_gcamusa_workflow_summary.jpg)
+
+This experiment can be divided into 7 different sub-workflows as shown in the figure above:
 
 * Workflow 1: Climate impacts on Runoff
 * Workflow 2: Climate impacts on Heating and Colling Degree Hours (HDH CDH)
@@ -40,21 +42,22 @@ Figure 1 Overall workflow
 
 ### Work flow 1: Climate impacts on Runoff
 
-Figure 2 Workflow 1: Climate Impacts: Runoff
+![Workflow 1: Climate impacts on Runoff](figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg)
 
 Workflow 1 can be divided into three parts: 
-* US Basins:
-* Global Basins: 
-* Combining US and Global Basins:
+
+A. US Basins:
+B. Global Basins: 
+C. Combining US and Global Basins:
 
 | Step | Description| Scripts|
 | --- | --- | --- |
-| WRF inputs | The WRF model was used to produced raw inputs at hourly, 12km x 12km resolution. For runoff impacts the temperature (deg C), minimum temperature (deg C), wind speed (m/s), relative humidity (%), GLW (W/m2) and SWDOWN (W/m2) were used. Projections were made for RCP 4.5 and 8.5 with a hot and cool variant for each.| NERSC: /global/cfs/cdirs/m2702/gsharing|
+| WRF Data | The WRF model was used to produced raw inputs at hourly, 12km x 12km resolution. For runoff impacts the temperature (deg C), minimum temperature (deg C), wind speed (m/s), relative humidity (%), GLW (W/m2) and SWDOWN (W/m2) were used. Projections were made for RCP 4.5 and 8.5 with a hot and cool variant for each.| NERSC: /global/cfs/cdirs/m2702/gsharing|
 |wrf_to_xanthos|wrf_to_xanthos_preprocess | |
 |wrf_to_xanthos| wrf_to_xanthos_process| |
 |wrf_to_xanthos| wrf_to_xanthos_process| |
 
-![Workflow 1: Climate impacts on Runoff](figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg)
+
 
 ### Work flow 2
 
