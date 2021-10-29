@@ -24,9 +24,10 @@ CITATION to be added.
 
 ## Work flows
 
-![Summary of experiment workflows](figures/im3_gcamusa_workflow_summary.jpg)
+<img src="figures/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="100px">
+<p align="center">* Figure 1: Summary of experiment workflows*</p>
 
-This experiment can be divided into 7 different sub-workflows as shown in the figure above:
+This experiment can be divided into 7 different sub-workflows as shown in Figure 1:
 
 * Workflow 1: Climate impacts on Runoff
 * Workflow 2: Climate impacts on Heating and Colling Degree Hours (HDH CDH)
@@ -38,11 +39,10 @@ This experiment can be divided into 7 different sub-workflows as shown in the fi
 
 Each workflow is described in more detail in the following sections.
 
-Figure 1 Overall workflow
-
 ### Work flow 1: Climate impacts on Runoff
 
-![Workflow 1: Climate impacts on Runoff](figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg)
+<img src="figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="100px">
+<p align="center">* Figure 2: Workflow 1: Climate impacts on Runoff*</p>
 
 Workflow 1 can be divided into three parts: 
 
