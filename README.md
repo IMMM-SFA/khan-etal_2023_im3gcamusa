@@ -46,7 +46,7 @@ Each workflow is described in more detail in the following sections.
 
 
 <p align="center">
-<img src="figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="700px">
+<img src="figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="90%">
 <br>
 Figure 2: Workflow 1: Climate impacts on Runoff
 </p>
