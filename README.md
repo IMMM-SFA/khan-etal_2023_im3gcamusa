@@ -46,9 +46,9 @@ Figure 1 Overall workflow
 
 Workflow 1 can be divided into three parts: 
 
-A. US Basins:
-B. Global Basins: 
-C. Combining US and Global Basins:
+i. US Basins:
+ii. Global Basins: 
+iii. Combining US and Global Basins:
 
 | Step | Description| Scripts|
 | --- | --- | --- |
