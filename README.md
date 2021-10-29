@@ -1,6 +1,6 @@
 _zenodo badge to go here_
 
-# khan-etal_2021_JounralTBD
+# khan-etal_2021_JournalTBD
 
 **Comparing the evolution of human vs earth system drivers on water, energy and land resources across the United States**
 
