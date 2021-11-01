@@ -53,16 +53,30 @@ Figure 2: Workflow 1: Climate impacts on Runoff
 
 Workflow 1 can be divided into three parts: 
 
-i. US Basins:
-ii. Global Basins: 
-iii. Combining US and Global Basins:
+* A. Climate Impacts Runoff US Basins
+* B. Climate Impacts Runoff Global Basins
+* C. Climate Impacts Runoff Combine US and Global
 
+
+** Table: Workflow 1A - Climate Impacts Runoff US Basins **
 | Step | Description| Scripts|
 | --- | --- | --- |
 | WRF Data | The WRF model was used to produced raw inputs at hourly, 12km x 12km resolution. For runoff impacts the temperature (deg C), minimum temperature (deg C), wind speed (m/s), relative humidity (%), GLW (W/m2) and SWDOWN (W/m2) were used. Projections were made for RCP 4.5 and 8.5 with a hot and cool variant for each.| NERSC: /global/cfs/cdirs/m2702/gsharing|
 |wrf_to_xanthos|wrf_to_xanthos_preprocess | |
 |wrf_to_xanthos| wrf_to_xanthos_process| |
 |wrf_to_xanthos| wrf_to_xanthos_process| |
+
+** Table: Workflow 1B - Climate Impacts Runoff Global Basins **
+| Step | Description| Scripts|
+| --- | --- | --- |
+| xxx | xxx | xxxx|
+| xxx | xxx | xxxx|
+
+** Table: Workflow 1C - Climate Impacts Runoff Combine US and Global **
+| Step | Description| Scripts|
+| --- | --- | --- |
+| xxx | xxx | xxxx|
+| xxx | xxx | xxxx|
 
 
 
