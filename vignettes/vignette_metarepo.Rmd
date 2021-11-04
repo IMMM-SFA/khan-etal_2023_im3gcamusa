@@ -56,10 +56,25 @@ Workflow 1 can be divided into three parts:
 
 | Step | Description| Scripts|
 | --- | --- | --- |
-| WRF Data | The WRF model was used to produced raw inputs at hourly, 12km x 12km resolution. For runoff impacts the temperature (deg C), minimum temperature (deg C), wind speed (m/s), relative humidity (%), GLW (W/m2) and SWDOWN (W/m2) were used. Projections were made for RCP 4.5 and 8.5 with a hot and cool variant for each.| NERSC: /global/cfs/cdirs/m2702/gsharing|
-|wrf_to_xanthos|wrf_to_xanthos_preprocess | |
-|wrf_to_xanthos| wrf_to_xanthos_process| |
-|wrf_to_xanthos| wrf_to_xanthos_process| |
+| WRF Data | 
+* RCP 4.5, 8.5, hotter and cooler
+* hourly, 1979_01 to 2099_12
+* 12km x 12km resolution
+* Temperature (deg C)
+* Minimum temperature (deg C)
+* Wind speed (m/s)
+* Relative humidity (%)
+* GLW (W/m2)
+* SWDOWN (W/m2) were used 
+| NERSC: /global/cfs/cdirs/m2702/gsharing|
+|wrf_to_xanthos| 
+* wrf_to_xanthos_preprocess_ssp585_hot_historical.sh 
+* wrf_to_xanthos_preprocess_ssp585_hot_near.sh 
+* wrf_to_xanthos_preprocess_ssp585_hot_far.sh | 
+* /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos
+* https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa |
+|wrf_to_xanthos| wrf_to_xanthos_process | |
+|wrf_to_xanthos| wrf_to_xanthos_process | |
 
 ### **Table: Workflow 1B - Climate Impacts Runoff Global Basins**
 
