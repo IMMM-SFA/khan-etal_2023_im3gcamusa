@@ -10,7 +10,9 @@ LazyData: true
 RoxygenNote: 7.1.1
 Suggests: 
     rmarkdown,
-    knitr
+    knitr,
+	pander
 VignetteBuilder: 
-    knitr
+    knitr,
+	pander
 Config/testthat/edition: 3
