@@ -1,12 +1,5 @@
 title: khan-etal_2022_journalTBD_im3gcamusa
 
-template:
-  params:
-    bootswatch: cosmo
-    
-home:
-  strip_header: true
-
 navbar:
   left:
     - icon: fa-home
