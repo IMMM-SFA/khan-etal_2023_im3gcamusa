@@ -6,12 +6,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> • khan-etal_2022_journalTBD_im3gcamusa</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -130,19 +124,21 @@
 <a href="#table-workflow-1a---climate-impacts-runoff-us-basins" class="anchor"></a><strong>Table: Workflow 1A - Climate Impacts Runoff US Basins</strong>
 </h3>
 <table class="table">
+<colgroup>
+<col width="13%">
+<col width="36%">
+<col width="49%">
+</colgroup>
 <thead><tr class="header">
 <th>Step</th>
 <th>Description</th>
-<th>Scripts</th>
+<th>Location</th>
 </tr></thead>
-<tbody><tr class="odd">
-<td>WRF Data</td>
-<td></td>
-<td></td>
-</tr></tbody>
-</table>
-<ul>
-<li>RCP 4.5, 8.5, hotter and cooler</li>
+<tbody>
+<tr class="odd">
+<td>WRF Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5, hot and cool</li>
 <li>hourly, 1979_01 to 2099_12</li>
 <li>12km x 12km resolution</li>
 <li>Temperature (deg C)</li>
@@ -150,14 +146,25 @@
 <li>Wind speed (m/s)</li>
 <li>Relative humidity (%)</li>
 <li>GLW (W/m2)</li>
-<li>SWDOWN (W/m2) were used | NERSC: /global/cfs/cdirs/m2702/gsharing| |wrf_to_xanthos|</li>
-<li>wrf_to_xanthos_preprocess_ssp585_hot_historical.sh</li>
+<li>SWDOWN (W/m2)</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gsharing</td>
+</tr>
+<tr class="even">
+<td>wrf_to_xanthos</td>
+<td><ul>
+<li>wrf_to_xanthos_preprocess_historical.sh</li>
 <li>wrf_to_xanthos_preprocess_ssp585_hot_near.sh</li>
-<li>wrf_to_xanthos_preprocess_ssp585_hot_far.sh |</li>
-<li>/global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
-<li>
-<a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa</a> | |wrf_to_xanthos| wrf_to_xanthos_process | | |wrf_to_xanthos| wrf_to_xanthos_process | |</li>
-</ul>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_far.sh</li>
+</ul></td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a>
+</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="table-workflow-1b---climate-impacts-runoff-global-basins" class="section level3">
 <h3 class="hasAnchor">
