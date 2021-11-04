@@ -1,0 +1,101 @@
+---
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Meta-Reository}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+resourse_files:
+  - vignettes/vignetteFigs
+---
+
+<!-------------------------->
+<!-------------------------->
+# Citation
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="vignetteFigs/divider.png"></p>
+
+Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 2022. Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomic, climate, and energy policy drivers. (In progress) Journal_TBD, DOI: XXXX
+
+<!-------------------------->
+<!-------------------------->
+# Models Used
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="vignetteFigs/divider.png"></p>
+
+<!-------------------------->
+<!-------------------------->
+# Workflows
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="vignetteFigs/divider.png"></p>
+
+<p align="center">
+<img src="figures/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="90%">
+<br>
+Figure 1: Summary of experiment workflows
+</p>
+
+## Workflow 1
+
+<p align="center">
+<img src="figures/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="75%">
+<br>
+Figure 2: Workflow 1: Climate impacts on Runoff
+</p>
+
+Workflow 1 can be divided into three parts: 
+
+* A. Climate Impacts Runoff US Basins
+* B. Climate Impacts Runoff Global Basins
+* C. Climate Impacts Runoff Combine US and Global
+
+
+** Table: Workflow 1A - Climate Impacts Runoff US Basins **
+
+| Step | Description| Scripts|
+| --- | --- | --- |
+| WRF Data | The WRF model was used to produced raw inputs at hourly, 12km x 12km resolution. For runoff impacts the temperature (deg C), minimum temperature (deg C), wind speed (m/s), relative humidity (%), GLW (W/m2) and SWDOWN (W/m2) were used. Projections were made for RCP 4.5 and 8.5 with a hot and cool variant for each.| NERSC: /global/cfs/cdirs/m2702/gsharing|
+|wrf_to_xanthos|wrf_to_xanthos_preprocess | |
+|wrf_to_xanthos| wrf_to_xanthos_process| |
+|wrf_to_xanthos| wrf_to_xanthos_process| |
+
+** Table: Workflow 1B - Climate Impacts Runoff Global Basins **
+
+| Step | Description| Scripts|
+| --- | --- | --- |
+| xxx | xxx | xxxx|
+| xxx | xxx | xxxx|
+
+** Table: Workflow 1C - Climate Impacts Runoff Combine US and Global **
+
+| Step | Description| Scripts|
+| --- | --- | --- |
+| xxx | xxx | xxxx|
+| xxx | xxx | xxxx|
+
+
+
+## Workflow 2
+## Workflow 3
+## Workflow 4
+## Workflow 5
+## Workflow 6
+## Workflow 7
+
+
+<!-------------------------->
+<!-------------------------->
+# Input Data
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="vignetteFigs/divider.png"></p>
+
+<!-------------------------->
+<!-------------------------->
+# Output Data
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="vignetteFigs/divider.png"></p>
+

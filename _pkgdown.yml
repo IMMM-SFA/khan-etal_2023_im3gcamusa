@@ -1,0 +1,19 @@
+title: khan-etal_2022_journalTBD_im3gcamusa
+
+template:
+  params:
+    bootswatch: cosmo
+    
+home:
+  strip_header: true
+
+navbar:
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Meta Repository"
+      icon: fas fa-book
+      href: articles/vignette_metarepo.html
+      
+toc:
+  depth: 3
