@@ -54,27 +54,31 @@ Workflow 1 can be divided into three parts:
 
 ### **Table: Workflow 1A - Climate Impacts Runoff US Basins**
 
-| Step | Description| Scripts|
-| --- | --- | --- |
-| WRF Data | 
-* RCP 4.5, 8.5, hotter and cooler
-* hourly, 1979_01 to 2099_12
-* 12km x 12km resolution
-* Temperature (deg C)
-* Minimum temperature (deg C)
-* Wind speed (m/s)
-* Relative humidity (%)
-* GLW (W/m2)
-* SWDOWN (W/m2) were used 
-| NERSC: /global/cfs/cdirs/m2702/gsharing|
-|wrf_to_xanthos| 
-* wrf_to_xanthos_preprocess_ssp585_hot_historical.sh 
-* wrf_to_xanthos_preprocess_ssp585_hot_near.sh 
-* wrf_to_xanthos_preprocess_ssp585_hot_far.sh | 
-* /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos
-* https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa |
-|wrf_to_xanthos| wrf_to_xanthos_process | |
-|wrf_to_xanthos| wrf_to_xanthos_process | |
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(pander)
+mytable = data.frame(
+    Step     = c("WRF Outputs Raw", 
+                 "wrf_to_xanthos"),
+    Description = c("* RCP 4.5, 8.5, hot and cool\
+                    \n * hourly, 1979_01 to 2099_12\
+                    \n * 12km x 12km resolution\
+                    \n * Temperature (deg C)\
+                    \n * Minimum temperature (deg C)\
+                    \n * Wind speed (m/s)\
+                    \n * Relative humidity (%)\
+                    \n * GLW (W/m2)\
+                    \n * SWDOWN (W/m2)",
+                    "* wrf_to_xanthos_preprocess_historical.sh\ 
+                    \n* wrf_to_xanthos_preprocess_ssp585_hot_near.sh\
+                    \n* wrf_to_xanthos_preprocess_ssp585_hot_far.sh"),
+    Location     = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
+                     "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos\
+                     \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts")
+    )
+
+pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
+```
 
 ### **Table: Workflow 1B - Climate Impacts Runoff Global Basins**
 
