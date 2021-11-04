@@ -8,5 +8,5 @@ Meta-repository for: *Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 202
 
 <br>
 <p align="center">
-<a href="https://jgcri.github.io/khan-etal_2022_im3gcamusa/articles/vignette_metarepo.html" target="_blank"><img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_metarepo.PNG?raw=true" alt="https://jgcri.github.io/khan-etal_2022_im3gcamusa/articles/vignette_metarepo.html" height="60"/></a>
+<a href="https://immm-sfa.github.io/khan-etal_2022_im3gcamusa/articles/vignette_metarepo.html" target="_blank"><img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_metarepo.PNG?raw=true" height="60"/></a>
 </p>
