@@ -131,39 +131,34 @@
 <a href="#table-workflow-1a---climate-impacts-runoff-us-basins" class="anchor"></a><strong>Table: Workflow 1A - Climate Impacts Runoff US Basins</strong>
 </h3>
 <table class="table">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
 <thead><tr class="header">
 <th>Step</th>
 <th>Description</th>
 <th>Scripts</th>
 </tr></thead>
-<tbody>
-<tr class="odd">
+<tbody><tr class="odd">
 <td>WRF Data</td>
-<td>The WRF model was used to produced raw inputs at hourly, 12km x 12km resolution. For runoff impacts the temperature (deg C), minimum temperature (deg C), wind speed (m/s), relative humidity (%), GLW (W/m2) and SWDOWN (W/m2) were used. Projections were made for RCP 4.5 and 8.5 with a hot and cool variant for each.</td>
-<td>NERSC: /global/cfs/cdirs/m2702/gsharing</td>
-</tr>
-<tr class="even">
-<td>wrf_to_xanthos</td>
-<td>wrf_to_xanthos_preprocess</td>
 <td></td>
-</tr>
-<tr class="odd">
-<td>wrf_to_xanthos</td>
-<td>wrf_to_xanthos_process</td>
 <td></td>
-</tr>
-<tr class="even">
-<td>wrf_to_xanthos</td>
-<td>wrf_to_xanthos_process</td>
-<td></td>
-</tr>
-</tbody>
+</tr></tbody>
 </table>
+<ul>
+<li>RCP 4.5, 8.5, hotter and cooler</li>
+<li>hourly, 1979_01 to 2099_12</li>
+<li>12km x 12km resolution</li>
+<li>Temperature (deg C)</li>
+<li>Minimum temperature (deg C)</li>
+<li>Wind speed (m/s)</li>
+<li>Relative humidity (%)</li>
+<li>GLW (W/m2)</li>
+<li>SWDOWN (W/m2) were used | NERSC: /global/cfs/cdirs/m2702/gsharing| |wrf_to_xanthos|</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_historical.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_far.sh |</li>
+<li>/global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>
+<a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa</a> | |wrf_to_xanthos| wrf_to_xanthos_process | | |wrf_to_xanthos| wrf_to_xanthos_process | |</li>
+</ul>
 </div>
 <div id="table-workflow-1b---climate-impacts-runoff-global-basins" class="section level3">
 <h3 class="hasAnchor">
