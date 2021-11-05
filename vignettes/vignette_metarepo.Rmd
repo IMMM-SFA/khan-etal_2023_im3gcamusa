@@ -63,6 +63,7 @@ data.frame(
              "https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3",
             "https://github.com/JGCRI/xanthos",
             "Helios",
+            "GGCMI",
             "https://github.com/JGCRI/rpackageutils",
             "https://github.com/IMMM-SFA/im3components",
             "https://github.com/JGCRI/gcamextractor")
@@ -128,16 +129,22 @@ data.frame(
 <p align="center">
 <img src="vignetteFigs/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="100%">
 <br>
+<br>
 Figure 1: Summary of experiment workflows
 </p>
 
 ## Workflow 1 - Climate Impacts Runoff
 
+<br>
+
 <p align="center">
 <img src="vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="80%">
 <br>
+<br>
 Figure 2: Workflow 1: Climate Impacts Runoff
 </p>
+
+<br>
 
 Workflow 1 can be divided into three parts: 
 
