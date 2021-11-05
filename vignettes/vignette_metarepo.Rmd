@@ -24,6 +24,100 @@ Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 2022. Coevolution of futu
 <!-------------------------->
 <p align="center"> <img src="vignetteFigs/divider.png"></p>
 
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(kableExtra)
+data.frame(
+    Model     = c("WRF",
+                  "GCAM",
+                  "Xanthos",
+                  "Helios",
+                  "GGCMI",
+                  "rpackageutils",
+                  "im3components",
+                  "gcamextractor"),
+    Version = c("-",
+                "gcam v5.3 (branch gcam-usa-im3)",
+                "xanthos v2.4.1",
+                "helios v1.0.0",
+                "ggcmi v1.0.0",
+                "rpackageutils v1.0.0",
+                "im3components v1.0.0",
+                "gcamextractor"),
+    Description = c("Climate simulation model",
+                    "Global Change Analysis Model. Human-earth systems dynamic model.",
+                    "Water runoff emulator at 0.5 degree grids and monthly timesteps.",
+                    "Gridded Heating and cooling degree day calculator at multiple spatial and temporal resolution.",
+                    "Emulators to model agricultural yield impacts in response to climate",
+                    "Utility functions to process, aggregate and reformat data.",
+                    "Functions to process data between different IM3 models.",
+                    "Model to extract and process data from GCAM output databases."),
+    Language = c("-",
+                  "C++/R",
+                  "Python",
+                  "R",
+                  "?",
+                  "R",
+                  "R/Python",
+                  "R"),
+    Link = c("https://www.mmm.ucar.edu/weather-research-and-forecasting-model",
+             "https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3",
+            "https://github.com/JGCRI/xanthos",
+            "Helios",
+            "https://github.com/JGCRI/rpackageutils",
+            "https://github.com/IMMM-SFA/im3components",
+            "https://github.com/JGCRI/gcamextractor")
+    ) %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+
+<!-------------------------->
+<!-------------------------->
+# Data
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="vignetteFigs/divider.png"></p>
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(kableExtra)
+data.frame(
+    Data     = c("WRF Outputs",
+                 "Xanthos Outputs",
+                 "Helios Outputs",
+                 "GGCMI Outputs",
+                 "Population US States",
+                 "Population Gridded",
+                 "GCAM Outputs"),
+     Source = c("WRF runs",
+                "Xanthos runs (Workflow 1)",
+                "Helios runs (Workflow 2)",
+                "GGCMI runs (Workflow 3)",
+                "xxx",
+                "xxx",
+                "GCAM runs (Workflow 7)"),
+    `Used by` = c("Xanthos, Helios, GGCMI",
+                  "GCAM",
+                  "GCAM",
+                  "GCAM",
+                  "GCAM",
+                  "GCAM",
+                  "-"),
+    Location = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
+                 "zenodo link",
+                  "zenodo link",
+                  "zenodo link",
+                  "zenodo link",
+                  "zenodo link",
+                  "zenodo link")
+    ) %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+
+
 <!-------------------------->
 <!-------------------------->
 # Workflows
@@ -105,32 +199,4 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 ## Workflow 5
 ## Workflow 6
 ## Workflow 7
-
-
-<!-------------------------->
-<!-------------------------->
-# Input Data
-<!-------------------------->
-<!-------------------------->
-<p align="center"> <img src="vignetteFigs/divider.png"></p>
-
-```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
-library(kableExtra)
-data.frame(
-    Data     = c("WRF Outputs"),
-    Description = c("WRF climate model outputs used for climate impacts"),
-    Location = c("(NERSC) /global/cfs/cdirs/m2702/gsharing"),
-    Source     = c("WRF model outputs.")
-    ) %>% 
-  kbl() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-
-```
-
-<!-------------------------->
-<!-------------------------->
-# Output Data
-<!-------------------------->
-<!-------------------------->
-<p align="center"> <img src="vignetteFigs/divider.png"></p>
 
