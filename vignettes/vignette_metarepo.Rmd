@@ -32,17 +32,17 @@ Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 2022. Coevolution of futu
 <p align="center"> <img src="vignetteFigs/divider.png"></p>
 
 <p align="center">
-<img src="vignetteFigs/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="90%">
+<img src="vignetteFigs/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="100%">
 <br>
 Figure 1: Summary of experiment workflows
 </p>
 
-## Workflow 1
+## Workflow 1 - Climate Impacts Runoff
 
 <p align="center">
-<img src="vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="75%">
+<img src="vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="80%">
 <br>
-Figure 2: Workflow 1: Climate impacts on Runoff
+Figure 2: Workflow 1: Climate Impacts Runoff
 </p>
 
 Workflow 1 can be divided into three parts: 
@@ -71,7 +71,12 @@ mytable = data.frame(
                     \n * SWDOWN (W/m2)",
                     "* wrf_to_xanthos_preprocess_historical.sh\ 
                     \n* wrf_to_xanthos_preprocess_ssp585_hot_near.sh\
-                    \n* wrf_to_xanthos_preprocess_ssp585_hot_far.sh"),
+                    \n* wrf_to_xanthos_preprocess_ssp585_hot_far.sh\
+                    \n* wrf_to_xanthos_process_historical.sh\
+                    \n* wrf_to_xanthos_process_ssp585_hot_near.sh\
+                    \n* wrf_to_xanthos_process_ssp585_hot_far.sh\
+                    \n* wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh\
+                    \n* wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh"),
     Location     = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
                      "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos\
                      \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts")
@@ -108,6 +113,19 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 <!-------------------------->
 <!-------------------------->
 <p align="center"> <img src="vignetteFigs/divider.png"></p>
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(kableExtra)
+data.frame(
+    Data     = c("WRF Outputs"),
+    Description = c("WRF climate model outputs used for climate impacts"),
+    Location = c("(NERSC) /global/cfs/cdirs/m2702/gsharing"),
+    Source     = c("WRF model outputs.")
+    ) %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
 
 <!-------------------------->
 <!-------------------------->
