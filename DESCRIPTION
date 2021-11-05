@@ -1,5 +1,5 @@
 Package: khanetal2022im3gcamusa
-Title: khan-etal_2022_im3gcamusa
+Title: khan_etal_2022_im3gcamusa
 Version: 1.0
 Authors@R: c(person("Zarrar", "Khan", email = "zarrar.khan@pnnl.gov", role = c("aut", "cre"),comment = c(ORCID ="0000-0002-8147-8553")))
 Description: Paper meta-repository
