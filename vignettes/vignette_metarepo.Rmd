@@ -160,7 +160,8 @@ Workflow 1 can be divided into three parts:
 library(pander)
 mytable = data.frame(
     Step     = c("WRF Outputs Raw", 
-                 "wrf_to_xanthos"),
+                 "wrf_to_xanthos",
+                 "xanthos"),
     Description = c("* RCP 4.5, 8.5, hot and cool\
                     \n * hourly, 1979_01 to 2099_12\
                     \n * 12km x 12km resolution\
@@ -176,15 +177,17 @@ mytable = data.frame(
                     \n* wrf_to_xanthos_process_historical.sh\
                     \n* wrf_to_xanthos_process_ssp585_hot_near.sh\
                     \n* wrf_to_xanthos_process_ssp585_hot_far.sh\
-                    \n* wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh\
-                    \n* wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh"),
+                    \n* wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh", "wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh"),
     Location     = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
                      "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos\
-                     \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts")
+                     \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
+                     "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output")
     )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
 ```
+
+Workflow 1A results in WRF outputs being processed and run through Xanthos to produce runoff in mm per month for US Basins to be combined with Non-US Basins runoff results from Workflow 1B. 
 
 ### **Table: Workflow 1B - Climate Impacts Runoff Global Basins**
 
@@ -193,17 +196,109 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 | xxx | xxx | xxxx|
 | xxx | xxx | xxxx|
 
+
+Some diagnostics from workflow 1b.
+
+* Sensitivity Analysis across GCMs
+
+
 ### **Table: Workflow 1C - Climate Impacts Runoff Combine US and Global**
 
-| Step | Description| Scripts|
-| --- | --- | --- |
-| xxx | xxx | xxxx|
-| xxx | xxx | xxxx|
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(pander)
+mytable = data.frame(
+    Step     = c("Workflow 1A Outputs",
+                 "Workflow 1B Outputs",
+                 "Combine US and Non-US runoff",
+                 "Extrapolate 2099 to 2100",
+                 "Smoothing",
+                 "Convert to XML"),
+    Description = c("Runoff mm per month for US Basins.",
+                 "Runoff mm per month for Non-US Basins.",
+                 "* xanthos_process_us_global_ssp585hotter_gcmChosen.sh\ 
+                    \n* xanthos_combine_us_global_ssp585hotter_gcmChosen.R",
+                 "* xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R",
+                 "* xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R",
+                 "* xanthos_convert2xml_ssp585hotter_gcmChosen.R"),
+    Location     = c("* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a\
+                     \n* Copied from (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1b\
+                     \n* Copied from (PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff")
+    )
+
+pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
+```
+
+Some diagnostics from workflow 1c. 
+
+* Compare Global vs WRF Xanthos Runoff for U.S. Basins
+* Smoothed Outputs
 
 ## Workflow 2
 ## Workflow 3
 ## Workflow 4
 ## Workflow 5
 ## Workflow 6
+
 ## Workflow 7
 
+
+### **Table: Workflow 7 - Final GCAM-USA Runs**
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(pander)
+mytable = data.frame(
+    Step     = c("Workflow 1A Outputs",
+                 "Workflow 1B Outputs",
+                 "Combine US and Non-US runoff",
+                 "Extrapolate 2099 to 2100",
+                 "Smoothing",
+                 "Convert to XML"),
+    Description = c("Runoff mm per month for US Basins.",
+                 "Runoff mm per month for Non-US Basins.",
+                 "* xanthos_process_us_global_ssp585hotter_gcmChosen.sh\ 
+                    \n* xanthos_combine_us_global_ssp585hotter_gcmChosen.R",
+                 "* xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R",
+                 "* xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R",
+                 "* xanthos_convert2xml_ssp585hotter_gcmChosen.R"),
+    Location     = c("* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a\
+                     \n* Copied from (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1b\
+                     \n* Copied from (PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "/pic/projects/im3/gcamusa/climateimpacts/runoff")
+    )
+
+pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
+```
+
+### **Table: Workflow 7b - Intermediate GCAM-USA Run Riagnostics**
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(pander)
+mytable = data.frame(
+    Step     = c("ssp235_noclimate",
+                 "ssp235_climateRunoff_rcp85hotter",
+                 "ssp235_hddcdd_rcp85hotter",
+                 "ssp235_agyields_rcp85hotter",
+                 "ssp235_rcp85hotter"),
+    Description = c("ssp235_noclimate",
+                 "ssp235_climateRunoff_rcp85hotter",
+                 "ssp235_hddcdd_rcp85hotter",
+                 "ssp235_agyields_rcp85hotter",
+                 "ssp235_rcp85hotter"),
+    Location     = c("ssp235_noclimate",
+                 "ssp235_climateRunoff_rcp85hotter",
+                 "ssp235_hddcdd_rcp85hotter",
+                 "ssp235_agyields_rcp85hotter",
+                 "ssp235_rcp85hotter")
+    )
+
+pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
+```
