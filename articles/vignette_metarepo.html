@@ -474,27 +474,63 @@ zenodo link
 <a href="#table-workflow-1b---climate-impacts-runoff-global-basins" class="anchor"></a><strong>Table: Workflow 1B - Climate Impacts Runoff Global Basins</strong>
 </h3>
 <table class="table">
+<colgroup>
+<col width="14%">
+<col width="42%">
+<col width="43%">
+</colgroup>
 <thead><tr class="header">
 <th>Step</th>
 <th>Description</th>
-<th>Scripts</th>
+<th>Location</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>xxx</td>
-<td>xxx</td>
-<td>xxxx</td>
+<td>CMIP5 Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5, hot and cool</li>
+<li>hourly, 1979_01 to 2099_12</li>
+<li>12km x 12km resolution</li>
+<li>Temperature (deg C)</li>
+<li>Minimum temperature (deg C)</li>
+<li>Wind speed (m/s)</li>
+<li>Relative humidity (%)</li>
+<li>GLW (W/m2)</li>
+<li>SWDOWN (W/m2)</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gsharing</td>
 </tr>
 <tr class="even">
-<td>xxx</td>
-<td>xxx</td>
-<td>xxxx</td>
+<td>Xanthos Outputs on PIC</td>
+<td><ul>
+<li>wrf_to_xanthos_preprocess_historical.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_far.sh</li>
+<li>wrf_to_xanthos_process_historical.sh</li>
+<li>wrf_to_xanthos_process_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_process_ssp585_hot_far.sh</li>
+<li>wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh</li>
+</ul></td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a>
+</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Xanthos GCM Sensitivity Analysis</td>
+<td>wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh</td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output</li>
+</ul></td>
 </tr>
 </tbody>
 </table>
 <p>Some diagnostics from workflow 1b.</p>
 <ul>
-<li>Sensitivity Analysis across GCMs</li>
+<li>include 5 GCM runoff comparison figure</li>
+<li>GCAM figure sensitivity across 5 GCMs</li>
+<li>sensitivity across smoothing mechanisms for GCM chosen (NORESM)</li>
 </ul>
 </div>
 <div id="table-workflow-1c---climate-impacts-runoff-combine-us-and-global" class="section level3">
@@ -563,6 +599,13 @@ zenodo link
 <p>Some diagnostics from workflow 1c.</p>
 <ul>
 <li>Compare Global vs WRF Xanthos Runoff for U.S. Basins</li>
+</ul>
+<p><br></p>
+<p align="center">
+<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="alt text" width="80%"><br><br> Figure : Comparison of Global vs WRF Xanthos Runoff for U.S. Basins
+</p>
+<p><br></p>
+<ul>
 <li>Smoothed Outputs</li>
 </ul>
 </div>
