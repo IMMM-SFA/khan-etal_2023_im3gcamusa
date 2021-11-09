@@ -262,17 +262,26 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 
 Some diagnostics from workflow 1c. 
 
+
+<br>
+<p align="center">
+<img src="vignetteFigs/water_runoff_facet_model.png" alt="alt text" width="35%">
+<br>
+<br>
+Figure : Comparison of water runoff across five global climate models (GCMs). 
+</p>
+<br>
+
+
 * Compare Global vs WRF Xanthos Runoff for U.S. Basins
 
 <br>
-
 <p align="center">
-<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="alt text" width="80%">
+<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="alt text" width="40%">
 <br>
 <br>
 Figure : Comparison of Global vs WRF Xanthos Runoff for U.S. Basins
 </p>
-
 <br>
 
 
