@@ -1,5 +1,7 @@
 ---
-output: rmarkdown::html_vignette
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
 vignette: >
   %\VignetteIndexEntry{Meta-Reository}
   %\VignetteEngine{knitr::rmarkdown}
@@ -13,7 +15,7 @@ resourse_files:
 # Citation
 <!-------------------------->
 <!-------------------------->
-<p align="center"> <img src="vignetteFigs/divider.png"></p>
+<p align="center">![](vignetteFigs/divider.png)</p>
 
 Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 2022. Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomic, climate, and energy policy drivers. (In progress) Journal_TBD, DOI: XXXX
 
@@ -22,7 +24,7 @@ Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 2022. Coevolution of futu
 # Models Used
 <!-------------------------->
 <!-------------------------->
-<p align="center"> <img src="vignetteFigs/divider.png"></p>
+<p align="center">![](vignetteFigs/divider.png)</p>
 
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
 library(kableExtra)
@@ -79,7 +81,7 @@ data.frame(
 # Data
 <!-------------------------->
 <!-------------------------->
-<p align="center"> <img src="vignetteFigs/divider.png"></p>
+<p align="center">![](vignetteFigs/divider.png)</p>
 
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
 library(kableExtra)
@@ -124,13 +126,12 @@ data.frame(
 # Workflows
 <!-------------------------->
 <!-------------------------->
-<p align="center"> <img src="vignetteFigs/divider.png"></p>
+<p align="center">![](vignetteFigs/divider.png)</p>
 
 <p align="center">
-<img src="vignetteFigs/im3_gcamusa_workflow_summary.jpg" alt="alt text" width="100%">
-<br>
-<br>
-Figure 1: Summary of experiment workflows
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Summary of experiment workflows."}
+knitr::include_graphics("vignetteFigs/im3_gcamusa_workflow_summary.jpg")
+```
 </p>
 
 ## Workflow 1 - Climate Impacts Runoff
@@ -138,10 +139,9 @@ Figure 1: Summary of experiment workflows
 <br>
 
 <p align="center">
-<img src="vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="alt text" width="80%">
-<br>
-<br>
-Figure 2: Workflow 1: Climate Impacts Runoff
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Workflow 1: Climate Impacts Runoff."}
+knitr::include_graphics("vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg")
+```
 </p>
 
 <br>
@@ -266,10 +266,9 @@ Some diagnostics from workflow 1c.
 
 <br>
 <p align="center">
-<img src="vignetteFigs/water_runoff_facet_model.png" alt="alt text" width="100%">
-<br>
-<br>
-Figure : Comparison of water runoff across five global climate models (GCMs). 
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Comparison of water runoff across five global climate models (GCMs)."}
+knitr::include_graphics("vignetteFigs/water_runoff_facet_model.png")
+```
 </p>
 <br>
 
@@ -277,12 +276,9 @@ Figure : Comparison of water runoff across five global climate models (GCMs).
 * Compare Global vs WRF Xanthos Runoff for U.S. Basins
 
 <br>
-<p align="center">
-<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="alt text" width="100%">
-<br>
-<br>
-Figure : Comparison of Global vs WRF Xanthos Runoff for U.S. Basins
-</p>
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Comparison of Global vs WRF Xanthos Runoff for U.S. Basins"}
+knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
+```
 <br>
 
 
