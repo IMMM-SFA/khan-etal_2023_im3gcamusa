@@ -1,7 +1,9 @@
 ---
-output:
+output: 
   rmarkdown::html_vignette:
-    fig_caption: yes
+    toc: true
+    toc_depth: 3
+    fig_caption: true
 vignette: >
   %\VignetteIndexEntry{Meta-Reository}
   %\VignetteEngine{knitr::rmarkdown}
@@ -128,21 +130,18 @@ data.frame(
 <!-------------------------->
 <p align="center">![](vignetteFigs/divider.png)</p>
 
-<p align="center">
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Summary of experiment workflows."}
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Summary of experiment workflows.**"}
 knitr::include_graphics("vignetteFigs/im3_gcamusa_workflow_summary.jpg")
 ```
-</p>
 
 ## Workflow 1 - Climate Impacts Runoff
 
 <br>
 
-<p align="center">
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Workflow 1: Climate Impacts Runoff."}
+```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="**Workflow 1: Climate Impacts Runoff.**"}
 knitr::include_graphics("vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg")
 ```
-</p>
 
 <br>
 
@@ -265,18 +264,18 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 Some diagnostics from workflow 1c. 
 
 <br>
-<p align="center">
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Comparison of water runoff across five global climate models (GCMs)."}
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of water runoff across five global climate models (GCMs).**"}
 knitr::include_graphics("vignetteFigs/water_runoff_facet_model.png")
 ```
-</p>
+
 <br>
 
 
 * Compare Global vs WRF Xanthos Runoff for U.S. Basins
 
 <br>
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="Comparison of Global vs WRF Xanthos Runoff for U.S. Basins"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**"}
 knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
 ```
 <br>
