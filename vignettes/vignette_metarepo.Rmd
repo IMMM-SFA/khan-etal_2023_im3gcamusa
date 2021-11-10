@@ -181,7 +181,9 @@ mytable = data.frame(
     Location     = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
                      "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos\
                      \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
-                     "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output")
+                     "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos\
+                     \n* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output\
+                     \n*  (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts")
     )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
@@ -262,10 +264,9 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 
 Some diagnostics from workflow 1c. 
 
-
 <br>
 <p align="center">
-<img src="vignetteFigs/water_runoff_facet_model.png" alt="alt text" width="35%">
+<img src="vignetteFigs/water_runoff_facet_model.png" alt="alt text" width="100%">
 <br>
 <br>
 Figure : Comparison of water runoff across five global climate models (GCMs). 
@@ -277,7 +278,7 @@ Figure : Comparison of water runoff across five global climate models (GCMs).
 
 <br>
 <p align="center">
-<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="alt text" width="40%">
+<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="alt text" width="100%">
 <br>
 <br>
 Figure : Comparison of Global vs WRF Xanthos Runoff for U.S. Basins
