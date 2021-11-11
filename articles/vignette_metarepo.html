@@ -386,9 +386,9 @@ zenodo link
 </table>
 <!--------------------------><!-------------------------->
 </div>
-<div id="workflows" class="section level1">
+<div id="workflows-summary" class="section level1">
 <h1 class="hasAnchor">
-<a href="#workflows" class="anchor"></a>Workflows</h1>
+<a href="#workflows-summary" class="anchor"></a>Workflows Summary</h1>
 <!-------------------------->
 <!-------------------------->
 <p align="center">
@@ -398,9 +398,16 @@ zenodo link
 <strong>Summary of experiment workflows.</strong>
 </p>
 </div>
-<div id="workflow-1---climate-impacts-runoff" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-1---climate-impacts-runoff" class="anchor"></a>Workflow 1 - Climate Impacts Runoff</h2>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-1---climate-impacts-runoff" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-1---climate-impacts-runoff" class="anchor"></a>Workflow 1 - Climate Impacts Runoff</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="vignetteFigs/divider.png"></p>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="**Workflow 1: Climate Impacts Runoff.**" width="80%"><p class="caption">
@@ -414,6 +421,9 @@ zenodo link
 <li>B. Climate Impacts Runoff Global Basins</li>
 <li>C. Climate Impacts Runoff Combine US and Global</li>
 </ul>
+<div id="workflow-1a---climate-impacts-runoff-us-basins" class="section level2">
+<h2 class="hasAnchor">
+<a href="#workflow-1a---climate-impacts-runoff-us-basins" class="anchor"></a>Workflow 1A - Climate Impacts Runoff US Basins</h2>
 <div id="table-workflow-1a---climate-impacts-runoff-us-basins" class="section level3">
 <h3 class="hasAnchor">
 <a href="#table-workflow-1a---climate-impacts-runoff-us-basins" class="anchor"></a><strong>Table: Workflow 1A - Climate Impacts Runoff US Basins</strong>
@@ -476,6 +486,10 @@ zenodo link
 </table>
 <p>Workflow 1A results in WRF outputs being processed and run through Xanthos to produce runoff in mm per month for US Basins to be combined with Non-US Basins runoff results from Workflow 1B.</p>
 </div>
+</div>
+<div id="workflow-1b---climate-impacts-runoff-global-basins" class="section level2">
+<h2 class="hasAnchor">
+<a href="#workflow-1b---climate-impacts-runoff-global-basins" class="anchor"></a>Workflow 1B - Climate Impacts Runoff Global Basins</h2>
 <div id="table-workflow-1b---climate-impacts-runoff-global-basins" class="section level3">
 <h3 class="hasAnchor">
 <a href="#table-workflow-1b---climate-impacts-runoff-global-basins" class="anchor"></a><strong>Table: Workflow 1B - Climate Impacts Runoff Global Basins</strong>
@@ -533,13 +547,22 @@ zenodo link
 </tr>
 </tbody>
 </table>
-<p>Some diagnostics from workflow 1b.</p>
-<ul>
-<li>include 5 GCM runoff comparison figure</li>
-<li>GCAM figure sensitivity across 5 GCMs</li>
-<li>sensitivity across smoothing mechanisms for GCM chosen (NORESM)</li>
-</ul>
+<p>Some diagnostics from workflow 1b:</p>
+<div class="figure" style="text-align: center">
+<img src="vignetteFigs/water_runoff_facet_model.png" alt="**Comparison of water runoff across five global climate models (GCMs).**" width="100%"><p class="caption">
+<strong>Comparison of water runoff across five global climate models (GCMs).</strong>
+</p>
 </div>
+<div class="figure" style="text-align: center">
+<img src="vignetteFigs/water_runoff_facet_scenario.png" alt="**Comparison of smoothed runoff data from the NORESM model **" width="100%"><p class="caption">
+<strong>Comparison of smoothed runoff data from the NORESM model </strong>
+</p>
+</div>
+</div>
+</div>
+<div id="workflow-1c---climate-impacts-runoff-combine-us-and-global" class="section level2">
+<h2 class="hasAnchor">
+<a href="#workflow-1c---climate-impacts-runoff-combine-us-and-global" class="anchor"></a>Workflow 1C - Climate Impacts Runoff Combine US and Global</h2>
 <div id="table-workflow-1c---climate-impacts-runoff-combine-us-and-global" class="section level3">
 <h3 class="hasAnchor">
 <a href="#table-workflow-1c---climate-impacts-runoff-combine-us-and-global" class="anchor"></a><strong>Table: Workflow 1C - Climate Impacts Runoff Combine US and Global</strong>
@@ -604,59 +627,37 @@ zenodo link
 </tbody>
 </table>
 <p>Some diagnostics from workflow 1c.</p>
-<ul>
-<li>Comparison of water runoff across five global climate models (GCMs)</li>
-</ul>
-<p><br></p>
 <div class="figure" style="text-align: center">
-<img src="vignetteFigs/water_runoff_facet_model.png" alt="**Comparison of water runoff across five global climate models (GCMs).**" width="100%"><p class="caption">
-<strong>Comparison of water runoff across five global climate models (GCMs).</strong>
-</p>
-</div>
-<p><br></p>
-<ul>
-<li>Compare Global vs WRF Xanthos Runoff for U.S. Basins</li>
-</ul>
-<br><div class="figure" style="text-align: center">
 <img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**" width="100%"><p class="caption">
 <strong>Comparison of Global vs WRF Xanthos Runoff for U.S. Basins</strong>
 </p>
 </div>
-<p><br></p>
-<ul>
-<li>Compare outputs from the NORESM global climate model smoothed over 5- and 10-year windows using trailing and surrounding years</li>
-</ul>
-<br><div class="figure" style="text-align: center">
-<img src="vignetteFigs/water_runoff_facet_scenario.png" alt="**Comparison of smoothed runoff data from the NORESM model **" width="100%"><p class="caption">
-<strong>Comparison of smoothed runoff data from the NORESM model </strong>
-</p>
-</div>
-<p><br></p>
 </div>
 </div>
-<div id="workflow-2" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-2" class="anchor"></a>Workflow 2</h2>
 </div>
-<div id="workflow-3" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-3" class="anchor"></a>Workflow 3</h2>
+<div id="workflow-2" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-2" class="anchor"></a>Workflow 2</h1>
 </div>
-<div id="workflow-4" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-4" class="anchor"></a>Workflow 4</h2>
+<div id="workflow-3" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-3" class="anchor"></a>Workflow 3</h1>
 </div>
-<div id="workflow-5" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-5" class="anchor"></a>Workflow 5</h2>
+<div id="workflow-4" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-4" class="anchor"></a>Workflow 4</h1>
 </div>
-<div id="workflow-6" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-6" class="anchor"></a>Workflow 6</h2>
+<div id="workflow-5" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-5" class="anchor"></a>Workflow 5</h1>
 </div>
-<div id="workflow-7" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow-7" class="anchor"></a>Workflow 7</h2>
+<div id="workflow-6" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-6" class="anchor"></a>Workflow 6</h1>
+</div>
+<div id="workflow-7" class="section level1">
+<h1 class="hasAnchor">
+<a href="#workflow-7" class="anchor"></a>Workflow 7</h1>
 <div id="table-workflow-7---final-gcam-usa-runs" class="section level3">
 <h3 class="hasAnchor">
 <a href="#table-workflow-7---final-gcam-usa-runs" class="anchor"></a><strong>Table: Workflow 7 - Final GCAM-USA Runs</strong>
@@ -764,7 +765,6 @@ zenodo link
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
   </div>
