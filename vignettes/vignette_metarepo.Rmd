@@ -160,7 +160,7 @@ Workflow 1 can be divided into three parts:
 * C. Climate Impacts Runoff Combine US and Global
 
 
-## Workflow 1A - Climate Impacts Runoff US Basins
+## 1A Runoff US Basins
 
 ### **Table: Workflow 1A - Climate Impacts Runoff US Basins**
 
@@ -201,7 +201,7 @@ Workflow 1A results in WRF outputs being processed and run through Xanthos to pr
 
 
 
-## Workflow 1B - Climate Impacts Runoff Global Basins
+## 1B Runoff Global Basins
 
 ### **Table: Workflow 1B - Climate Impacts Runoff Global Basins**
 
@@ -249,7 +249,7 @@ knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
 
 
 
-## Workflow 1C - Climate Impacts Runoff Combine US and Global
+## 1C Runoff Combine US and Global
 
 ### **Table: Workflow 1C - Climate Impacts Runoff Combine US and Global**
 
