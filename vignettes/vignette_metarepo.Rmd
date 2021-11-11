@@ -125,7 +125,7 @@ data.frame(
 
 <!-------------------------->
 <!-------------------------->
-# Workflows
+# Workflows Summary
 <!-------------------------->
 <!-------------------------->
 <p align="center">![](vignetteFigs/divider.png)</p>
@@ -135,7 +135,15 @@ data.frame(
 knitr::include_graphics("vignetteFigs/im3_gcamusa_workflow_summary.jpg")
 ```
 
-## Workflow 1 - Climate Impacts Runoff
+
+
+<!-------------------------->
+<!-------------------------->
+# Workflow 1 - Climate Impacts Runoff
+<!-------------------------->
+<!-------------------------->
+<p align="center">![](vignetteFigs/divider.png)</p>
+
 
 <br>
 
@@ -152,8 +160,9 @@ Workflow 1 can be divided into three parts:
 * C. Climate Impacts Runoff Combine US and Global
 
 
-### **Table: Workflow 1A - Climate Impacts Runoff US Basins**
+## Workflow 1A - Climate Impacts Runoff US Basins
 
+### **Table: Workflow 1A - Climate Impacts Runoff US Basins**
 
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
 library(pander)
@@ -190,6 +199,10 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 
 Workflow 1A results in WRF outputs being processed and run through Xanthos to produce runoff in mm per month for US Basins to be combined with Non-US Basins runoff results from Workflow 1B. 
 
+
+
+## Workflow 1B - Climate Impacts Runoff Global Basins
+
 ### **Table: Workflow 1B - Climate Impacts Runoff Global Basins**
 
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
@@ -224,11 +237,19 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 ```
 
 
-Some diagnostics from workflow 1b.
+Some diagnostics from workflow 1b:
 
-* include 5 GCM runoff comparison figure 
-* GCAM figure sensitivity across 5 GCMs
-* sensitivity across smoothing mechanisms for GCM chosen (NORESM)
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of water runoff across five global climate models (GCMs).**"}
+knitr::include_graphics("vignetteFigs/water_runoff_facet_model.png")
+```
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of smoothed runoff data from the NORESM model **"}
+knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
+```
+
+
+
+## Workflow 1C - Climate Impacts Runoff Combine US and Global
 
 ### **Table: Workflow 1C - Climate Impacts Runoff Combine US and Global**
 
@@ -263,42 +284,19 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 
 Some diagnostics from workflow 1c. 
 
-* Comparison of water runoff across five global climate models (GCMs)
-
-<br>
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of water runoff across five global climate models (GCMs).**"}
-knitr::include_graphics("vignetteFigs/water_runoff_facet_model.png")
-```
-
-<br>
-
-
-* Compare Global vs WRF Xanthos Runoff for U.S. Basins
-
-<br>
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**"}
 knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
 ```
-<br>
 
 
 
-* Compare outputs from the NORESM global climate model smoothed over 5- and 10-year windows using trailing and surrounding years
+# Workflow 2
+# Workflow 3
+# Workflow 4
+# Workflow 5
+# Workflow 6
 
-<br>
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of smoothed runoff data from the NORESM model **"}
-knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
-```
-<br>
-
-## Workflow 2
-## Workflow 3
-## Workflow 4
-## Workflow 5
-## Workflow 6
-
-## Workflow 7
+# Workflow 7
 
 
 ### **Table: Workflow 7 - Final GCAM-USA Runs**
