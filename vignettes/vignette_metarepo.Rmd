@@ -288,7 +288,7 @@ knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
 
 <br>
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of smoothed runoff data from the NORESM model **"}
-knitr::include_graphics("vignetteFigs/water_runoff_facet_window_type.png")
+knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
 ```
 <br>
 
