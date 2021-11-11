@@ -263,6 +263,8 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 
 Some diagnostics from workflow 1c. 
 
+* Comparison of water runoff across five global climate models (GCMs)
+
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of water runoff across five global climate models (GCMs).**"}
@@ -282,7 +284,13 @@ knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
 
 
 
-* Smoothed Outputs
+* Compare outputs from the NORESM global climate model smoothed over 5- and 10-year windows using trailing and surrounding years
+
+<br>
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of smoothed runoff data from the NORESM model **"}
+knitr::include_graphics("vignetteFigs/water_runoff_facet_window_type.png")
+```
+<br>
 
 ## Workflow 2
 ## Workflow 3
