@@ -211,30 +211,19 @@ mytable = data.frame(
     Step     = c("CMIP5 Outputs Raw", 
                  "Xanthos Outputs on PIC",
                  "Xanthos GCM Sensitivity Analysis"),
-    Description = c("* RCP 4.5, 8.5, hot and cool\
-                    \n * hourly, 1979_01 to 2099_12\
-                    \n * 12km x 12km resolution\
-                    \n * Temperature (deg C)\
-                    \n * Minimum temperature (deg C)\
-                    \n * Wind speed (m/s)\
-                    \n * Relative humidity (%)\
-                    \n * GLW (W/m2)\
-                    \n * SWDOWN (W/m2)",
-                    "* wrf_to_xanthos_preprocess_historical.sh\ 
-                    \n* wrf_to_xanthos_preprocess_ssp585_hot_near.sh\
-                    \n* wrf_to_xanthos_preprocess_ssp585_hot_far.sh\
-                    \n* wrf_to_xanthos_process_historical.sh\
-                    \n* wrf_to_xanthos_process_ssp585_hot_near.sh\
-                    \n* wrf_to_xanthos_process_ssp585_hot_far.sh\
-                    \n* wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh", "wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh"),
-    Location     = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
-                     "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos\
+    Description = c("* RCP 4.5, 8.5\
+                    \n * annualy, 1950 to 2099\
+                    \n * 235 river basins\
+                    \n * Basin runoff (km3/year)",
+                    "* runoff_global_xanthos_to_gcam.sh"),
+    Location     = c("(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
+                     "*
                      \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
-                     "* (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output")
+                     "* ")
     )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
-```
+
 
 
 Some diagnostics from workflow 1b:
