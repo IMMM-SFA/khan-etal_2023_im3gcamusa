@@ -215,15 +215,15 @@ mytable = data.frame(
                     \n * annualy, 1950 to 2099\
                     \n * 235 river basins\
                     \n * Basin runoff (km3/year)",
-                    "* runoff_global_xanthos_to_gcam.sh"),
+                    "runoff_global_xanthos_to_gcam.sh",
+                    ""),
     Location     = c("(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
-                     "*
-                     \n* (Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
-                     "* ")
+                     "(Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
+                     "")
     )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
-
+```
 
 
 Some diagnostics from workflow 1b:
@@ -234,6 +234,11 @@ knitr::include_graphics("vignetteFigs/water_runoff_facet_model.png")
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of smoothed runoff data from the NORESM model **"}
 knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
+```
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of baseline data, smoothed runoff data,  and 'delta' applied to smoothed data **"}
+knitr::include_graphics("vignetteFigs/water_runoff_NORESM_8p5_10ysurr_delta2015_clip.png")
 ```
 
 
