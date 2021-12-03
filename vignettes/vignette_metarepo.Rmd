@@ -238,7 +238,7 @@ knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of baseline data, smoothed runoff data,  and 'delta' applied to smoothed data **"}
-knitr::include_graphics("vignetteFigs/water_runoff_NORESM_8p5_10ysurr_delta2015_clip.png")
+knitr::include_graphics("vignetteFigs/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.png")
 ```
 
 
