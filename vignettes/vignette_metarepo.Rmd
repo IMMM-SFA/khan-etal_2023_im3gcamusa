@@ -294,12 +294,11 @@ knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
 # Workflow 3
 # Workflow 4
 # Workflow 5
+
 # Workflow 6
 
-# Workflow 7
 
-
-### **Table: Workflow 7 - Final GCAM-USA Runs**
+### **Table: Workflow 6 - Final GCAM-USA Runs**
 
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
 library(pander)
@@ -330,7 +329,7 @@ mytable = data.frame(
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
 ```
 
-### **Table: Workflow 7b - Intermediate GCAM-USA Run Riagnostics**
+### **Table: Workflow 6 - Intermediate GCAM-USA Run Diagnostics**
 
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
 library(pander)
