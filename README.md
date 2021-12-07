@@ -4,7 +4,7 @@ _Zenodo badge to go here_
 <!-- badges: end -->
 # khan-etal_2022_im3gcamusa
 
-Meta-repository for: *Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., 2022. Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomic, climate, and energy policy drivers. (In progress) Journal_TBD, DOI: XXXX*
+Meta-repository for: *Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., Binsted, M., Graham, N. 2022. Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomic, climate, and energy policy drivers. (In-Prep) Journal_TBD, DOI: XXXX*
 
 <br>
 <p align="center">
