@@ -153,12 +153,6 @@ knitr::include_graphics("vignetteFigs/im3_gcamusa_workflow_1_climate_impacts_run
 
 <br>
 
-Workflow 1 can be divided into three parts: 
-
-* A. Climate Impacts Runoff US Basins
-* B. Climate Impacts Runoff Global Basins
-* C. Climate Impacts Runoff Combine US and Global
-
 
 ## 1A Runoff US Basins
 
@@ -200,7 +194,6 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 Workflow 1A results in WRF outputs being processed and run through Xanthos to produce runoff in mm per month for US Basins to be combined with Non-US Basins runoff results from Workflow 1B. 
 
 
-
 ## 1B Runoff Global Basins
 
 ### **Table: Workflow 1B - Climate Impacts Runoff Global Basins**
@@ -210,16 +203,22 @@ library(pander)
 mytable = data.frame(
     Step     = c("CMIP5 Outputs Raw", 
                  "Xanthos Outputs on PIC",
-                 "Xanthos GCM Sensitivity Analysis"),
+                 "Xanthos GCAM GCM Sensitivity Analysis",
+                 "Xanthos GCAM smoothing Sensitivity Analysis"),
     Description = c("* RCP 4.5, 8.5\
                     \n * annualy, 1950 to 2099\
                     \n * 235 river basins\
                     \n * Basin runoff (km3/year)",
                     "runoff_global_xanthos_to_gcam.sh",
-                    ""),
-    Location     = c("(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
-                     "(Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
-                     "")
+                    "gcamDiagnostics_runoff_GCMs_5trail_delta.sh",
+                    "gcamDiagnostics_runoff_NORESM_smooth_delta.sh"
+                    ),
+    Location     = c("*(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
+                     "*(Repo) https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts",
+                     "*(PIC) /pic/projects/im3/gcamusa/diagnostics\
+                     \n * /pic/projects/im3/gcamusa/diagnostics/outputs_runoff_GCMs_5trail_delta",
+                     "*(PIC) /pic/projects/im3/gcamusa/diagnostics\
+                     \n * /pic/projects/im3/gcamusa/diagnostics/outputs_runoff_NORESM_smooth_delta")
     )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
@@ -241,7 +240,13 @@ knitr::include_graphics("vignetteFigs/water_runoff_facet_scenario.png")
 knitr::include_graphics("vignetteFigs/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.png")
 ```
 
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
+knitr::include_graphics("vignetteFigs/compare_GCAM_global_GCMs_5trail.png")
+```
 
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM **"}
+knitr::include_graphics("vignetteFigs/compare_GCAM_global_noresm_smooth.png")
+```
 
 ## 1C Runoff Combine US and Global
 
@@ -255,22 +260,26 @@ mytable = data.frame(
                  "Combine US and Non-US runoff",
                  "Extrapolate 2099 to 2100",
                  "Smoothing",
-                 "Convert to XML"),
+                 "Convert to XML",
+                 "Run GCAM scenario rcp85hotter_ssp5"),
     Description = c("Runoff mm per month for US Basins.",
                  "Runoff mm per month for Non-US Basins.",
                  "* xanthos_process_us_global_ssp585hotter_gcmChosen.sh\ 
                     \n* xanthos_combine_us_global_ssp585hotter_gcmChosen.R",
                  "* xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R",
                  "* xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R",
-                 "* xanthos_convert2xml_ssp585hotter_gcmChosen.R"),
+                 "* xanthos_convert2xml_ssp585hotter_gcmChosen.R",
+                 "* Run GCAM using rcp85hotter_ssp5 runoff."),
     Location     = c("* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a\
                      \n* Copied from (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output",
-                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1b\
-                     \n* Copied from (PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
-                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
-                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
-                 "/pic/projects/im3/gcamusa/climateimpacts/runoff",
-                 "/pic/projects/im3/gcamusa/climateimpacts/runoff")
+                 "* /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/gcam-usa-im3/exe\
+                 \n * gcam_parallel_im3.sh\
+                 \n * configuration_rcp85hotter_ssp5.xml")
     )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
@@ -282,7 +291,15 @@ Some diagnostics from workflow 1c.
 knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
 ```
 
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**"}
+knitr::include_graphics("vignetteFigs/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_1.png")
+```
 
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5**"}
+knitr::include_graphics("vignetteFigs/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta2015_1.png")
+```
+
+** GCAM Diagnostics for rcp85hotter_ssp5 with runoff impacts**: In Progress.
 
 # Workflow 2
 # Workflow 3
