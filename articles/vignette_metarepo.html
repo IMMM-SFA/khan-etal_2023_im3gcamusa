@@ -417,12 +417,6 @@ zenodo link
 </p>
 </div>
 <p><br></p>
-<p>Workflow 1 can be divided into three parts:</p>
-<ul>
-<li>A. Climate Impacts Runoff US Basins</li>
-<li>B. Climate Impacts Runoff Global Basins</li>
-<li>C. Climate Impacts Runoff Combine US and Global</li>
-</ul>
 <div class="section level2">
 <h2 id="a-runoff-us-basins">1A Runoff US Basins<a class="anchor" aria-label="anchor" href="#a-runoff-us-basins"></a>
 </h2>
@@ -448,8 +442,8 @@ zenodo link
 <li>RCP 4.5, 8.5, hot and cool</li>
 <li>hourly, 1979_01 to 2099_12</li>
 <li>12km x 12km resolution</li>
-<li>Temperature (deg C)</li>
-<li>Minimum temperature (deg C)</li>
+<li>Temperature (K)</li>
+<li>Minimum temperature (K)</li>
 <li>Wind speed (m/s)</li>
 <li>Relative humidity (%)</li>
 <li>GLW (W/m2)</li>
@@ -499,8 +493,8 @@ zenodo link
 <table class="table">
 <colgroup>
 <col width="20%">
-<col width="27%">
-<col width="52%">
+<col width="31%">
+<col width="48%">
 </colgroup>
 <thead><tr class="header">
 <th>Step</th>
@@ -516,18 +510,25 @@ zenodo link
 <li>235 river basins</li>
 <li>Basin runoff (km3/year)</li>
 </ul></td>
-<td>(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</td>
+<td>*(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</td>
 </tr>
 <tr class="even">
 <td>Xanthos Outputs on PIC</td>
 <td>runoff_global_xanthos_to_gcam.sh</td>
-<td>(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="external-link uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a>
+<td>*(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="external-link uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a>
 </td>
 </tr>
 <tr class="odd">
-<td>Xanthos GCM Sensitivity Analysis</td>
-<td></td>
-<td></td>
+<td>Xanthos GCAM GCM Sensitivity Analysis</td>
+<td>gcamDiagnostics_runoff_GCMs_5trail_delta.sh</td>
+<td>
+<em>(PIC) /pic/projects/im3/gcamusa/diagnostics </em> /pic/projects/im3/gcamusa/diagnostics/outputs_runoff_GCMs_5trail_delta</td>
+</tr>
+<tr class="even">
+<td>Xanthos GCAM smoothing Sensitivity Analysis</td>
+<td>gcamDiagnostics_runoff_NORESM_smooth_delta.sh</td>
+<td>
+<em>(PIC) /pic/projects/im3/gcamusa/diagnostics </em> /pic/projects/im3/gcamusa/diagnostics/outputs_runoff_NORESM_smooth_delta</td>
 </tr>
 </tbody>
 </table>
@@ -545,6 +546,16 @@ zenodo link
 <div class="figure" style="text-align: center">
 <img src="vignetteFigs/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.png" alt="**Comparison of baseline data, smoothed runoff data,  and 'delta' applied to smoothed data **" width="100%"><p class="caption">
 <strong>Comparison of baseline data, smoothed runoff data, and ‘delta’ applied to smoothed data </strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="vignetteFigs/compare_GCAM_global_GCMs_5trail.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="100%"><p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="vignetteFigs/compare_GCAM_global_noresm_smooth.png" alt="**Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM **" width="100%"><p class="caption">
+<strong>Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM </strong>
 </p>
 </div>
 </div>
@@ -580,8 +591,7 @@ zenodo link
 <td>Workflow 1B Outputs</td>
 <td>Runoff mm per month for Non-US Basins.</td>
 <td><ul>
-<li>/pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1b</li>
-<li>Copied from (PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</li>
+<li>/pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -590,37 +600,67 @@ zenodo link
 <li>xanthos_process_us_global_ssp585hotter_gcmChosen.sh</li>
 <li>xanthos_combine_us_global_ssp585hotter_gcmChosen.R</li>
 </ul></td>
-<td>/pic/projects/im3/gcamusa/climateimpacts/runoff</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td>Extrapolate 2099 to 2100</td>
 <td><ul>
 <li>xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R</li>
 </ul></td>
-<td>/pic/projects/im3/gcamusa/climateimpacts/runoff</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td>Smoothing</td>
 <td><ul>
 <li>xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R</li>
 </ul></td>
-<td>/pic/projects/im3/gcamusa/climateimpacts/runoff</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td>Convert to XML</td>
 <td><ul>
 <li>xanthos_convert2xml_ssp585hotter_gcmChosen.R</li>
 </ul></td>
-<td>/pic/projects/im3/gcamusa/climateimpacts/runoff</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Run GCAM scenario rcp85hotter_ssp5</td>
+<td><ul>
+<li>Run GCAM using rcp85hotter_ssp5 runoff.</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/gcam-usa-im3/exe</li>
+<li>gcam_parallel_im3.sh</li>
+<li>configuration_rcp85hotter_ssp5.xml</li>
+</ul></td>
 </tr>
 </tbody>
 </table>
 <p>Some diagnostics from workflow 1c.</p>
 <div class="figure" style="text-align: center">
-<img src="vignetteFigs/wrf_xanthos_compare_us.png" alt="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**" width="100%"><p class="caption">
+<img src="vignetteFigs/wrf_xanthos_compare_us_default.png" alt="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**" width="100%"><p class="caption">
 <strong>Comparison of Global vs WRF Xanthos Runoff for U.S. Basins</strong>
 </p>
 </div>
+<div class="figure" style="text-align: center">
+<img src="vignetteFigs/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_1.png" alt="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%"><p class="caption">
+<strong>Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="vignetteFigs/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta2015_1.png" alt="**Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%"><p class="caption">
+<strong>Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5</strong>
+</p>
+</div>
+<p>** GCAM Diagnostics for rcp85hotter_ssp5 with runoff impacts**: In Progress.</p>
 </div>
 </div>
 </div>
