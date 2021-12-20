@@ -288,7 +288,7 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 Some diagnostics from workflow 1c. 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**"}
-knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us.png")
+knitr::include_graphics("vignetteFigs/wrf_xanthos_compare_us_default.png")
 ```
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**"}
