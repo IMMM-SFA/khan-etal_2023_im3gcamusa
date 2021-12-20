@@ -167,8 +167,8 @@ mytable = data.frame(
     Description = c("* RCP 4.5, 8.5, hot and cool\
                     \n * hourly, 1979_01 to 2099_12\
                     \n * 12km x 12km resolution\
-                    \n * Temperature (deg C)\
-                    \n * Minimum temperature (deg C)\
+                    \n * Temperature (K)\
+                    \n * Minimum temperature (K)\
                     \n * Wind speed (m/s)\
                     \n * Relative humidity (%)\
                     \n * GLW (W/m2)\
