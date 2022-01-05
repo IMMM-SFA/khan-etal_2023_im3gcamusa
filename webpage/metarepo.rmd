@@ -1,5 +1,5 @@
 ---
-title: khan_etal_2022_im3gcamusa
+pagetitle: khan_etal_2022_im3gcamusa
 output: 
   html_document:
     toc: true
