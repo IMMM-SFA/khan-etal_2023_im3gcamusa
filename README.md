@@ -1,6 +1,5 @@
 <!-- badges: start --> 
 [![docs](https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/actions/workflows/docs.yaml/badge.svg?branch=main)](https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/actions/workflows/docs.yaml)
-_Zenodo badge to go here_
 <!-- badges: end -->
 # khan-etal_2022_im3gcamusa
 
