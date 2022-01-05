@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>metarepo.knit</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">khan_etal_2022_im3gcamusa</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="metarepo.html">
+    <span class="fas fa-book"></span>
+     
+    Meta Repository
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div class="header_logo">
+<p><img src="images/logo_pnnl_white.png" style="float:right;height:40px;"></p>
+</div>
+<!-------------------------->
+<!-------------------------->
+<div id="citation" class="section level1">
+<h1>Citation</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., Binsted, M., Graham, N. 2022. Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomics, climate, and energy transitions. (In-Prep) Journal_TBD, DOI: XXXX</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="models-used" class="section level1">
+<h1>Models Used</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Model
+</th>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Language
+</th>
+<th style="text-align:left;">
+Link
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+WRF
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+Climate simulation model
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<a href="https://www.mmm.ucar.edu/weather-research-and-forecasting-model" class="uri">https://www.mmm.ucar.edu/weather-research-and-forecasting-model</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GCAM
+</td>
+<td style="text-align:left;">
+gcam v5.3 (branch gcam-usa-im3)
+</td>
+<td style="text-align:left;">
+Global Change Analysis Model. Human-earth systems dynamic model.
+</td>
+<td style="text-align:left;">
+C++/R
+</td>
+<td style="text-align:left;">
+<a href="https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3" class="uri">https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xanthos
+</td>
+<td style="text-align:left;">
+xanthos v2.4.1
+</td>
+<td style="text-align:left;">
+Water runoff emulator at 0.5 degree grids and monthly timesteps.
+</td>
+<td style="text-align:left;">
+Python
+</td>
+<td style="text-align:left;">
+<a href="https://github.com/JGCRI/xanthos" class="uri">https://github.com/JGCRI/xanthos</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Helios
+</td>
+<td style="text-align:left;">
+helios v1.0.0
+</td>
+<td style="text-align:left;">
+Gridded Heating and cooling degree day calculator at multiple spatial and temporal resolution.
+</td>
+<td style="text-align:left;">
+R
+</td>
+<td style="text-align:left;">
+Helios
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GGCMI
+</td>
+<td style="text-align:left;">
+ggcmi v1.0.0
+</td>
+<td style="text-align:left;">
+Emulators to model agricultural yield impacts in response to climate
+</td>
+<td style="text-align:left;">
+?
+</td>
+<td style="text-align:left;">
+GGCMI
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rpackageutils
+</td>
+<td style="text-align:left;">
+rpackageutils v1.0.0
+</td>
+<td style="text-align:left;">
+Utility functions to process, aggregate and reformat data.
+</td>
+<td style="text-align:left;">
+R
+</td>
+<td style="text-align:left;">
+<a href="https://github.com/JGCRI/rpackageutils" class="uri">https://github.com/JGCRI/rpackageutils</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+im3components
+</td>
+<td style="text-align:left;">
+im3components v1.0.0
+</td>
+<td style="text-align:left;">
+Functions to process data between different IM3 models.
+</td>
+<td style="text-align:left;">
+R/Python
+</td>
+<td style="text-align:left;">
+<a href="https://github.com/IMMM-SFA/im3components" class="uri">https://github.com/IMMM-SFA/im3components</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gcamextractor
+</td>
+<td style="text-align:left;">
+gcamextractor
+</td>
+<td style="text-align:left;">
+Model to extract and process data from GCAM output databases.
+</td>
+<td style="text-align:left;">
+R
+</td>
+<td style="text-align:left;">
+<a href="https://github.com/JGCRI/gcamextractor" class="uri">https://github.com/JGCRI/gcamextractor</a>
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Data
+</th>
+<th style="text-align:left;">
+Source
+</th>
+<th style="text-align:left;">
+Used.by
+</th>
+<th style="text-align:left;">
+Location
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+WRF Outputs
+</td>
+<td style="text-align:left;">
+WRF runs
+</td>
+<td style="text-align:left;">
+Xanthos, Helios, GGCMI
+</td>
+<td style="text-align:left;">
+(NERSC) /global/cfs/cdirs/m2702/gsharing
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xanthos Outputs
+</td>
+<td style="text-align:left;">
+Xanthos runs (Workflow 1)
+</td>
+<td style="text-align:left;">
+GCAM
+</td>
+<td style="text-align:left;">
+zenodo link
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Helios Outputs
+</td>
+<td style="text-align:left;">
+Helios runs (Workflow 2)
+</td>
+<td style="text-align:left;">
+GCAM
+</td>
+<td style="text-align:left;">
+zenodo link
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GGCMI Outputs
+</td>
+<td style="text-align:left;">
+GGCMI runs (Workflow 3)
+</td>
+<td style="text-align:left;">
+GCAM
+</td>
+<td style="text-align:left;">
+zenodo link
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Population US States
+</td>
+<td style="text-align:left;">
+xxx
+</td>
+<td style="text-align:left;">
+GCAM
+</td>
+<td style="text-align:left;">
+zenodo link
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Population Gridded
+</td>
+<td style="text-align:left;">
+xxx
+</td>
+<td style="text-align:left;">
+GCAM
+</td>
+<td style="text-align:left;">
+zenodo link
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GCAM Outputs
+</td>
+<td style="text-align:left;">
+GCAM runs (Workflow 7)
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+zenodo link
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflows-summary" class="section level1">
+<h1>Workflows Summary</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/im3_gcamusa_workflow_summary.jpg" alt="**Summary of experiment workflows.**" width="100%" />
+<p class="caption">
+<strong>Summary of experiment workflows.</strong>
+</p>
+</div>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-1---runoff" class="section level1">
+<h1>Workflow 1 - Runoff</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="**Workflow 1: Climate Impacts Runoff.**" width="80%" />
+<p class="caption">
+<strong>Workflow 1: Climate Impacts Runoff.</strong>
+</p>
+</div>
+<p><br></p>
+<div id="workflow-1a-us-basins" class="section level2 tabset">
+<h2 class="tabset">Workflow 1A US Basins</h2>
+<p><br></p>
+<div id="table-workflow-1a" class="section level3">
+<h3>Table Workflow 1A</h3>
+<p><br></p>
+<p>Workflow 1A results in WRF outputs being processed and run through Xanthos to produce runoff in mm per month for US Basins to be combined with Non-US Basins runoff results from Workflow 1B.</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="44%" />
+<col width="45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WRF Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5, hot and cool</li>
+<li>hourly, 1979_01 to 2099_12</li>
+<li>12km x 12km resolution</li>
+<li>Temperature (K)</li>
+<li>Minimum temperature (K)</li>
+<li>Wind speed (m/s)</li>
+<li>Relative humidity (%)</li>
+<li>GLW (W/m2)</li>
+<li>SWDOWN (W/m2)</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gsharing</td>
+</tr>
+<tr class="even">
+<td>wrf_to_xanthos</td>
+<td><ul>
+<li>wrf_to_xanthos_preprocess_historical.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_far.sh</li>
+<li>wrf_to_xanthos_process_historical.sh</li>
+<li>wrf_to_xanthos_process_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_process_ssp585_hot_far.sh</li>
+<li>wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh</li>
+</ul></td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>xanthos</td>
+<td>wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh</td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output</li>
+<li>(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+</div>
+<div id="workflow-1b-global-basins" class="section level2 tabset">
+<h2 class="tabset">Workflow 1B Global Basins</h2>
+<p><br></p>
+<div id="table-workflow-1b" class="section level3">
+<h3>Table Workflow 1B</h3>
+<p><br></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="31%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CMIP5 Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5</li>
+<li>annualy, 1950 to 2099</li>
+<li>235 river basins</li>
+<li>Basin runoff (km3/year)</li>
+</ul></td>
+<td>*(PIC) /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</td>
+</tr>
+<tr class="even">
+<td>Xanthos Outputs on PIC</td>
+<td>runoff_global_xanthos_to_gcam.sh</td>
+<td>*(Repo) <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts" class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a></td>
+</tr>
+<tr class="odd">
+<td>Xanthos GCAM GCM Sensitivity Analysis</td>
+<td>gcamDiagnostics_runoff_GCMs_5trail_delta.sh</td>
+<td><em>(PIC) /pic/projects/im3/gcamusa/diagnostics </em> /pic/projects/im3/gcamusa/diagnostics/outputs_runoff_GCMs_5trail_delta</td>
+</tr>
+<tr class="even">
+<td>Xanthos GCAM smoothing Sensitivity Analysis</td>
+<td>gcamDiagnostics_runoff_NORESM_smooth_delta.sh</td>
+<td><em>(PIC) /pic/projects/im3/gcamusa/diagnostics </em> /pic/projects/im3/gcamusa/diagnostics/outputs_runoff_NORESM_smooth_delta</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="compare-gcms" class="section level3">
+<h3>Compare GCMs</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/water_runoff_facet_model.png" alt="**Comparison of water runoff across five global climate models (GCMs).**" width="100%" />
+<p class="caption">
+<strong>Comparison of water runoff across five global climate models (GCMs).</strong>
+</p>
+</div>
+</div>
+<div id="compare-smoothing" class="section level3">
+<h3>Compare Smoothing</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/water_runoff_facet_scenario.png" alt="**Comparison of smoothed runoff data from the NORESM model **" width="100%" />
+<p class="caption">
+<strong>Comparison of smoothed runoff data from the NORESM model </strong>
+</p>
+</div>
+</div>
+<div id="compare-raw-smooth-delta" class="section level3">
+<h3>Compare Raw, Smooth, Delta</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.png" alt="**Comparison of baseline data, smoothed runoff data,  and 'delta' applied to smoothed data **" width="100%" />
+<p class="caption">
+<strong>Comparison of baseline data, smoothed runoff data, and ‘delta’ applied to smoothed data </strong>
+</p>
+</div>
+</div>
+<div id="gcam-outputs-gcms" class="section level3">
+<h3>GCAM Outputs GCMs</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compare_GCAM_global_GCMs_5trail.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+</div>
+<div id="gcam-outputs-smoothing" class="section level3">
+<h3>GCAM Outputs Smoothing</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compare_GCAM_global_noresm_smooth.png" alt="**Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM </strong>
+</p>
+</div>
+</div>
+</div>
+<div id="workflow-1c-us-and-global" class="section level2 tabset">
+<h2 class="tabset">Workflow 1C US and Global</h2>
+<p><br></p>
+<div id="table-workflow-1c" class="section level3">
+<h3>Table Workflow 1C</h3>
+<p><br></p>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="35%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Workflow 1A Outputs</td>
+<td>Runoff mm per month for US Basins.</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a</li>
+<li>Copied from (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Workflow 1B Outputs</td>
+<td>Runoff mm per month for Non-US Basins.</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Combine US and Non-US runoff</td>
+<td><ul>
+<li>xanthos_process_us_global_ssp585hotter_gcmChosen.sh</li>
+<li>xanthos_combine_us_global_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Extrapolate 2099 to 2100</td>
+<td><ul>
+<li>xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Smoothing</td>
+<td><ul>
+<li>xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Convert to XML</td>
+<td><ul>
+<li>xanthos_convert2xml_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Run GCAM scenario rcp85hotter_ssp5</td>
+<td><ul>
+<li>Run GCAM using rcp85hotter_ssp5 runoff.</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/gcam-usa-im3/exe</li>
+<li>gcam_parallel_im3.sh</li>
+<li>configuration_rcp85hotter_ssp5.xml</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="runoff-diagnostics" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Runoff Diagnostics</h3>
+<div id="global-vs-wrf" class="section level4">
+<h4>Global vs WRF</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/wrf_xanthos_compare_us_default.png" alt="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**" width="100%" />
+<p class="caption">
+<strong>Comparison of Global vs WRF Xanthos Runoff for U.S. Basins</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="smoothing" class="section level4">
+<h4>Smoothing</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_1.png" alt="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%" />
+<p class="caption">
+<strong>Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="deltas" class="section level4">
+<h4>Deltas</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta2015_1.png" alt="**Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%" />
+<p class="caption">
+<strong>Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5</strong>
+</p>
+</div>
+</div>
+</div>
+<div id="gcam-rcp85hotter_ssp5" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM rcp85hotter_ssp5</h3>
+<div id="socio-economics" class="section level4">
+<h4>Socio-economics</h4>
+<p><br></p>
+</div>
+<div id="energy" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+</div>
+<div id="water" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+</div>
+</div>
+</div>
+<div id="workflow-2---hddcdd" class="section level1">
+<h1>Workflow 2 - HDDCDD</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of HDDCDD workflows to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-3---ag-yields" class="section level1">
+<h1>Workflow 3 - Ag Yields</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of Ag Yield workflow to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-4---ssp3" class="section level1">
+<h1>Workflow 4 - SSP3</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of SSP3 workflows to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-5---ssp5" class="section level1">
+<h1>Workflow 5 - SSP5</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of SSP5 workflows to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-6---final-scenarios" class="section level1">
+<h1>Workflow 6 - Final Scenarios</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of Final Scenario workflows to go here.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
