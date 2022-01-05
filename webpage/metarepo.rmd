@@ -249,7 +249,9 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 ```
 
 
-### Compare GCMs
+### Runoff Diagnostics {.tabset .tabset-pills}
+
+#### Compare GCMs
 
 <br>
 
@@ -257,7 +259,7 @@ pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left
 knitr::include_graphics("images/water_runoff_facet_model.png")
 ```
 
-### Compare Smoothing
+#### Compare Smoothing
 
 <br>
 
@@ -265,7 +267,7 @@ knitr::include_graphics("images/water_runoff_facet_model.png")
 knitr::include_graphics("images/water_runoff_facet_scenario.png")
 ```
 
-### Compare Raw, Smooth, Delta
+#### Compare Deltas
 
 <br>
 
@@ -273,7 +275,9 @@ knitr::include_graphics("images/water_runoff_facet_scenario.png")
 knitr::include_graphics("images/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.png")
 ```
 
-### GCAM Outputs GCMs
+### GCAM Diagnostics {.tabset .tabset-pills}
+
+#### GCAM Outputs GCMs
 
 <br>
 
@@ -281,7 +285,7 @@ knitr::include_graphics("images/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.
 knitr::include_graphics("images/compare_GCAM_global_GCMs_5trail.png")
 ```
 
-### GCAM Outputs Smoothing
+#### GCAM Outputs Smoothing
 
 <br>
 
