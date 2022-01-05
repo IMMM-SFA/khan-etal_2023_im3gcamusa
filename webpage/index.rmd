@@ -1,0 +1,25 @@
+<div class="header_logo">
+<img src="images/logo_pnnl_white.png" style="float:right;height:40px;">
+</div>
+
+<br>
+<br>
+
+<!-------------------------->
+<!-------------------------->
+# Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomics, climate, and energy transitions
+<!-------------------------->
+<!-------------------------->
+<p align="center"> <img src="images/divider.png"></p>
+
+This study examines the coevolution of multiple sectors including water, energy and land in response to socioeconomic, policy, and climate drivers across the United States in a global context using the Global Change Analysis Model - USA (GCAM-USA). Consistent with the Shared Socioeconomic Pathways - Representative Concentration Pathways (SSP-RCP) scenario framework, we combine different socioeconomic pathways with both moderate and more severe climate projections developed from the Coupled Model Intercomparison Project Phase 6 (CMIP6) archive. Our study contributes to the literature by focusing on subnational (state and basin level) economy-energy-water-land interactions and dynamics within the U.S linked to the rest of the world through trade in international commodity markets. Conditions outside of the U.S. dynamically affect sub-national conditions within the U.S. and vice versa.
+
+<p align="center"> <img src="images/divider.png"></p>
+
+<div class="container_map_outer">
+<div class="container_map">
+  <a href = "metarepo.html">
+<img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_metarepo.PNG?raw=true" height="60"/>
+</a>
+</div>
+</div>

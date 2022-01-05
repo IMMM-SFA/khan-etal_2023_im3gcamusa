@@ -1,0 +1,15 @@
+name: khan_etal_2022_im3gcamusa
+
+navbar:
+  title: "khan_etal_2022_im3gcamusa"
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Meta Repository"
+      icon: fas fa-book
+      href: metarepo.html
+
+output:
+  html_document:
+    theme: cosmo
+    css: "style.css"
