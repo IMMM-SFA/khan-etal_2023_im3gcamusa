@@ -289,6 +289,8 @@ knitr::include_graphics("images/compare_GCAM_global_GCMs_5trail.png")
 
 #### Water
 
+#### Electricity
+
 #### Energy
 
 #### AGLU
@@ -314,6 +316,8 @@ knitr::include_graphics("images/compare_GCAM_global_GCMs_5trail.png")
 #### Socioeconomics
 
 #### Water
+
+#### Electricity
 
 #### Energy
 
@@ -396,18 +400,18 @@ knitr::include_graphics("images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm
 
 ### GCAM rcp85hotter_ssp5 {.tabset .tabset-pills}
 
-#### Socio-economics
-
-<br>
-
-#### Energy
-
-<br>
+#### Socioeconomics
 
 #### Water
 
+#### Electricity
 
-<br>
+#### Energy
+
+#### AGLU
+
+#### Emissions
+
 
 <!-------------------------->
 <!-------------------------->
