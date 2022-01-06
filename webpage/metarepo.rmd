@@ -299,18 +299,12 @@ knitr::include_graphics("images/compare_GCAM_global_GCMs_5trail.png")
 
 ### GCAM Outputs Smoothing {.tabset .tabset-pills}
 
-<br>
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM **"}
-knitr::include_graphics("images/compare_GCAM_global_noresm_smooth.png")
-```
-
 #### Summary
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
-knitr::include_graphics("images/compare_GCAM_global_GCMs_5trail.png")
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for different smoothing methods for GCM NORESM **"}
+knitr::include_graphics("images/compare_GCAM_global_noresm_smooth.png")
 ```
 
 #### Socioeconomics
