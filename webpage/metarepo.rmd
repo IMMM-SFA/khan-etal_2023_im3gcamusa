@@ -306,12 +306,20 @@ knitr::include_graphics("images/chart_class_diff_absolute_water_runoff_GCMs_5tra
 
 
 
-#### Electricity
+#### Energy
 
 <br>
 
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_runoff_GCMs_5trail_delta.png")
+```
+
+#### Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_runoff_GCMs_5trail_delta.png")
 ```
 
 
@@ -383,6 +391,13 @@ knitr::include_graphics("images/chart_param_socioecon_runoff_NORESM_smooth_delta
 knitr::include_graphics("images/chart_class_diff_absolute_water_runoff_NORESM_smooth_delta.png")
 ```
 
+#### Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_runoff_NORESM_smooth_delta.png")
+```
 
 
 #### Electricity
@@ -537,6 +552,14 @@ knitr::include_graphics("images/chart_param_socioecon_im3_runoff.png")
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff.png")
 ```
 
+#### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff.png")
+```
+
 
 
 #### Electricity
@@ -544,7 +567,7 @@ knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff.png")
 <br>
 
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff.png")
 ```
 
 
