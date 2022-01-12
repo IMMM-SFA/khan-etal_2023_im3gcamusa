@@ -282,7 +282,7 @@ knitr::include_graphics("images/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.
 <br>
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
-knitr::include_graphics("images/chart_param_all_summary.png")
+knitr::include_graphics("images/chart_param_all_summary_runoff_GCMs_5trail_delta.png")
 ```
 
 
@@ -291,7 +291,7 @@ knitr::include_graphics("images/chart_param_all_summary.png")
 <br>
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs for 5 GCMS **"}
-knitr::include_graphics("images/chart_param_diff_percent_socioecon.png")
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_runoff_GCMs_5trail_delta.png")
 ```
 
 
@@ -301,9 +301,30 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon.png")
 <br>
 
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for 5 GCMS **"}
-knitr::include_graphics("images/chart_class_diff_absolute_water.png")
+knitr::include_graphics("images/chart_class_diff_absolute_water_runoff_GCMs_5trail_delta.png")
 ```
 
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_runoff_GCMs_5trail_delta.png")
+```
+
+
+
+#### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_runoff_GCMs_5trail_delta.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_runoff_GCMs_5trail_delta.png")
+```
 
 
 #### Electricity
@@ -311,7 +332,13 @@ knitr::include_graphics("images/chart_class_diff_absolute_water.png")
 <br>
 
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_runoff_GCMs_5trail_delta.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_runoff_GCMs_5trail_delta.png")
 ```
 
 
@@ -321,29 +348,41 @@ knitr::include_graphics("images/chart_class_diff_absolute_energy.png")
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 5 GCMS **"}
-knitr::include_graphics("images/chart_class_diff_absolute_aglu.png")
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_runoff_GCMs_5trail_delta.png")
 ```
 
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_runoff_GCMs_5trail_delta.png")
+```
 
 
 #### Emissions
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for 5 GCMS **"}
-knitr::include_graphics("images/compareCO2GlobalCumRCP.png")
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for 5 GCMS **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_GCMs_5trail_delta.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for 5 GCMS **"}
+knitr::include_graphics("images/compareCO2USA_GCMs_5trail_delta.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for 5 GCMS **"}
-knitr::include_graphics("images/compareCO2USA.png")
+knitr::include_graphics("images/compareNonCO2global_GCMs_5trail_delta.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for 5 GCMS **"}
-knitr::include_graphics("images/compareNonCO2global.png")
+knitr::include_graphics("images/compareNonCO2USA_GCMs_5trail_delta.png")
 ```
 
 
@@ -355,7 +394,7 @@ knitr::include_graphics("images/compareNonCO2global.png")
 <br>
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/chart_param_all_summary_smooth.png")
+knitr::include_graphics("images/chart_param_all_summary_runoff_NORESM_smooth_delta.png")
 ```
 
 
@@ -364,7 +403,7 @@ knitr::include_graphics("images/chart_param_all_summary_smooth.png")
 <br>
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/chart_param_diff_percent_socioecon_smooth.png")
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_runoff_NORESM_smooth_delta.png")
 ```
 
 
@@ -373,9 +412,31 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon_smooth.png")
 
 <br>
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/chart_class_diff_absolute_water_smooth.png")
+knitr::include_graphics("images/chart_class_diff_absolute_water_runoff_NORESM_smooth_delta.png")
 ```
 
+<br>
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_runoff_NORESM_smooth_delta.png")
+```
+
+
+
+
+#### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_runoff_NORESM_smooth_delta.png")
+```
+
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_runoff_NORESM_smooth_delta.png")
+```
 
 
 #### Electricity
@@ -383,7 +444,13 @@ knitr::include_graphics("images/chart_class_diff_absolute_water_smooth.png")
 <br>
 
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy_smooth.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_runoff_NORESM_smooth_delta.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_runoff_NORESM_smooth_delta.png")
 ```
 
 
@@ -396,7 +463,13 @@ knitr::include_graphics("images/chart_class_diff_absolute_energy_smooth.png")
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/chart_class_diff_absolute_aglu_smooth.png")
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_runoff_NORESM_smooth_delta.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_runoff_NORESM_smooth_delta.png")
 ```
 
 
@@ -405,22 +478,28 @@ knitr::include_graphics("images/chart_class_diff_absolute_aglu_smooth.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/compareCO2GlobalCumRCP_smooth.png")
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_smooth_delta.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for NORESM different smoothing techniques **"}
+knitr::include_graphics("images/compareCO2USA_smooth_delta.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/compareCO2USA_smooth.png")
+knitr::include_graphics("images/compareNonCO2global_smooth_delta.png")
 ```
+
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs for NORESM different smoothing techniques **"}
-knitr::include_graphics("images/compareNonCO2global_smooth.png")
+knitr::include_graphics("images/compareNonCO2USA_smooth_delta.png")
 ```
-
 
 
 <br>
@@ -503,7 +582,7 @@ knitr::include_graphics("images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm
 <br>
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for SSP3 and SSP5 **"}
-knitr::include_graphics("images/chart_param_all_summary_ssp35.png")
+knitr::include_graphics("images/chart_param_all_summary_im3_runoff.png")
 ```
 
 
@@ -512,7 +591,13 @@ knitr::include_graphics("images/chart_param_all_summary_ssp35.png")
 <br>
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs for SSP3 and SSP5 **"}
-knitr::include_graphics("images/chart_param_diff_percent_socioecon_ssp35.png")
+knitr::include_graphics("images/chart_param_socioecon_im3_runoff.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_runoff.png")
 ```
 
 
@@ -521,7 +606,29 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon_ssp35.png")
 
 <br>
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for SSP3 and SSP5 **"}
-knitr::include_graphics("images/chart_class_diff_absolute_water_ssp35.png")
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff.png")
+```
+
+
+<br>
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_runoff.png")
+```
+
+
+#### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff.png")
+```
+
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_runoff.png")
 ```
 
 
@@ -531,7 +638,14 @@ knitr::include_graphics("images/chart_class_diff_absolute_water_ssp35.png")
 <br>
 
 ```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for SSP3 and SSP5 **"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy_ssp35.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff.png")
+```
+
+
+<br>
+
+```{r, echo=FALSE, out.width="130%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_runoff.png")
 ```
 
 
@@ -544,11 +658,48 @@ knitr::include_graphics("images/chart_class_diff_absolute_energy_ssp35.png")
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for SSP3 and SSP5 **"}
-knitr::include_graphics("images/chart_class_diff_absolute_aglu_ssp35.png")
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_runoff.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_runoff.png")
 ```
 
 
 #### Emissions
+
+
+<br>
+
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM emission outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_runoff.png")
+```
+
+
+<br>
+
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM emission outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_runoff.png")
+```
+
+
+<br>
+
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM emission outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_runoff.png")
+```
+
+
+<br>
+
+```{r, echo=FALSE, out.width="90%", fig.align='center', fig.cap="**Comparison of GCAM emission outputs for SSP3 and SSP5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_runoff.png")
+```
+
+
+
 
 
 <!-------------------------->
