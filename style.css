@@ -45,4 +45,8 @@
   opacity: 0.5;
 }
 
+img {
+  max-width: 200% !important;
+}
+
 
