@@ -133,6 +133,67 @@ data.frame(
 
 ```
 
+
+
+
+<br>
+
+<!-------------------------->
+<!-------------------------->
+# Emissions pathways
+<!-------------------------->
+<!-------------------------->
+<p align="center">![](images/divider.png)</p>
+
+<br>
+
+We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO2 emissions constraint. This emissions constraint in turn is based on the GCAM core model, version 5.4, a global model differentiating 32 world regions. Specifically, we run GCAM 5.4 in target finder mode.
+
+
+<br>
+
+
+## Running GCAM in target finder mode {.tabset}
+
+<br>
+
+
+As described in the GCAM online documentation on GitHub (https://jgcri.github.io/gcam-doc/user-guide.html#target-finder), running GCAM in target finder mode requires enabling the find-path option in the respective configuration file, whichb is exe/configuration_RCP45.xml when running an RCP4.5 scenario:
+
+<Value name="find-path">1</Value>
+
+
+Then, the configuration file must be called in exe/run-gcam.bat:
+
+gcam.exe -C configuration_RCP45.xml
+
+
+
+
+<br>
+
+
+## Implementing CO2 emissions constraint in GCAM-USA {.tabset}
+
+<br>
+
+
+The resulting pathway of CO2 emissions from land use and energy is then used as a CO2 emissions constraint in GCAM-USA. Therefore, we create a file named input/policy/global_CO2_constraint.xml.
+
+[Zarrar, is it possible to upload these files directly? It is sometimes too cumbersome to describe the changes made.]
+
+We then create a new configuration file named configuration_mult_USA_SSP5_CO2constr.xml. It is based on the existing file configuration_mult_USA_SSP5.xml found in the exe folder. The difference in our new configuration file is the addition of the following lines of code immediately after cal_broyden_config.xml is called:
+
+	<!--POLICY ADD ONS-->
+	<Value name = "global_CO2_constraint">../input/policy/global_CO2_constraint.xml</Value>
+	<Value name = "global_CO2_link">../input/policy/global_CO2_link.xml</Value>
+
+
+
+
+
+
+
 <br>
 
 <!-------------------------->
