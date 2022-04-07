@@ -678,6 +678,39 @@ zenodo link
 <!-------------------------->
 <!-------------------------->
 </div>
+<div id="emissions-pathways" class="section level1">
+<h1>Emissions pathways</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO2 emissions constraint. This emissions constraint in turn is based on the GCAM core model, version 5.4, a global model differentiating 32 world regions. Specifically, we run GCAM 5.4 in target finder mode.</p>
+<p><br></p>
+<div id="running-gcam-in-target-finder-mode" class="section level2 tabset">
+<h2 class="tabset">Running GCAM in target finder mode</h2>
+<p><br></p>
+<p>As described in the GCAM online documentation on GitHub (<a href="https://jgcri.github.io/gcam-doc/user-guide.html#target-finder" class="uri">https://jgcri.github.io/gcam-doc/user-guide.html#target-finder</a>), running GCAM in target finder mode requires enabling the find-path option in the respective configuration file, whichb is exe/configuration_RCP45.xml when running an RCP4.5 scenario:</p>
+<p><Value name="find-path">1</Value></p>
+<p>Then, the configuration file must be called in exe/run-gcam.bat:</p>
+<p>gcam.exe -C configuration_RCP45.xml</p>
+<p><br></p>
+</div>
+<div id="implementing-co2-emissions-constraint-in-gcam-usa" class="section level2 tabset">
+<h2 class="tabset">Implementing CO2 emissions constraint in GCAM-USA</h2>
+<p><br></p>
+<p>The resulting pathway of CO2 emissions from land use and energy is then used as a CO2 emissions constraint in GCAM-USA. Therefore, we create a file named input/policy/global_CO2_constraint.xml.</p>
+<p>[Zarrar, is it possible to upload these files directly? It is sometimes too cumbersome to describe the changes made.]</p>
+<p>We then create a new configuration file named configuration_mult_USA_SSP5_CO2constr.xml. It is based on the existing file configuration_mult_USA_SSP5.xml found in the exe folder. The difference in our new configuration file is the addition of the following lines of code immediately after cal_broyden_config.xml is called:</p>
+<pre><code>&lt;!--POLICY ADD ONS--&gt;
+&lt;Value name = &quot;global_CO2_constraint&quot;&gt;../input/policy/global_CO2_constraint.xml&lt;/Value&gt;
+&lt;Value name = &quot;global_CO2_link&quot;&gt;../input/policy/global_CO2_link.xml&lt;/Value&gt;</code></pre>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+</div>
 <div id="workflows-summary" class="section level1">
 <h1>Workflows Summary</h1>
 <!-------------------------->
