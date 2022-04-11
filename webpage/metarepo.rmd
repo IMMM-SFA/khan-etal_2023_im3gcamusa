@@ -147,47 +147,90 @@ data.frame(
 
 <br>
 
-We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO2 emissions constraint. This emissions constraint in turn is based on the GCAM core model, version 5.4, a global model differentiating 32 world regions. Specifically, we run GCAM 5.4 in target finder mode.
+We model two emissions pathways, RCP8.5 and RCP4.5. 
+RCP8.5 is the default pathway in GCAM-USA. 
+Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. 
+For RCP4.5, we impose a global CO~2~ emissions constraint. This emissions constraint in turn is based on the GCAM core model, version 5.4, a global model differentiating 32 world regions. 
+Specifically, we run GCAM release version 5.4 in target finder mode.
 
 
 <br>
 
 
-## Running GCAM in target finder mode {.tabset}
+## Running GCAM 5.4 in target finder mode {.tabset}
 
 <br>
 
 
-As described in the GCAM online documentation on GitHub (https://jgcri.github.io/gcam-doc/user-guide.html#target-finder), running GCAM in target finder mode requires enabling the find-path option in the respective configuration file, whichb is exe/configuration_RCP45.xml when running an RCP4.5 scenario:
+As described in the [GCAM online documentation on GitHub](https://jgcri.github.io/gcam-doc/user-guide.html#target-finder), running GCAM 5.4 in target finder mode requires enabling (setting to 1) the `find-path` option in the respective configuration file, which is `gcam-core/exe/configuration_RCP45.xml` when running an RCP4.5 scenario:
 
-<Value name="find-path">1</Value>
+`"<Value name="find-path">1</Value>"`
 
 
-Then, the configuration file must be called in exe/run-gcam.bat:
+Then, the configuration file must be called in `gcam-core/exe/run-gcam.sh` as follows:
 
-gcam.exe -C configuration_RCP45.xml
+`gcam.exe -C configuration_RCP45.xml`
 
+Once the model run is finished, results can be extracted using the model interface: `gcam-core/ModelInterface/run-model-interface.bat`. Specifically, we query "CO2 emissions by region" and "LUC emissions by region" for the region "Global" and sum up the values for each year in a separate spreadsheet. 
+
+Figure xx illustrates the final CO~2~ pathway, as well as the corresponding CO~2~-price pathway and the forcing:
+
+[Figure]
 
 
 
 <br>
 
 
-## Implementing CO2 emissions constraint in GCAM-USA {.tabset}
+## Implementing CO~2~ Emissions Constraint In GCAM-USA {.tabset}
 
 <br>
 
 
-The resulting pathway of CO2 emissions from land use and energy is then used as a CO2 emissions constraint in GCAM-USA. Therefore, we create a file named input/policy/global_CO2_constraint.xml.
+The resulting pathway of CO~2~ emissions from land use and energy is then used as a CO~2~ emissions constraint in GCAM-USA. 
+Therefore, we use a file named `/pic/projects/im3/gcamusa/gcam-usa-im3/input/policy/global_CO2_constraint.xml` into which we input the CO~2~ emissions values calculated by GCAM 5.4 (as described above) as constraints. 
+We also add an accompanying file called `/pic/projects/im3/gcamusa/gcam-usa-im3/input/policy/global_CO2_link.xml` which performs additional required tasks.
 
-[Zarrar, is it possible to upload these files directly? It is sometimes too cumbersome to describe the changes made.]
 
-We then create a new configuration file named configuration_mult_USA_SSP5_CO2constr.xml. It is based on the existing file configuration_mult_USA_SSP5.xml found in the exe folder. The difference in our new configuration file is the addition of the following lines of code immediately after cal_broyden_config.xml is called:
+We then create a set of new configuration files in `/pic/projects/im3/gcamusa/gcam-usa-im3/exe/` based on existing ones: 
 
-	<!--POLICY ADD ONS-->
-	<Value name = "global_CO2_constraint">../input/policy/global_CO2_constraint.xml</Value>
-	<Value name = "global_CO2_link">../input/policy/global_CO2_link.xml</Value>
 
+<br>
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(kableExtra)
+data.frame(
+    `Exisitng file` = c("configuration_rcp85cooler_ssp3_rcp85gdp_runoff.xml",
+                 "configuration_rcp85hotter_ssp3_rcp85gdp_runoff.xml",
+                 "configuration_rcp85cooler_ssp5_runoff.xml",
+                 "configuration_rcp85hotter_ssp5_runoff.xml"),
+     `New file` = c("configuration_rcp45cooler_ssp3_rcp45gdp_runoff.xml",
+                 "configuration_rcp45hotter_ssp3_rcp45gdp_runoff.xml",
+                 "configuration_rcp45cooler_ssp5_runoff.xml",
+                 "configuration_rcp45hotter_ssp5_runoff.xml")
+    ) %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+```
+<br>
+
+
+The main difference in our new configuration files is the addition of the following lines of code immediately after `cal_broyden_config.xml` is called:
+
+```
+<!--POLICY ADD ONS-->
+<Value name = "global_CO2_constraint">../input/policy/global_CO2_constraint.xml</Value>
+<Value name = "global_CO2_link">../input/policy/global_CO2_link.xml</Value>
+```
+
+In addition, the following lines need to be updated accordingly in each configuration file (e.g. replace `rcp85hotter` by `rcp45cooler` etc.): 
+
+`<Value write-output="1" append-scenario-name="0" name="xmldb-location">../output/database_rcp85hotter_ssp3_rcp85gdp_runoff</Value>`
+
+`<Value name="ccs_supply">../input/im3scenarios/rcp85hotter/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta_applied2015.xml</Value>`
+
+
+`<Value name="scenarioName">rcp85hotter_ssp3_rcp85gdp_runoff</Value>`
 
 
 
