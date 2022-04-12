@@ -686,7 +686,7 @@ zenodo link
 <img src="images/divider.png" />
 </p>
 <p><br></p>
-<p>We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO<sub>2</sub> emissions constraint. This emissions constraint in turn is based on the GCAM core model, version 5.4, a global model differentiating 32 world regions. Specifically, we run GCAM release version 5.4 in target finder mode.</p>
+<p>We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO<sub>2</sub> emissions constraint. This emissions constraint in turn is based on the GCAM core model, release version 5.4 (publicly available <a href="https://github.com/JGCRI/gcam-core/releases/tag/gcam-v5.4">here</a>), a global model differentiating 32 world regions. Specifically, we run GCAM 5.4 in target finder mode.</p>
 <p><br></p>
 <div id="running-gcam-5.4-in-target-finder-mode" class="section level2 tabset">
 <h2 class="tabset">Running GCAM 5.4 in target finder mode</h2>
@@ -696,8 +696,15 @@ zenodo link
 <p>Then, the configuration file must be called in <code>gcam-core/exe/run-gcam.sh</code> as follows:</p>
 <p><code>gcam.exe -C configuration_RCP45.xml</code></p>
 <p>Once the model run is finished, results can be extracted using the model interface: <code>gcam-core/ModelInterface/run-model-interface.bat</code>. Specifically, we query “CO2 emissions by region” and “LUC emissions by region” for the region “Global” and sum up the values for each year in a separate spreadsheet.</p>
-<p>Figure xx illustrates the final CO<sub>2</sub> pathway, as well as the corresponding CO<sub>2</sub>-price pathway and the forcing:</p>
-<p>[Figure]</p>
+<p>The figure below illustrates the final CO<sub>2</sub> pathway, as well as the corresponding CO<sub>2</sub>-price pathway and the resulting radiative forcing:</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45_pathway.png" alt="**Overview of the RCP4.5 emissions pathway in GCAM.**" width="100%" />
+<p class="caption">
+<strong>Overview of the RCP4.5 emissions pathway in GCAM.</strong>
+</p>
+</div>
+<p><br></p>
 <p><br></p>
 </div>
 <div id="implementing-co2-emissions-constraint-in-gcam-usa" class="section level2 tabset">
