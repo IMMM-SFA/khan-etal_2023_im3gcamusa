@@ -686,26 +686,90 @@ zenodo link
 <img src="images/divider.png" />
 </p>
 <p><br></p>
-<p>We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO2 emissions constraint. This emissions constraint in turn is based on the GCAM core model, version 5.4, a global model differentiating 32 world regions. Specifically, we run GCAM 5.4 in target finder mode.</p>
+<p>We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the default pathway in GCAM-USA. Thus, no modifications to the source code are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a global CO<sub>2</sub> emissions constraint. This emissions constraint in turn is based on the GCAM core model, release version 5.4 (publicly available <a href="https://github.com/JGCRI/gcam-core/releases/tag/gcam-v5.4">here</a>), a global model differentiating 32 world regions. Specifically, we run GCAM 5.4 in target finder mode.</p>
 <p><br></p>
-<div id="running-gcam-in-target-finder-mode" class="section level2 tabset">
-<h2 class="tabset">Running GCAM in target finder mode</h2>
+<div id="running-gcam-5.4-in-target-finder-mode" class="section level2 tabset">
+<h2 class="tabset">Running GCAM 5.4 in target finder mode</h2>
 <p><br></p>
-<p>As described in the GCAM online documentation on GitHub (<a href="https://jgcri.github.io/gcam-doc/user-guide.html#target-finder" class="uri">https://jgcri.github.io/gcam-doc/user-guide.html#target-finder</a>), running GCAM in target finder mode requires enabling the find-path option in the respective configuration file, whichb is exe/configuration_RCP45.xml when running an RCP4.5 scenario:</p>
-<p><Value name="find-path">1</Value></p>
-<p>Then, the configuration file must be called in exe/run-gcam.bat:</p>
-<p>gcam.exe -C configuration_RCP45.xml</p>
+<p>As described in the <a href="https://jgcri.github.io/gcam-doc/user-guide.html#target-finder">GCAM online documentation on GitHub</a>, running GCAM 5.4 in target finder mode requires enabling (setting to 1) the <code>find-path</code> option in the respective configuration file, which is <code>gcam-core/exe/configuration_RCP45.xml</code> when running an RCP4.5 scenario:</p>
+<p><code>"&lt;Value name="find-path"&gt;1&lt;/Value&gt;"</code></p>
+<p>Then, the configuration file must be called in <code>gcam-core/exe/run-gcam.sh</code> as follows:</p>
+<p><code>gcam.exe -C configuration_RCP45.xml</code></p>
+<p>Once the model run is finished, results can be extracted using the model interface: <code>gcam-core/ModelInterface/run-model-interface.bat</code>. Specifically, we query “CO2 emissions by region” and “LUC emissions by region” for the region “Global” and sum up the values for each year in a separate spreadsheet.</p>
+<p>The figure below illustrates the final CO<sub>2</sub> pathway, as well as the corresponding CO<sub>2</sub>-price pathway and the resulting radiative forcing:</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45_pathway.png" alt="**Overview of the RCP4.5 emissions pathway in GCAM.**" width="100%" />
+<p class="caption">
+<strong>Overview of the RCP4.5 emissions pathway in GCAM.</strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<!-- location for images: meta_repos/khan-etal_2022_im3gcamusa/webpage/images -->
+<p><br></p>
 <p><br></p>
 </div>
 <div id="implementing-co2-emissions-constraint-in-gcam-usa" class="section level2 tabset">
-<h2 class="tabset">Implementing CO2 emissions constraint in GCAM-USA</h2>
+<h2 class="tabset">Implementing CO<sub>2</sub> Emissions Constraint In GCAM-USA</h2>
 <p><br></p>
-<p>The resulting pathway of CO2 emissions from land use and energy is then used as a CO2 emissions constraint in GCAM-USA. Therefore, we create a file named input/policy/global_CO2_constraint.xml.</p>
-<p>[Zarrar, is it possible to upload these files directly? It is sometimes too cumbersome to describe the changes made.]</p>
-<p>We then create a new configuration file named configuration_mult_USA_SSP5_CO2constr.xml. It is based on the existing file configuration_mult_USA_SSP5.xml found in the exe folder. The difference in our new configuration file is the addition of the following lines of code immediately after cal_broyden_config.xml is called:</p>
+<p>The resulting pathway of CO<sub>2</sub> emissions from land use and energy is then used as a CO<sub>2</sub> emissions constraint in GCAM-USA. Therefore, we use a file named <code>/pic/projects/im3/gcamusa/gcam-usa-im3/input/policy/global_CO2_constraint.xml</code> into which we input the CO<sub>2</sub> emissions values calculated by GCAM 5.4 (as described above) as constraints. We also add an accompanying file called <code>/pic/projects/im3/gcamusa/gcam-usa-im3/input/policy/global_CO2_link.xml</code> which performs additional required tasks.</p>
+<p>We then create a set of new configuration files in <code>/pic/projects/im3/gcamusa/gcam-usa-im3/exe/</code> based on existing ones:</p>
+<br>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Exisitng.file
+</th>
+<th style="text-align:left;">
+New.file
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85cooler_ssp3_rcp85gdp_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45cooler_ssp3_rcp45gdp_runoff.xml
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85hotter_ssp3_rcp85gdp_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45hotter_ssp3_rcp45gdp_runoff.xml
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85cooler_ssp5_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45cooler_ssp5_runoff.xml
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85hotter_ssp5_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45hotter_ssp5_runoff.xml
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The main difference in our new configuration files is the addition of the following lines of code immediately after <code>cal_broyden_config.xml</code> is called:</p>
 <pre><code>&lt;!--POLICY ADD ONS--&gt;
 &lt;Value name = &quot;global_CO2_constraint&quot;&gt;../input/policy/global_CO2_constraint.xml&lt;/Value&gt;
 &lt;Value name = &quot;global_CO2_link&quot;&gt;../input/policy/global_CO2_link.xml&lt;/Value&gt;</code></pre>
+<p>In addition, the following lines need to be updated accordingly in each configuration file (e.g. replace <code>rcp85hotter</code> by <code>rcp45cooler</code> etc.):</p>
+<p><code>&lt;Value write-output="1" append-scenario-name="0" name="xmldb-location"&gt;../output/database_rcp85hotter_ssp3_rcp85gdp_runoff&lt;/Value&gt;</code></p>
+<p><code>&lt;Value name="ccs_supply"&gt;../input/im3scenarios/rcp85hotter/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta_applied2015.xml&lt;/Value&gt;</code></p>
+<p><code>&lt;Value name="scenarioName"&gt;rcp85hotter_ssp3_rcp85gdp_runoff&lt;/Value&gt;</code></p>
 <p><br></p>
 <!-------------------------->
 <!-------------------------->
@@ -1283,10 +1347,33 @@ zenodo link
 <strong>Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5</strong>
 </p>
 </div>
+<p><br></p>
+</div>
+<div id="maps-of-water-runoff-in-the-us" class="section level4">
+<h4>Maps of water runoff in the US</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS.png" alt="**Comparison of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Comparison of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS_DiffAbs.png" alt="**Absolute difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Absolute difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS_DiffPrcnt.png" alt="**Relative difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Relative difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
 </div>
 </div>
-<div id="gcam-rcp85hotter_ssp35_runoff" class="section level3 tabset tabset-pills">
-<h3 class="tabset tabset-pills">GCAM rcp85hotter_ssp35_runoff</h3>
+</div>
+<div id="gcam-rcp85hotter_ssp3_runoff" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM rcp85hotter_ssp3_runoff</h3>
 <div id="summary-2" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
@@ -1296,6 +1383,7 @@ zenodo link
 <strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
 </p>
 </div>
+<!--updated on 4/12/2022-->
 </div>
 <div id="socioeconomics-2" class="section level4">
 <h4>Socioeconomics</h4>
@@ -1306,6 +1394,7 @@ zenodo link
 <strong>Comparison of GCAM socioeconomic outputs</strong>
 </p>
 </div>
+<!--updated on 4/12/2022-->
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_param_diff_percent_socioecon_im3_runoff.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
@@ -1393,30 +1482,31 @@ zenodo link
 <h4>Emissions</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/compareCO2GlobalCumRCP_im3_runoff.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<img src="images/compareCO2GlobalCumRCP_im3_runoff_ssp3_rcp85gdp.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+<strong>Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_runoff.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/compareCO2USA_im3_runoff.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<img src="images/compareNonCO2global_im3_runoff.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+<strong>Annual global non-CO<sub>2</sub> emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/compareNonCO2global_im3_runoff.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<img src="images/compareNonCO2USA_im3_runoff.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
-</p>
-</div>
-<p><br></p>
-<div class="figure" style="text-align: center">
-<img src="images/compareNonCO2USA_im3_runoff.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
-<p class="caption">
-<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+<strong>Annual US non-CO<sub>2</sub> emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </p>
 </div>
 <!-------------------------->
