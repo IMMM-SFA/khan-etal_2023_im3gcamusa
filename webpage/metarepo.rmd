@@ -882,11 +882,18 @@ knitr::include_graphics("images/compareNonCO2USA_im3_runoff.png")
 
 <br>
 
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Workflow 2: Climate impacts on heating and cooling degrees.**"}
+knitr::include_graphics("images/im3_gcamusa_workflow_2_climate_impacts_hdcd.jpg")
+```
+
+<br>
+
 ## Workflow 2A US States {.tabset}
 
 <br>
 
 Workflow 2A results in WRF outputs being processed and run through `helios` to produce total heating and cooling degree-hours at day and night segment for each month for commercial and residential buildings.
+
 
 <br>
 
@@ -1000,7 +1007,7 @@ knitr::include_graphics("images/ncdf_allyears_vs_noaa_2021_rcp85hotter_ssp5.png"
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**"}
-knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85cooler_ssp3.png")
+knitr::include_graphics("images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85cooler_ssp3.png")
 ```
 
 <br>
@@ -1010,7 +1017,7 @@ knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85cooler_ss
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**"}
-knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85cooler_ssp5.png")
+knitr::include_graphics("images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85cooler_ssp5.png")
 ```
 
 <br>
@@ -1020,7 +1027,7 @@ knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85cooler_ss
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**"}
-knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85hotter_ssp3.png")
+knitr::include_graphics("images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85hotter_ssp3.png")
 ```
 
 <br>
@@ -1030,7 +1037,7 @@ knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85hotter_ss
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**"}
-knitr::include_graphics("images/hdcd_diagnostic_allYears_freeScalercp85hotter_ssp5.png")
+knitr::include_graphics("images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85hotter_ssp5.png")
 ```
 
 <br>
