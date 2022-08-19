@@ -6,6 +6,12 @@ navbar:
     - text: "Meta Repository"
       icon: fas fa-book
       href: metarepo.html
+  right:
+    - text: "Appendix"
+      href: appendix.html
+    - icon: fas fa-quote-left
+      text: Citation
+      href: CITATION.html
     - icon: fab fa-github
       href: https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa
 

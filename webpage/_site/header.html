@@ -11,7 +11,7 @@
 
 
 
-<title>khan_etal_2022_im3gcamusa</title>
+<title>header.knit</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -288,53 +288,45 @@ $(document).ready(function () {
 </div>
 
 
-<!-------------------------->
-<!-------------------------->
-<h1 style="float:left;font-size:60px;vertical-align:middle">
-Welcome
-</h1>
-<p><img src="images/logo_pnnl.png" style="float:right;height:100px;">
-<!--------------------------> <!--------------------------></p>
-<p align="center">
-<img src="images/divider.png">
-</p>
-<!-------------------------->
-<!-------------------------->
-<div
-id="coevolution-of-future-water-energy-and-land-systems-across-the-united-states-in-response-to-national-and-global-socioeconomics-climate-and-energy-transitions"
-class="section level1">
-<h1>Coevolution of future water, energy and land systems across the
-United States in response to national and global socioeconomics,
-climate, and energy transitions</h1>
-<!-------------------------->
-<!-------------------------->
-<p align="center">
-<img src="images/divider.png">
-</p>
-<p>This study examines the coevolution of multiple sectors including
-water, energy and land in response to socioeconomic, policy, and climate
-drivers across the United States in a global context using the Global
-Change Analysis Model - USA (GCAM-USA). Consistent with the Shared
-Socioeconomic Pathways - Representative Concentration Pathways (SSP-RCP)
-scenario framework, we combine different socioeconomic pathways with
-both moderate and more severe climate projections developed from the
-Coupled Model Intercomparison Project Phase 6 (CMIP6) archive. Our study
-contributes to the literature by focusing on subnational (state and
-basin level) economy-energy-water-land interactions and dynamics within
-the U.S linked to the rest of the world through trade in international
-commodity markets. Conditions outside of the U.S. dynamically affect
-sub-national conditions within the U.S. and vice versa.</p>
-<p align="center">
-<img src="images/divider.png">
-</p>
-<div class="container_map_outer">
-<div class="container_map">
-<p><a href = "metarepo.html">
-<img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_metarepo.PNG?raw=true" height="60"/>
-</a></p>
-</div>
-</div>
-</div>
+<!-- Allow href to tabsets -->
+<style type="text/css">
+script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+</style>
+<script type="text/javascript">
+ $(document).ready(function() {
+    $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+      $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'}); 
+    });
+  });
+</script>
+<!-- Allow href to tabsets -->
+<script type="text/javascript">
+function goToTab() {
+  var hash = String(window.location.href.match("#.*$"));
+  var target = document.querySelector("a[role = 'tab'][href='" + hash + "']");
+  if (target !== null) {
+    var greatGrandParent = target.parentElement.parentElement.parentElement;
+    if (greatGrandParent.getAttribute("role") == "tabpanel") {
+      document.querySelector("a[role = 'tab'][href='#" + greatGrandParent.getAttribute("id") + "']").click();
+    }
+    target.click();
+    target.scrollIntoView();
+  }
+}
+
+window.onload = function() {
+  setTimeout(goToTab, 1000);
+}
+
+window.onhashchange = goToTab;
+</script>
 
 
 

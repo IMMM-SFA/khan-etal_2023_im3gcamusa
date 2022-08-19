@@ -2,13 +2,19 @@
 pagetitle: khan_etal_2022_im3gcamusa
 ---
 
-<div class="header_logo">
-<img src="images/logo_pnnl_white.png" style="float:right;height:40px;">
-</div>
 
-<br>
-<br>
+```{r setup, echo = F}
+knitr::opts_chunk$set(echo=FALSE, out.width="100%", results = "show")
+```
 
+<!-------------------------->
+<!-------------------------->
+<h1 style="float:left;font-size:60px;vertical-align:middle"> Welcome </h1>
+<img src="images/logo_pnnl.png" style="float:right;height:100px;">
+<!-------------------------->
+<!-------------------------->
+
+<p align="center"> <img src="images/divider.png"></p>
 <!-------------------------->
 <!-------------------------->
 # Coevolution of future water, energy and land systems across the United States in response to national and global socioeconomics, climate, and energy transitions
