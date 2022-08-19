@@ -16,6 +16,89 @@ output:
 
 <!-------------------------->
 <!-------------------------->
+# Data
+<!-------------------------->
+<!-------------------------->
+<p align="center">![](images/divider.png)</p>
+
+<br>
+
+## Final Outputs
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(kableExtra)
+data.frame(
+    Model     = c("gcam_v5p3_im3",
+                  "gcam_v5p3_im3",
+                  "gcam_v5p3_im3",
+                  "gcam_v5p3_im3",
+                 "gcamextractor"),
+    Scenario = c("rcp85hotter_ssp5",
+                 "rcp85cooler_ssp5",
+                 "rcp85hotter_ssp3",
+                 "rcp85cooler_ssp3",
+                 "all"),
+    `Used by` = c("gcamextractor",
+                  "gcamextractor",
+                  "gcamextractor",
+                  "gcamextractor",
+                  "n/a"),
+    Location = c("/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
+                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp5",
+                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
+                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp5",
+                 "(In-Progress) /pic/projects/im3/gcamusa/diagnostics/outputs_im3")
+    ) %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("bordered","striped", "hover", "condensed", "responsive")) %>%
+  row_spec(0, background = "#2A2A2A", color = "white")
+
+```
+
+
+
+## Intermediate Data
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(kableExtra)
+data.frame(
+    Model     = c("WRF",
+                 "Xanthos",
+                 "Helios",
+                 "Osiris",
+                 "Population US States",
+                 "Population Gridded"),
+     Type = c("Outputs",
+              "Outputs",
+              "Outputs",
+              "Outputs",
+              "Raw Data",
+              "Raw Data"),
+    `Used by` = c("Xanthos, Helios, Osiris",
+                  "GCAM",
+                  "GCAM",
+                  "GCAM",
+                  "GCAM",
+                  "GCAM"),
+    Location = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
+                 "zenodo link",
+                  "zenodo link",
+                  "zenodo link",
+                  "zenodo link",
+                  "zenodo link")
+    ) %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("bordered","striped", "hover", "condensed", "responsive")) %>%
+  row_spec(0, background = "#2A2A2A", color = "white")
+
+```
+
+
+<br>
+
+
+<!-------------------------->
+<!-------------------------->
 # Models Used
 <!-------------------------->
 <!-------------------------->
@@ -69,91 +152,13 @@ data.frame(
             "https://github.com/JGCRI/gcamextractor")
     ) %>% 
   kbl() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  kable_styling(bootstrap_options = c("bordered","striped", "hover", "condensed", "responsive")) %>%
+  row_spec(0, background = "#2A2A2A", color = "white")
 
 ```
 
 <br>
 
-<!-------------------------->
-<!-------------------------->
-# Data
-<!-------------------------->
-<!-------------------------->
-<p align="center">![](images/divider.png)</p>
-
-<br>
-
-## Final Outputs
-
-```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
-library(kableExtra)
-data.frame(
-    Model     = c("gcam_v5p3_im3",
-                  "gcam_v5p3_im3",
-                  "gcam_v5p3_im3",
-                  "gcam_v5p3_im3",
-                 "gcamextractor"),
-    Scenario = c("rcp85hotter_ssp5",
-                 "rcp85cooler_ssp5",
-                 "rcp85hotter_ssp3",
-                 "rcp85cooler_ssp3",
-                 "all"),
-    `Used by` = c("gcamextractor",
-                  "gcamextractor",
-                  "gcamextractor",
-                  "gcamextractor",
-                  "n/a"),
-    Location = c("/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
-                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
-                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
-                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
-                 "(In-Progress) /pic/projects/im3/gcamusa/diagnostics/outputs_im3")
-    ) %>% 
-  kbl() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-
-```
-
-
-
-## Intermediate Data
-
-```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
-library(kableExtra)
-data.frame(
-    Model     = c("WRF",
-                 "Xanthos",
-                 "Helios",
-                 "Osiris",
-                 "Population US States",
-                 "Population Gridded"),
-     Type = c("Outputs",
-              "Outputs",
-              "Outputs",
-              "Outputs",
-              "Raw Data",
-              "Raw Data"),
-    `Used by` = c("Xanthos, Helios, Osiris",
-                  "GCAM",
-                  "GCAM",
-                  "GCAM",
-                  "GCAM",
-                  "GCAM"),
-    Location = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
-                 "zenodo link",
-                  "zenodo link",
-                  "zenodo link",
-                  "zenodo link",
-                  "zenodo link")
-    ) %>% 
-  kbl() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-
-```
-
-
-<br>
 
 <!-------------------------->
 <!-------------------------->
