@@ -33,10 +33,10 @@ data.frame(
                   "gcam_v5p3_im3",
                   "gcam_v5p3_im3",
                  "gcamextractor"),
-    Scenario = c("rcp85hotter_ssp5",
+    Scenario = c("rcp85cooler_ssp3",
                  "rcp85cooler_ssp5",
                  "rcp85hotter_ssp3",
-                 "rcp85cooler_ssp3",
+                 "rcp85hotter_ssp5",
                  "all"),
     `Used by` = c("gcamextractor",
                   "gcamextractor",
@@ -45,8 +45,8 @@ data.frame(
                   "n/a"),
     Location = c("/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
                  "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp5",
-                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
-                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp5",
+                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85hotter_ssp3_rcp85gdp",
+                 "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85hotter_ssp5",
                  "(In-Progress) /pic/projects/im3/gcamusa/diagnostics/outputs_im3")
     ) %>% 
   kbl() %>%
