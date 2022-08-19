@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>khan_etal_2022_im3gcamusa</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">khan_etal_2022_im3gcamusa</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="metarepo.html">
+    <span class="fas fa-book"></span>
+     
+    Meta Repository
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="appendix.html">Appendix</a>
+</li>
+<li>
+  <a href="CITATION.html">
+    <span class="fas fa-quote-left"></span>
+     
+    Citation
+  </a>
+</li>
+<li>
+  <a href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<!-- Allow href to tabsets -->
+<style type="text/css">
+script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+</style>
+<script type="text/javascript">
+ $(document).ready(function() {
+    $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+      $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'}); 
+    });
+  });
+</script>
+<!-- Allow href to tabsets -->
+<script type="text/javascript">
+function goToTab() {
+  var hash = String(window.location.href.match("#.*$"));
+  var target = document.querySelector("a[role = 'tab'][href='" + hash + "']");
+  if (target !== null) {
+    var greatGrandParent = target.parentElement.parentElement.parentElement;
+    if (greatGrandParent.getAttribute("role") == "tabpanel") {
+      document.querySelector("a[role = 'tab'][href='#" + greatGrandParent.getAttribute("id") + "']").click();
+    }
+    target.click();
+    target.scrollIntoView();
+  }
+}
+
+window.onload = function() {
+  setTimeout(goToTab, 1000);
+}
+
+window.onhashchange = goToTab;
+</script>
+<!-------------------------->
+<!-------------------------->
+<div id="workflows-summary" class="section level1">
+<h1>Workflows Summary</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/im3_gcamusa_workflow_summary.jpg" alt="**Summary of experiment workflows.**" width="100%" />
+<p class="caption">
+<strong>Summary of experiment workflows.</strong>
+</p>
+</div>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-1---runoff" class="section level1">
+<h1>Workflow 1 - Runoff</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/im3_gcamusa_workflow_1_climate_impacts_runoff.jpg" alt="**Workflow 1: Climate Impacts Runoff.**" width="80%" />
+<p class="caption">
+<strong>Workflow 1: Climate Impacts Runoff.</strong>
+</p>
+</div>
+<p><br></p>
+<div id="workflow-1a-us-basins" class="section level2 tabset">
+<h2 class="tabset">Workflow 1A US Basins</h2>
+<p><br></p>
+<div id="table-workflow-1a" class="section level3">
+<h3>Table Workflow 1A</h3>
+<p><br></p>
+<p>Workflow 1A results in WRF outputs being processed and run through
+Xanthos to produce runoff in mm per month for US Basins to be combined
+with Non-US Basins runoff results from Workflow 1B.</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="44%" />
+<col width="45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WRF Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5, hot and cool</li>
+<li>hourly, 1979_01 to 2099_12</li>
+<li>12km x 12km resolution</li>
+<li>Temperature (K)</li>
+<li>Minimum temperature (K)</li>
+<li>Wind speed (m/s)</li>
+<li>Relative humidity (%)</li>
+<li>GLW (W/m2)</li>
+<li>SWDOWN (W/m2)</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gsharing</td>
+</tr>
+<tr class="even">
+<td>wrf_to_xanthos</td>
+<td><ul>
+<li>wrf_to_xanthos_preprocess_historical.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_preprocess_ssp585_hot_far.sh</li>
+<li>wrf_to_xanthos_process_historical.sh</li>
+<li>wrf_to_xanthos_process_ssp585_hot_near.sh</li>
+<li>wrf_to_xanthos_process_ssp585_hot_far.sh</li>
+<li>wrf_to_xanthos_combine_historical_ssp585_hot_near_far.sh</li>
+</ul></td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>(Repo) <a
+href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts"
+class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>xanthos</td>
+<td>wrf_to_xanthos_combine_historical_ssp585_hot_near_far_us_global_xanthos.sh</td>
+<td><ul>
+<li>(NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos</li>
+<li>(NERSC)
+/global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output</li>
+<li>(Repo) <a
+href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts"
+class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+</div>
+<div id="workflow-1b-global-basins" class="section level2 tabset">
+<h2 class="tabset">Workflow 1B Global Basins</h2>
+<p><br></p>
+<div id="table-workflow-1b" class="section level3">
+<h3>Table Workflow 1B</h3>
+<p><br></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="31%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CMIP5 Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5</li>
+<li>annualy, 1950 to 2099</li>
+<li>235 river basins</li>
+<li>Basin runoff (km3/year)</li>
+</ul></td>
+<td>*(PIC)
+/pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</td>
+</tr>
+<tr class="even">
+<td>Xanthos Outputs on PIC</td>
+<td>runoff_global_xanthos_to_gcam.sh</td>
+<td>*(Repo) <a
+href="https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts"
+class="uri">https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa/scripts</a></td>
+</tr>
+<tr class="odd">
+<td>Xanthos GCAM GCM Sensitivity Analysis</td>
+<td>gcamDiagnostics_runoff_GCMs_5trail_delta.sh</td>
+<td><em>(PIC) /pic/projects/im3/gcamusa/diagnostics </em>
+/pic/projects/im3/gcamusa/diagnostics/outputs_runoff_GCMs_5trail_delta</td>
+</tr>
+<tr class="even">
+<td>Xanthos GCAM smoothing Sensitivity Analysis</td>
+<td>gcamDiagnostics_runoff_NORESM_smooth_delta.sh</td>
+<td><em>(PIC) /pic/projects/im3/gcamusa/diagnostics </em>
+/pic/projects/im3/gcamusa/diagnostics/outputs_runoff_NORESM_smooth_delta</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="runoff-diagnostics" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Runoff Diagnostics</h3>
+<div id="compare-gcms" class="section level4">
+<h4>Compare GCMs</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/water_runoff_facet_model.png" alt="**Comparison of water runoff across five global climate models (GCMs).**" width="100%" />
+<p class="caption">
+<strong>Comparison of water runoff across five global climate models
+(GCMs).</strong>
+</p>
+</div>
+</div>
+<div id="compare-smoothing" class="section level4">
+<h4>Compare Smoothing</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/water_runoff_facet_scenario.png" alt="**Comparison of smoothed runoff data from the NORESM model **" width="100%" />
+<p class="caption">
+<strong>Comparison of smoothed runoff data from the NORESM model
+</strong>
+</p>
+</div>
+</div>
+<div id="compare-deltas" class="section level4">
+<h4>Compare Deltas</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/water_runoff_GCM_8p5_raw_10ysurr_delta2015_clip.png" alt="**Comparison of baseline data, smoothed runoff data,  and 'delta' applied to smoothed data **" width="100%" />
+<p class="caption">
+<strong>Comparison of baseline data, smoothed runoff data, and ‘delta’
+applied to smoothed data </strong>
+</p>
+</div>
+</div>
+</div>
+<div id="gcam-outputs-gcms" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM Outputs GCMs</h3>
+<div id="summary" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="socioeconomics" class="section level4">
+<h4>Socioeconomics</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_socioecon_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM socioeconomic outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM socioeconomic outputs for 5 GCMS % Diff**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs for 5 GCMS %
+Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM water outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM water outputs for 5 GCMS % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs for 5 GCMS % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM electricity outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM electricity outputs for 5 GCMS % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for 5 GCMS %
+Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM electricity outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM electricity outputs for 5 GCMS % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for 5 GCMS %
+Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu" class="section level4">
+<h4>AGLU</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_runoff_GCMs_5trail_delta.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for 5 GCMS % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions" class="section level4">
+<h4>Emissions</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_GCMs_5trail_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_GCMs_5trail_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_GCMs_5trail_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_GCMs_5trail_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+</div>
+</div>
+<div id="gcam-outputs-smoothing"
+class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM Outputs Smoothing</h3>
+<div id="summary-1" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="socioeconomics-1" class="section level4">
+<h4>Socioeconomics</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_socioecon_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM socioeconomic outputs for Smoothing **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs for Smoothing </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM socioeconomic outputs for Smoothing % Diff**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs for Smoothing %
+Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-1" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM water outputs for Smoothing **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs for Smoothing </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM water outputs for Smoothing % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs for Smoothing % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-1" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM electricity outputs for Smoothing **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for Smoothing </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM electricity outputs for Smoothing % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for Smoothing % Diff
+</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-1" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM electricity outputs for Smoothing **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for Smoothing </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM electricity outputs for Smoothing % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs for Smoothing %
+Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu-1" class="section level4">
+<h4>AGLU</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM AGLU outputs for Smoothing **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for Smoothing </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_runoff_NORESM_smooth_delta.png" alt="**Comparison of GCAM AGLU outputs for Smoothing % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for Smoothing % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-1" class="section level4">
+<h4>Emissions</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_smooth_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_smooth_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_smooth_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_smooth_delta.png" alt="**Comparison of GCAM emissions outputs for 5 GCMS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="workflow-1c-us-and-global" class="section level2 tabset">
+<h2 class="tabset">Workflow 1C US and Global</h2>
+<p><br></p>
+<div id="table-workflow-1c" class="section level3">
+<h3>Table Workflow 1C</h3>
+<p><br></p>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="35%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Workflow 1A Outputs</td>
+<td>Runoff mm per month for US Basins.</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a</li>
+<li>Copied from (NERSC)
+/global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Workflow 1B Outputs</td>
+<td>Runoff mm per month for Non-US Basins.</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Combine US and Non-US runoff</td>
+<td><ul>
+<li>xanthos_process_us_global_ssp585hotter_gcmChosen.sh</li>
+<li>xanthos_combine_us_global_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Extrapolate 2099 to 2100</td>
+<td><ul>
+<li>xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Smoothing</td>
+<td><ul>
+<li>xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Convert to XML</td>
+<td><ul>
+<li>xanthos_convert2xml_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Run GCAM scenario rcp85hotter_ssp35_runoff</td>
+<td><ul>
+<li>Run GCAM using rcp85hotter_ssp35_runoff.</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/gcam-usa-im3/exe</li>
+<li>gcam_parallel_im3.sh</li>
+<li>configuration_rcp85hotter_ssp35_runoff.xml</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="runoff-diagnostics-1"
+class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Runoff Diagnostics</h3>
+<div id="global-vs-wrf" class="section level4">
+<h4>Global vs WRF</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/wrf_xanthos_compare_us_default.png" alt="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**" width="100%" />
+<p class="caption">
+<strong>Comparison of Global vs WRF Xanthos Runoff for U.S.
+Basins</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="smoothing" class="section level4">
+<h4>Smoothing</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_1.png" alt="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%" />
+<p class="caption">
+<strong>Smoothing diagnostics for selected US Basins for
+rcp85hotter_ssp5</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="deltas" class="section level4">
+<h4>Deltas</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta2015_1.png" alt="**Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%" />
+<p class="caption">
+<strong>Delta processing diagnostics for selected US Basins for
+rcp85hotter_ssp5</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="maps-of-water-runoff-in-the-us" class="section level4">
+<h4>Maps of water runoff in the US</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS.png" alt="**Comparison of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Comparison of global water runoff in 2100 (km3) under RCP8.5
+hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS_DiffAbs.png" alt="**Absolute difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Absolute difference of global water runoff in 2100 (km3) under
+RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS_DiffPrcnt.png" alt="**Relative difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Relative difference of global water runoff in 2100 (km3) under
+RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+</div>
+</div>
+<div id="gcam-rcp85hotter_ssp3_runoff"
+class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM rcp85hotter_ssp3_runoff</h3>
+<div id="summary-2" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_im3_runoff.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+</div>
+<div id="socioeconomics-2" class="section level4">
+<h4>Socioeconomics</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_socioecon_im3_runoff.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs</strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_im3_runoff.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-2" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_runoff.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_runoff.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-2" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_runoff.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_runoff.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-2" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_runoff.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_runoff.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu-2" class="section level4">
+<h4>AGLU</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_runoff.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_runoff.png" alt="**Comparison of GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-2" class="section level4">
+<h4>Emissions</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_runoff_ssp3_rcp85gdp.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_runoff.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_runoff.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_runoff.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-------------------------->
+<!-------------------------->
+</div>
+</div>
+</div>
+</div>
+<div id="workflow-2---hddcdd" class="section level1">
+<h1>Workflow 2 - HDDCDD</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/im3_gcamusa_workflow_2_climate_impacts_hdcd.jpg" alt="**Workflow 2: Climate impacts on heating and cooling degrees.**" width="100%" />
+<p class="caption">
+<strong>Workflow 2: Climate impacts on heating and cooling
+degrees.</strong>
+</p>
+</div>
+<p><br></p>
+<div id="workflow-2a-us-states" class="section level2 tabset">
+<h2 class="tabset">Workflow 2A US States</h2>
+<p><br></p>
+<p>Workflow 2A results in WRF outputs being processed and run through
+<code>helios</code> to produce total heating and cooling degree-hours at
+day and night segment for each month for commercial and residential
+buildings.</p>
+<p><br></p>
+<div id="table-workflow-2a" class="section level3">
+<h3>Table Workflow 2A</h3>
+<p><br></p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="41%" />
+<col width="36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WRF Outputs Raw</td>
+<td><ul>
+<li>RCP 4.5, 8.5, hot and cool</li>
+<li>hourly, 2019_01 to 2099_12</li>
+<li>12km x 12km resolution</li>
+<li>Temperature (K)</li>
+<li>Minimum temperature (K)</li>
+<li>Wind speed (m/s)</li>
+<li>Relative humidity (%)</li>
+<li>GLW (W/m2)</li>
+<li>SWDOWN (W/m2)</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gsharing</td>
+</tr>
+<tr class="even">
+<td>HDCD</td>
+<td><ul>
+<li>parallel_subprocess_rcp85cooler_ssp3.sh</li>
+<li>parallel_subprocess_rcp85cooler_ssp5.sh</li>
+<li>parallel_subprocess_rcp85hotter_ssp3.sh</li>
+<li>parallel_subprocess_rcp85hotter_ssp5.sh</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gcamusa/hddcdd</td>
+</tr>
+<tr class="odd">
+<td>Create HDCD XML</td>
+<td><ul>
+<li>combine_hddcdd_scenarios.sh</li>
+</ul></td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gcamusa/hddcdd</td>
+</tr>
+<tr class="even">
+<td>Run GCAM</td>
+<td><ul>
+<li>configuration_rcp85cooler_ssp3_rcp85gdp_hdcd.xml</li>
+<li>configuration_rcp85hotter_ssp3_rcp85gdp_hdcd.xml</li>
+<li>configuration_rcp85cooler_ssp5_hdcd.xml</li>
+<li>configuration_rcp85hotter_ssp5_hdcd.xml</li>
+<li>gcam_parallel_im3.sh</li>
+</ul></td>
+<td>(PIC) /pic/projects/im3/gcamusa/gcam-usa-im3/exe</td>
+</tr>
+<tr class="odd">
+<td>HDCD Sensitivity Analysis</td>
+<td><ul>
+<li>gcamDiagnostics_im3_hdcd_ssp3.sh</li>
+<li>gcamDiagnostics_im3_hdcd_ssp5.sh</li>
+</ul></td>
+<td>(PIC) /pic/projects/im3/gcamusa/diagnostics</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="raw-data" class="section level3">
+<h3>Raw Data</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/wrf_raw_data_10states.png" alt="**WRF hourly temperature (Dec 24 - 31) in 2020, 2030, ..., 2090, and 2099 for each grid within selected states.**" width="100%" />
+<p class="caption">
+<strong>WRF hourly temperature (Dec 24 - 31) in 2020, 2030, …, 2090, and
+2099 for each grid within selected states.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="monthly-hdcd-diagnostic"
+class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Monthly HDCD Diagnostic</h3>
+<div id="rcp8.5-cooler---ssp3" class="section level4">
+<h4>RCP8.5 Cooler - SSP3</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/ncdf_allyears_vs_noaa_2021_rcp85cooler_ssp3.png" alt="**Monthly heating and cooling degree-days calculated from helios versus NOAA 2021 Observations (dashed black lines).**" width="100%" />
+<p class="caption">
+<strong>Monthly heating and cooling degree-days calculated from helios
+versus NOAA 2021 Observations (dashed black lines).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-cooler---ssp5" class="section level4">
+<h4>RCP8.5 Cooler - SSP5</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/ncdf_allyears_vs_noaa_2021_rcp85cooler_ssp5.png" alt="**Monthly heating and cooling degree-days calculated from helios versus NOAA 2021 Observations (dashed black lines).**" width="100%" />
+<p class="caption">
+<strong>Monthly heating and cooling degree-days calculated from helios
+versus NOAA 2021 Observations (dashed black lines).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-hotter---ssp3" class="section level4">
+<h4>RCP8.5 Hotter - SSP3</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/ncdf_allyears_vs_noaa_2021_rcp85hotter_ssp3.png" alt="**Monthly heating and cooling degree-days calculated from helios versus NOAA 2021 Observations (dashed black lines).**" width="100%" />
+<p class="caption">
+<strong>Monthly heating and cooling degree-days calculated from helios
+versus NOAA 2021 Observations (dashed black lines).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-hotter---ssp5" class="section level4">
+<h4>RCP8.5 Hotter - SSP5</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/ncdf_allyears_vs_noaa_2021_rcp85hotter_ssp5.png" alt="**Monthly heating and cooling degree-days calculated from helios versus NOAA 2021 Observations (dashed black lines).**" width="100%" />
+<p class="caption">
+<strong>Monthly heating and cooling degree-days calculated from helios
+versus NOAA 2021 Observations (dashed black lines).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="segment-hdcd-diagnostic"
+class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Segment HDCD Diagnostic</h3>
+<div id="rcp8.5-cooler---ssp3-1" class="section level4">
+<h4>RCP8.5 Cooler - SSP3</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85cooler_ssp3.png" alt="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**" width="100%" />
+<p class="caption">
+<strong>Heating and cooling degree-hours by GCAM-USA segments from 2020
+- 2100 at 5-year interval.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-cooler---ssp5-1" class="section level4">
+<h4>RCP8.5 Cooler - SSP5</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85cooler_ssp5.png" alt="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**" width="100%" />
+<p class="caption">
+<strong>Heating and cooling degree-hours by GCAM-USA segments from 2020
+- 2100 at 5-year interval.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-hotter---ssp3-1" class="section level4">
+<h4>RCP8.5 Hotter - SSP3</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85hotter_ssp3.png" alt="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**" width="100%" />
+<p class="caption">
+<strong>Heating and cooling degree-hours by GCAM-USA segments from 2020
+- 2100 at 5-year interval.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-hotter---ssp5-1" class="section level4">
+<h4>RCP8.5 Hotter - SSP5</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/hdcd_diagnostic_allYears_gradient_freeScale_rcp85hotter_ssp5.png" alt="**Heating and cooling degree-hours by GCAM-USA segments from 2020 - 2100 at 5-year interval.**" width="100%" />
+<p class="caption">
+<strong>Heating and cooling degree-hours by GCAM-USA segments from 2020
+- 2100 at 5-year interval.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="gcam-ssp3" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM SSP3</h3>
+<div id="summary-3" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_im3_hdcd_ssp3.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) reference SSP3, (2) SSP3 with RCP8.5 Hotter, and (3) SSP3 with RCP8.5 Cooler.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) reference
+SSP3, (2) SSP3 with RCP8.5 Hotter, and (3) SSP3 with RCP8.5
+Cooler.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-3" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-3" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-3" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu-3" class="section level4">
+<h4>AGLU</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="gcam-ssp5" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM SSP5</h3>
+<div id="summary-4" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_im3_hdcd_ssp5.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) reference SSP5, (2) SSP5 with RCP8.5 Hotter, and (3) SSP5 with RCP8.5 Cooler.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) reference
+SSP5, (2) SSP5 with RCP8.5 Hotter, and (3) SSP5 with RCP8.5
+Cooler.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-4" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-4" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-4" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu-4" class="section level4">
+<h4>AGLU</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+</div>
+</div>
+</div>
+<div id="workflow-3---ag-yields" class="section level1">
+<h1>Workflow 3 - Ag Yields</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of Ag Yield workflow to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-4---ssp3" class="section level1">
+<h1>Workflow 4 - SSP3</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of SSP3 workflows to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-5---ssp5" class="section level1">
+<h1>Workflow 5 - SSP5</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of SSP5 workflows to go here.</p>
+<p><br></p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="workflow-6---final-scenarios" class="section level1">
+<h1>Workflow 6 - Final Scenarios</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>Details of Final Scenario workflows to go here.</p>
+<!-------------------------->
+<!-------------------------->
+</div>
+<div id="emissions-pathways" class="section level1">
+<h1>Emissions pathways</h1>
+<!-------------------------->
+<!-------------------------->
+<p align="center">
+<img src="images/divider.png" />
+</p>
+<p><br></p>
+<p>We model two emissions pathways, RCP8.5 and RCP4.5. RCP8.5 is the
+default pathway in GCAM-USA. Thus, no modifications to the source code
+are required in order to run an RCP8.5 scenario. For RCP4.5, we impose a
+global CO<sub>2</sub> emissions constraint. This emissions constraint in
+turn is based on the GCAM core model, release version 5.4 (publicly
+available <a
+href="https://github.com/JGCRI/gcam-core/releases/tag/gcam-v5.4">here</a>),
+a global model differentiating 32 world regions. Specifically, we run
+GCAM 5.4 in target finder mode.</p>
+<p><br></p>
+<div id="running-gcam-5.4-in-target-finder-mode"
+class="section level2 tabset">
+<h2 class="tabset">Running GCAM 5.4 in target finder mode</h2>
+<p><br></p>
+<p>As described in the <a
+href="https://jgcri.github.io/gcam-doc/user-guide.html#target-finder">GCAM
+online documentation on GitHub</a>, running GCAM 5.4 in target finder
+mode requires enabling (setting to 1) the <code>find-path</code> option
+in the respective configuration file, which is
+<code>gcam-core/exe/configuration_RCP45.xml</code> when running an
+RCP4.5 scenario:</p>
+<p><code>"&lt;Value name="find-path"&gt;1&lt;/Value&gt;"</code></p>
+<p>Then, the configuration file must be called in
+<code>gcam-core/exe/run-gcam.sh</code> as follows:</p>
+<p><code>gcam.exe -C configuration_RCP45.xml</code></p>
+<p>Once the model run is finished, results can be extracted using the
+model interface:
+<code>gcam-core/ModelInterface/run-model-interface.bat</code>.
+Specifically, we query “CO2 emissions by region” and “LUC emissions by
+region” for the region “Global” and sum up the values for each year in a
+separate spreadsheet.</p>
+<p>The figure below illustrates the final CO<sub>2</sub> pathway, as
+well as the corresponding CO<sub>2</sub>-price pathway and the resulting
+radiative forcing:</p>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45_pathway.png" alt="**Overview of the RCP4.5 emissions pathway in GCAM.**" width="100%" />
+<p class="caption">
+<strong>Overview of the RCP4.5 emissions pathway in GCAM.</strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<!-- location for images: meta_repos/khan-etal_2022_im3gcamusa/webpage/images -->
+<p><br></p>
+<p><br></p>
+</div>
+<div id="implementing-co2-emissions-constraint-in-gcam-usa"
+class="section level2 tabset">
+<h2 class="tabset">Implementing CO<sub>2</sub> Emissions Constraint In
+GCAM-USA</h2>
+<p><br></p>
+<p>The resulting pathway of CO<sub>2</sub> emissions from land use and
+energy is then used as a CO<sub>2</sub> emissions constraint in
+GCAM-USA. Therefore, we use a file named
+<code>/pic/projects/im3/gcamusa/gcam-usa-im3/input/policy/global_CO2_constraint.xml</code>
+into which we input the CO<sub>2</sub> emissions values calculated by
+GCAM 5.4 (as described above) as constraints. We also add an
+accompanying file called
+<code>/pic/projects/im3/gcamusa/gcam-usa-im3/input/policy/global_CO2_link.xml</code>
+which performs additional required tasks.</p>
+<p>We then create a set of new configuration files in
+<code>/pic/projects/im3/gcamusa/gcam-usa-im3/exe/</code> based on
+existing ones:</p>
+<br>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Exisitng.file
+</th>
+<th style="text-align:left;">
+New.file
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85cooler_ssp3_rcp85gdp_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45cooler_ssp3_rcp45gdp_runoff.xml
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85hotter_ssp3_rcp85gdp_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45hotter_ssp3_rcp45gdp_runoff.xml
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85cooler_ssp5_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45cooler_ssp5_runoff.xml
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+configuration_rcp85hotter_ssp5_runoff.xml
+</td>
+<td style="text-align:left;">
+configuration_rcp45hotter_ssp5_runoff.xml
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The main difference in our new configuration files is the addition of
+the following lines of code immediately after
+<code>cal_broyden_config.xml</code> is called:</p>
+<pre><code>&lt;!--POLICY ADD ONS--&gt;
+&lt;Value name = &quot;global_CO2_constraint&quot;&gt;../input/policy/global_CO2_constraint.xml&lt;/Value&gt;
+&lt;Value name = &quot;global_CO2_link&quot;&gt;../input/policy/global_CO2_link.xml&lt;/Value&gt;</code></pre>
+<p>In addition, the following lines need to be updated accordingly in
+each configuration file (e.g. replace <code>rcp85hotter</code> by
+<code>rcp45cooler</code> etc.):</p>
+<p><code>&lt;Value write-output="1" append-scenario-name="0" name="xmldb-location"&gt;../output/database_rcp85hotter_ssp3_rcp85gdp_runoff&lt;/Value&gt;</code></p>
+<p><code>&lt;Value name="ccs_supply"&gt;../input/im3scenarios/rcp85hotter/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta_applied2015.xml&lt;/Value&gt;</code></p>
+<p><code>&lt;Value name="scenarioName"&gt;rcp85hotter_ssp3_rcp85gdp_runoff&lt;/Value&gt;</code></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
