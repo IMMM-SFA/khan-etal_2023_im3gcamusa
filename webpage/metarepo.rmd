@@ -216,7 +216,7 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 4 climate and socioeconomic scenarios (absolute diference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3.png")
 ```
 
@@ -232,7 +232,7 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 4 climate and socioeconomic scenarios (absolute diference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3.png")
 ```
 
@@ -248,7 +248,7 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 4 climate and socioeconomic scenarios (absolute diference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3.png")
 ```
 
@@ -264,25 +264,25 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of global cumulative CO2 emissions for 4 climate and socioeconomic scenarios (percent difference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of global cumulative CO2 emissions for 4 climate and socioeconomic scenarios. **"}
 knitr::include_graphics("images/compareCO2GlobalCumRCP_im3.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA CO2 emissions for 4 climate and socioeconomic scenarios (percent difference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA CO2 emissions for 4 climate and socioeconomic scenarios. **"}
 knitr::include_graphics("images/compareCO2USA_im3.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of global non-CO2 emissions for 4 climate and socioeconomic scenarios (percent difference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of global non-CO2 emissions for 4 climate and socioeconomic scenarios. **"}
 knitr::include_graphics("images/compareNonCO2global_im3.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA non-CO2 emissions for 4 climate and socioeconomic scenarios (percent difference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA non-CO2 emissions for 4 climate and socioeconomic scenarios. **"}
 knitr::include_graphics("images/compareNonCO2USA_im3.png")
 ```
 
