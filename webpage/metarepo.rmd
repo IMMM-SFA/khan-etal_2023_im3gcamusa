@@ -188,36 +188,322 @@ knitr::include_graphics("images/im3_gcamusa_workflow_summary.jpg")
 
 <br>
 
+Please click on image to enlarge.
+
 ## Summary 
 
 <br>
 
-<br>
-
-## Water
-
-<br>
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM outputs for 4 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_param_all_summary_im3.png")
+```
 
 <br>
 
-## Energy
+## Socioeconomics {.tabset}
 
 <br>
 
-<br>
-
-## Electricity
+### Charts
 
 <br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GDP and population for 4 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_param_socioecon_im3.png")
+```
+
 <br>
 
-## AGLU
+### Maps {.tabset .tabset-pills}
 
 <br>
+
+#### GDP
+
 <br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GDP for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_gdp_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of GDP from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_gdp_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of GDP from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_gdp_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+#### Population
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of population for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_pop_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of population from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_pop_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of population from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_pop_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+
+## Water {.tabset}
+
+<br>
+
+### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for 4 climate and socioeconomic scenarios (percent difference). **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3.png")
+```
+
+<br>
+
+### Maps {.tabset .tabset-pills}
+
+<br>
+
+#### Water Supply
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of basin runoff for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_watSupRunoffBasin_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of basin runoff from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_watSupRunoffBasin_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of basin runoff from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_watSupRunoffBasin_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+#### Water Withdrawal
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of water withdrawal for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_watWithdrawBySec_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of water withdrawal from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_watWithdrawBySec_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of water withdrawal from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_watWithdrawBySec_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+#### Water Consumption
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of water consumption for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_watConsumBySec_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of water consumption from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_watConsumBySec_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of water consumption from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_watConsumBySec_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+## Energy {.tabset}
+
+<br>
+
+### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 4 climate and socioeconomic scenarios (percent difference). **"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3.png")
+```
+
+<br>
+
+### Maps
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of final energy consumption for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_energyFinalConsumBySecEJ_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of final energy consumption from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_energyFinalConsumBySecEJ_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of final energy consumption from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_energyFinalConsumBySecEJ_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+## Electricity {.tabset}
+
+<br>
+
+### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 4 climate and socioeconomic scenarios (percent difference). **"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3.png")
+```
+
+<br>
+
+### Maps
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of electricity generation for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_elecByTechTWh_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of electricity generation from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_elecByTechTWh_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of electricity generation from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_elecByTechTWh_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+## AGLU {.tabset}
+
+<br>
+
+### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 4 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 4 climate and socioeconomic scenarios (percent difference). **"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3.png")
+```
+
+<br>
+
+### Maps
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
 
 ## Emissions
 
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of global cumulative CO2 emissions for 4 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3.png")
+```
 
 <br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA CO2 emissions for 4 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/compareCO2USA_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of global non-CO2 emissions for 4 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/compareNonCO2global_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA non-CO2 emissions for 4 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/compareNonCO2USA_im3.png")
+```
+
 <br>

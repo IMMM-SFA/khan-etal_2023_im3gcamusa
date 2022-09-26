@@ -959,7 +959,398 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5.png"
 
 <br>
 
-Details of Ag Yield workflow to go here.
+## Workflow 3C US and Global {.tabset}
+
+<br>
+
+### Table Workflow 3C
+
+<br>
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(pander)
+mytable = data.frame(
+    Step     = c("Workflow 3A Outputs",
+                 "Workflow 3B Outputs",
+                 "Combine US and Non-US runoff",
+                 "Extrapolate 2099 to 2100",
+                 "Smoothing",
+                 "Convert to XML",
+                 "Run GCAM scenario rcp85hotter_ssp35_runoff"),
+    Description = c("Runoff mm per month for US Basins.",
+                 "Runoff mm per month for Non-US Basins.",
+                 "* xanthos_process_us_global_ssp585hotter_gcmChosen.sh\ 
+                    \n* xanthos_combine_us_global_ssp585hotter_gcmChosen.R",
+                 "* xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R",
+                 "* xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R",
+                 "* xanthos_convert2xml_ssp585hotter_gcmChosen.R",
+                 "* Run GCAM using rcp85hotter_ssp35_runoff."),
+    Location     = c("* /pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a\
+                     \n* Copied from (NERSC) /global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/climateimpacts/runoff",
+                 "* /pic/projects/im3/gcamusa/gcam-usa-im3/exe\
+                 \n * gcam_parallel_im3.sh\
+                 \n * configuration_rcp85hotter_ssp35_runoff.xml")
+    )
+
+pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
+```
+
+### Agyield Diagnostics {.tabset .tabset-pills}
+
+#### Global vs WRF
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**"}
+knitr::include_graphics("images/wrf_xanthos_compare_us_default.png")
+```
+
+<br>
+
+#### Smoothing
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**"}
+knitr::include_graphics("images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_1.png")
+```
+
+<br>
+
+#### Deltas
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5**"}
+knitr::include_graphics("images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta2015_1.png")
+```
+
+
+<br>
+
+#### Maps of water runoff in the US 
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**"}
+knitr::include_graphics("images/map_param_2100_KMEANS.png")
+```
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Absolute difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**"}
+knitr::include_graphics("images/map_param_2100_KMEANS_DiffAbs.png")
+```
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Relative difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**"}
+knitr::include_graphics("images/map_param_2100_KMEANS_DiffPrcnt.png")
+```
+
+
+### GCAM SSP3 {.tabset .tabset-pills}
+
+#### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
+knitr::include_graphics("images/chart_param_all_summary_im3_agyields_ssp3.png")
+```
+<!--updated on 4/12/2022-->
+
+
+#### Socioeconomics
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs**"}
+knitr::include_graphics("images/chart_param_socioecon_im3_agyields_ssp3.png")
+```
+<!--updated on 4/12/2022-->
+
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff**"}
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_agyields_ssp3.png")
+```
+
+<br>
+
+#### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_agyields_ssp3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp3.png")
+```
+
+<br>
+
+#### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_agyields_ssp3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp3.png")
+```
+
+<br>
+
+#### Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_agyields_ssp3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyields_ssp3.png")
+```
+
+<br>
+
+#### AGLU {.tabset}
+
+<br>
+
+##### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_agyields_ssp3.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp3.png")
+```
+</div>
+
+<br>
+
+##### Maps
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png")
+```
+
+<br>
+
+#### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_agyields_ssp3.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_agyields_ssp3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_agyields_ssp3.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_agyields_ssp3.png")
+```
+
+
+### GCAM SSP5 {.tabset .tabset-pills}
+
+#### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
+knitr::include_graphics("images/chart_param_all_summary_im3_agyields_ssp5.png")
+```
+<!--updated on 4/12/2022-->
+
+
+#### Socioeconomics
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs**"}
+knitr::include_graphics("images/chart_param_socioecon_im3_agyields_ssp5.png")
+```
+<!--updated on 4/12/2022-->
+
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff**"}
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_agyields_ssp5.png")
+```
+
+<br>
+
+#### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_agyields_ssp5.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp5.png")
+```
+
+<br>
+
+#### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_agyields_ssp5.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp5.png")
+```
+
+<br>
+
+#### Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_agyields_ssp5.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyields_ssp5.png")
+```
+
+<br>
+
+#### AGLU {.tabset}
+
+<br>
+
+##### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 5 GCMS **"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_agyields_ssp5.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp5.png")
+```
+</div>
+
+<br>
+
+##### Maps
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png")
+```
+
+<br>
+
+#### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_agyields_ssp5.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_agyields_ssp5.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_agyields_ssp5.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_agyields_ssp5.png")
+```
 
 <br>
 

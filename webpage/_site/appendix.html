@@ -13,7 +13,7 @@
 
 <title>khan_etal_2022_im3gcamusa</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -64,6 +64,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -88,6 +89,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -1586,10 +1590,516 @@ difference).</strong>
 <img src="images/divider.png" />
 </p>
 <p><br></p>
-<p>Details of Ag Yield workflow to go here.</p>
+<div id="workflow-3c-us-and-global" class="section level2 tabset">
+<h2 class="tabset">Workflow 3C US and Global</h2>
+<p><br></p>
+<div id="table-workflow-3c" class="section level3">
+<h3>Table Workflow 3C</h3>
+<p><br></p>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="35%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Workflow 3A Outputs</td>
+<td>Runoff mm per month for US Basins.</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff/outputs_workflow1a</li>
+<li>Copied from (NERSC)
+/global/cfs/cdirs/m2702/gcamusa/wrf_to_xanthos/xanthos_files/example/output</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Workflow 3B Outputs</td>
+<td>Runoff mm per month for Non-US Basins.</td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/raw_global_runoff_files</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Combine US and Non-US runoff</td>
+<td><ul>
+<li>xanthos_process_us_global_ssp585hotter_gcmChosen.sh</li>
+<li>xanthos_combine_us_global_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Extrapolate 2099 to 2100</td>
+<td><ul>
+<li>xanthos_extrapolate_2099to2100_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Smoothing</td>
+<td><ul>
+<li>xanthos_smooth5trail_2099to2100_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Convert to XML</td>
+<td><ul>
+<li>xanthos_convert2xml_ssp585hotter_gcmChosen.R</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/climateimpacts/runoff</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Run GCAM scenario rcp85hotter_ssp35_runoff</td>
+<td><ul>
+<li>Run GCAM using rcp85hotter_ssp35_runoff.</li>
+</ul></td>
+<td><ul>
+<li>/pic/projects/im3/gcamusa/gcam-usa-im3/exe</li>
+<li>gcam_parallel_im3.sh</li>
+<li>configuration_rcp85hotter_ssp35_runoff.xml</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="agyield-diagnostics"
+class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Agyield Diagnostics</h3>
+<div id="global-vs-wrf-1" class="section level4">
+<h4>Global vs WRF</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/wrf_xanthos_compare_us_default.png" alt="**Comparison of Global vs WRF Xanthos Runoff for U.S. Basins**" width="100%" />
+<p class="caption">
+<strong>Comparison of Global vs WRF Xanthos Runoff for U.S.
+Basins</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="smoothing-1" class="section level4">
+<h4>Smoothing</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_1.png" alt="**Smoothing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%" />
+<p class="caption">
+<strong>Smoothing diagnostics for selected US Basins for
+rcp85hotter_ssp5</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="deltas-1" class="section level4">
+<h4>Deltas</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/Basin_runoff_km3peryear_comb_ssp585_rcp85_noresm_1979_2100_window5trail_delta2015_1.png" alt="**Delta processing diagnostics for selected US Basins for rcp85hotter_ssp5**" width="100%" />
+<p class="caption">
+<strong>Delta processing diagnostics for selected US Basins for
+rcp85hotter_ssp5</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="maps-of-water-runoff-in-the-us-1" class="section level4">
+<h4>Maps of water runoff in the US</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS.png" alt="**Comparison of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Comparison of global water runoff in 2100 (km3) under RCP8.5
+hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS_DiffAbs.png" alt="**Absolute difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Absolute difference of global water runoff in 2100 (km3) under
+RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="images/map_param_2100_KMEANS_DiffPrcnt.png" alt="**Relative difference of global water runoff in 2100 (km3) under RCP8.5 hotter and RCP8.5 cooler**" width="100%" />
+<p class="caption">
+<strong>Relative difference of global water runoff in 2100 (km3) under
+RCP8.5 hotter and RCP8.5 cooler</strong>
+</p>
+</div>
+</div>
+</div>
+<div id="gcam-ssp3-1" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM SSP3</h3>
+<div id="summary-5" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_im3_agyields_ssp3.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+</div>
+<div id="socioeconomics-3" class="section level4">
+<h4>Socioeconomics</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_socioecon_im3_agyields_ssp3.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs</strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_im3_agyields_ssp3.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-5" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_agyields_ssp3.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_agyields_ssp3.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-5" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp3.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp3.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-5" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_agyields_ssp3.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_agyields_ssp3.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu-5" class="section level4 tabset">
+<h4 class="tabset">AGLU</h4>
+<p><br></p>
+<div id="charts" class="section level5">
+<h5>Charts</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="maps" class="section level5">
+<h5>Maps</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
+<p class="caption">
+<strong>Comparison of agriculture production for 4 climate and
+socioeconomic scenarios.</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3.png" alt="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**" width="200%" />
+<p class="caption">
+<strong>Absolute difference of agriculture production from 3 climate and
+socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
+SSP3).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png" alt="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**" width="200%" />
+<p class="caption">
+<strong>Percent difference of agriculture production from 3 climate and
+socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
+SSP3).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="emissions-3" class="section level4">
+<h4>Emissions</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_agyields_ssp3.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_agyields_ssp3.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_agyields_ssp3.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_agyields_ssp3.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+</div>
+</div>
+<div id="gcam-ssp5-1" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM SSP5</h3>
+<div id="summary-6" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_im3_agyields_ssp5.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+</div>
+<div id="socioeconomics-4" class="section level4">
+<h4>Socioeconomics</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_socioecon_im3_agyields_ssp5.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs</strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_im3_agyields_ssp5.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-6" class="section level4">
+<h4>Water</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_agyields_ssp5.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_agyields_ssp5.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-6" class="section level4">
+<h4>Energy</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp5.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp5.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-6" class="section level4">
+<h4>Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_agyields_ssp5.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_agyields_ssp5.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="aglu-6" class="section level4 tabset">
+<h4 class="tabset">AGLU</h4>
+<p><br></p>
+<div id="charts-1" class="section level5">
+<h5>Charts</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs for 5 GCMS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="maps-1" class="section level5">
+<h5>Maps</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
+<p class="caption">
+<strong>Comparison of agriculture production for 4 climate and
+socioeconomic scenarios.</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5.png" alt="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**" width="200%" />
+<p class="caption">
+<strong>Absolute difference of agriculture production from 3 climate and
+socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
+SSP5).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png" alt="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**" width="200%" />
+<p class="caption">
+<strong>Percent difference of agriculture production from 3 climate and
+socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
+SSP5).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="emissions-4" class="section level4">
+<h4>Emissions</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_agyields_ssp5.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_agyields_ssp5.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_agyields_ssp5.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_agyields_ssp5.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
 <p><br></p>
 <!-------------------------->
 <!-------------------------->
+</div>
+</div>
+</div>
 </div>
 <div id="workflow-4---ssp3" class="section level1">
 <h1>Workflow 4 - SSP3</h1>
