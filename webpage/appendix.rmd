@@ -959,11 +959,17 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5.png"
 
 <br>
 
-## Workflow 3C US and Global {.tabset}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Workflow 3: Climate impacts on ag yields.**"}
+knitr::include_graphics("images/im3_gcamusa_workflow_3_climate_impacts_agyields.jpg")
+```
 
 <br>
 
-### Table Workflow 3C
+## Workflow 3 US and Global {.tabset}
+
+<br>
+
+### Table Workflow 3
 
 <br>
 
@@ -976,7 +982,7 @@ mytable = data.frame(
                "grid_to_basin_yield",
                "yield_to_gcam_basin",
                "create_AgProdChange_xml"),
-  Description = c("* RCP 4.5, 8.5, hot and cool\
+  Description = c("* RCP 4.5, 8.5 (hotter and cooler)\
                     \n * 3-hourly, 2020_01 to 2099_12\
                     \n * 12km x 12km resolution\
                     \n * Near Surface Air Temperature, T2 (K)\
