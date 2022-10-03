@@ -208,8 +208,14 @@ knitr::include_graphics("images/chart_param_all_summary_im3.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GDP and population for 4 climate and socioeconomic scenarios (absolute difference). **"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA GDP and population for 4 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_param_socioecon_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of Rest of World GDP and population for 4 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_param_socioecon_im3_global.png")
 ```
 
 <br>
@@ -411,6 +417,16 @@ knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3.png")
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 4 climate and socioeconomic scenarios (percent difference). **"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3.png")
+```
+
+<br>
+
+### Lines
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of State-level Superpeak Electricity Load (GW) for 4 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/Superpeak Electricity Load (GW).png")
 ```
 
 <br>
