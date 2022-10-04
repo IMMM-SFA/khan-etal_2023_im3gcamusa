@@ -7,5 +7,5 @@ Meta-repository for: *Khan, Z., Wolfram, P., Iyer, G., Rice, J., Vernon, C., Bin
 
 <br>
 <p align="center">
-<a href = "metarepo.html"> <img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_metarepo.PNG?raw=true" height="60"/> </a>
+<a href = "https://immm-sfa.github.io/khan-etal_2022_im3gcamusa/"> <img src="https://github.com/JGCRI/jgcricolors/blob/main/vignettes/button_metarepo.PNG?raw=true" height="60"/> </a>
 </p>
