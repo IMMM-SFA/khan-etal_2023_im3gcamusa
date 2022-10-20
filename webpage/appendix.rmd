@@ -965,7 +965,21 @@ knitr::include_graphics("images/im3_gcamusa_workflow_3_climate_impacts_agyields.
 
 <br>
 
-## Workflow 3 US and Global {.tabset}
+## Workflow 3A US - Key Insights
+
+<br>
+
+Workflow 3A results in WRF outputs being processed and run through `osiris` to produce agricultural production change time series by crop and GCAM basin, for each climate and socioeconomic scenarios.
+
+Some preliminary trends we have observed:
+
+-   AgProdByCrop shows an increase from reference to cool and hot, especially for corn. However, we see the opposite trend in land use by crop. It goes down for crops.
+-   Water consumption and water withdrawal go down. Can these trends be explained by increasing crop yields which requires less land and water?
+-   Rainfed agyields, especially for corn and wheat, seem quite high in some basins, such as California and Pacific NW. Will need to dig into this.
+
+<br>
+
+## Workflow 3B US and Global {.tabset}
 
 <br>
 
@@ -977,11 +991,11 @@ knitr::include_graphics("images/im3_gcamusa_workflow_3_climate_impacts_agyields.
 library(pander)
 mytable = data.frame(
   Step     = c("WRF Outputs Raw", 
-               "wrf_to_osiris",
-               "calculate_deltas_from_climate",
-               "grid_to_basin_yield",
-               "yield_to_gcam_basin",
-               "create_AgProdChange_xml"),
+               "Extract key variables into separate ncdf file",
+               "Transfer files to PIC using globus",
+               "Run Osiris",
+               "Run GCAM",
+               "Run diagnostics"),
   Description = c("* RCP 4.5, 8.5 (hotter and cooler)\
                     \n * 3-hourly, 2020_01 to 2099_12\
                     \n * 12km x 12km resolution\
@@ -989,13 +1003,23 @@ mytable = data.frame(
                     \n * Accumulated precipitation from the Convective, RAINC (mm)\
                     \n * Accumulated precipitation from the Shallow Convective, RAINSH (mm)\
                     \n * Accumulated precipitation from the Microphysics, RAINNC (mm)",
-                  "Function to extract temperature and precipitation data from WRF nc files, reproject to match osiris CRS and resolution, calculate monthly mean temperature and precipitation flux, and save to a new nc file.", "Function to process climate data to calculate delta P and delta T.", "Function that uses emulators to create gridded yield files then aggregates to gcam basin level via MIRCA harvested areas.", "Function that uses emulated yield data aggregated to GCAM basin level to create GCAM region, basin, and irrigation level data for all GCAM commodities.", "Function that takes the defined impacts and reference AgProdChange files then updates and saves the new AgProdChange csv and xml files."),
+                  "Since we get an error when trying to run Osiris on NERSC, we transfer the files to PIC and run Osiris there. We extract the relavant variables to reduce the file size.",
+                  "Log in to globus (need to make an account first), select and activate endpoints, and transfer files",
+                  "* osiris.sh\
+                    \n * osiris.R",
+                  "* configuration_rcp85cooler_ssp3_rcp85gdp_agyields.xml\
+                    \n * configuration_rcp85hotter_ssp3_rcp85gdp_agyields.xml\
+                    \n * configuration_rcp85cooler_ssp5_agyields.xml\
+                    \n * configuration_rcp85hotter_ssp5_agyields.xml\
+                    \n * gcam_parallel_im3.sh",
+                  "* gcamDiagnostics_im3_agyields_ssp3.sh\
+                    \n * gcamDiagnostics_im3_agyields_ssp5.sh"),
   Location     = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
-                   "https://github.com/JGCRI/osiris",
-                   "https://github.com/JGCRI/osiris",
-                   "https://github.com/JGCRI/osiris",
-                   "https://github.com/JGCRI/osiris",
-                   "https://github.com/JGCRI/osiris")
+                   "(NERSC) /global/cfs/cdirs/m2702/gcamusa/osiris/wrf_extract.sh",
+                   "(PIC) /pic/projects/im3/WRF_data",
+                   "(PIC) /pic/projects/im3/gcamusa/climateimpacts/osiris",
+                   "(PIC) /pic/projects/im3/gcamusa/gcam-usa-im3/exe",
+                   "(PIC) /pic/projects/im3/gcamusa/diagnostics")
 )
 
 pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
@@ -1285,25 +1309,29 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyield
 
 <br>
 
-##### Charts
+##### Summary {.tabset}
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 5 GCMS **"}
+###### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_agyields_ssp3.png")
 ```
 
 <br>
 
 <div class="img_large">
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
 knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp3.png")
 ```
 </div>
 
 <br>
 
-##### Maps
+###### Maps
 
 <br>
 
@@ -1322,6 +1350,77 @@ knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
 knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png")
 ```
+
+<br>
+
+##### Corn
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp3.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_corn_im3_agyields_ssp3.png")
+```
+</div>
+
+<br>
+
+##### OilCrop
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp3.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_oilcrop_im3_agyields_ssp3.png")
+```
+</div>
+
+<br>
+
+##### Rice
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp3.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_rice_im3_agyields_ssp3.png")
+```
+</div>
+
+<br>
+
+##### Wheat
+
+<br>
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp3.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_wheat_im3_agyields_ssp3.png")
+```
+</div>
 
 <br>
 
@@ -1436,7 +1535,11 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyield
 
 <br>
 
-##### Charts
+##### Summary {.tabset}
+
+<br>
+
+###### Charts
 
 <br>
 
@@ -1454,7 +1557,7 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp5.
 
 <br>
 
-##### Maps
+###### Maps
 
 <br>
 
@@ -1473,6 +1576,77 @@ knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
 knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png")
 ```
+
+<br>
+
+##### Corn
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp5.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_corn_im3_agyields_ssp5.png")
+```
+</div>
+
+<br>
+
+##### OilCrop
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp5.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_oilcrop_im3_agyields_ssp5.png")
+```
+</div>
+
+<br>
+
+##### Rice
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp5.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_rice_im3_agyields_ssp5.png")
+```
+</div>
+
+<br>
+
+##### Wheat
+
+<br>
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp5.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_wheat_im3_agyields_ssp5.png")
+```
+</div>
 
 <br>
 

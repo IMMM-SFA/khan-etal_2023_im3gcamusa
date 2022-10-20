@@ -1597,17 +1597,38 @@ difference).</strong>
 </p>
 </div>
 <p><br></p>
-<div id="workflow-3-us-and-global" class="section level2 tabset">
-<h2 class="tabset">Workflow 3 US and Global</h2>
+<div id="workflow-3a-us---key-insights" class="section level2">
+<h2>Workflow 3A US - Key Insights</h2>
+<p><br></p>
+<p>Workflow 3A results in WRF outputs being processed and run through
+<code>osiris</code> to produce agricultural production change time
+series by crop and GCAM basin, for each climate and socioeconomic
+scenarios.</p>
+<p>Some preliminary trends we have observed:</p>
+<ul>
+<li>AgProdByCrop shows an increase from reference to cool and hot,
+especially for corn. However, we see the opposite trend in land use by
+crop. It goes down for crops.</li>
+<li>Water consumption and water withdrawal go down. Can these trends be
+explained by increasing crop yields which requires less land and
+water?</li>
+<li>Rainfed agyields, especially for corn and wheat, seem quite high in
+some basins, such as California and Pacific NW. Will need to dig into
+this.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="workflow-3b-us-and-global" class="section level2 tabset">
+<h2 class="tabset">Workflow 3B US and Global</h2>
 <p><br></p>
 <div id="table-workflow-3" class="section level3">
 <h3>Table Workflow 3</h3>
 <p><br></p>
 <table>
 <colgroup>
-<col width="32%" />
-<col width="32%" />
-<col width="35%" />
+<col width="21%" />
+<col width="39%" />
+<col width="39%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1640,42 +1661,44 @@ difference).</strong>
 <td>(NERSC) /global/cfs/cdirs/m2702/gsharing</td>
 </tr>
 <tr class="even">
-<td>wrf_to_osiris</td>
-<td>Function to extract temperature and precipitation data from WRF nc
-files, reproject to match osiris CRS and resolution, calculate monthly
-mean temperature and precipitation flux, and save to a new nc file.</td>
-<td><a href="https://github.com/JGCRI/osiris"
-class="uri">https://github.com/JGCRI/osiris</a></td>
+<td>Extract key variables into separate ncdf file</td>
+<td>Since we get an error when trying to run Osiris on NERSC, we
+transfer the files to PIC and run Osiris there. We extract the relavant
+variables to reduce the file size.</td>
+<td>(NERSC) /global/cfs/cdirs/m2702/gcamusa/osiris/wrf_extract.sh</td>
 </tr>
 <tr class="odd">
-<td>calculate_deltas_from_climate</td>
-<td>Function to process climate data to calculate delta P and delta
-T.</td>
-<td><a href="https://github.com/JGCRI/osiris"
-class="uri">https://github.com/JGCRI/osiris</a></td>
+<td>Transfer files to PIC using globus</td>
+<td>Log in to globus (need to make an account first), select and
+activate endpoints, and transfer files</td>
+<td>(PIC) /pic/projects/im3/WRF_data</td>
 </tr>
 <tr class="even">
-<td>grid_to_basin_yield</td>
-<td>Function that uses emulators to create gridded yield files then
-aggregates to gcam basin level via MIRCA harvested areas.</td>
-<td><a href="https://github.com/JGCRI/osiris"
-class="uri">https://github.com/JGCRI/osiris</a></td>
+<td>Run Osiris</td>
+<td><ul>
+<li>osiris.sh</li>
+<li>osiris.R</li>
+</ul></td>
+<td>(PIC) /pic/projects/im3/gcamusa/climateimpacts/osiris</td>
 </tr>
 <tr class="odd">
-<td>yield_to_gcam_basin</td>
-<td>Function that uses emulated yield data aggregated to GCAM basin
-level to create GCAM region, basin, and irrigation level data for all
-GCAM commodities.</td>
-<td><a href="https://github.com/JGCRI/osiris"
-class="uri">https://github.com/JGCRI/osiris</a></td>
+<td>Run GCAM</td>
+<td><ul>
+<li>configuration_rcp85cooler_ssp3_rcp85gdp_agyields.xml</li>
+<li>configuration_rcp85hotter_ssp3_rcp85gdp_agyields.xml</li>
+<li>configuration_rcp85cooler_ssp5_agyields.xml</li>
+<li>configuration_rcp85hotter_ssp5_agyields.xml</li>
+<li>gcam_parallel_im3.sh</li>
+</ul></td>
+<td>(PIC) /pic/projects/im3/gcamusa/gcam-usa-im3/exe</td>
 </tr>
 <tr class="even">
-<td>create_AgProdChange_xml</td>
-<td>Function that takes the defined impacts and reference AgProdChange
-files then updates and saves the new AgProdChange csv and xml
-files.</td>
-<td><a href="https://github.com/JGCRI/osiris"
-class="uri">https://github.com/JGCRI/osiris</a></td>
+<td>Run diagnostics</td>
+<td><ul>
+<li>gcamDiagnostics_im3_agyields_ssp3.sh</li>
+<li>gcamDiagnostics_im3_agyields_ssp5.sh</li>
+</ul></td>
+<td>(PIC) /pic/projects/im3/gcamusa/diagnostics</td>
 </tr>
 </tbody>
 </table>
@@ -1988,28 +2011,31 @@ class="section level3 tabset tabset-pills">
 <div id="aglu-5" class="section level4 tabset">
 <h4 class="tabset">AGLU</h4>
 <p><br></p>
-<div id="charts" class="section level5">
-<h5>Charts</h5>
+<div id="summary-6" class="section level5 tabset">
+<h5 class="tabset">Summary</h5>
+<p><br></p>
+<div id="charts" class="section level6">
+<h6>Charts</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
+<img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs for 5 GCMS </strong>
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
 </p>
 </div>
 <p><br></p>
 <div class="img_large">
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs**" width="200%" />
+<img src="images/chart_class_diff_percent_aglu_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs</strong>
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
 </p>
 </div>
 </div>
 <p><br></p>
 </div>
-<div id="maps" class="section level5">
-<h5>Maps</h5>
+<div id="maps" class="section level6">
+<h6>Maps</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
@@ -2035,6 +2061,87 @@ SSP3).</strong>
 socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
 SSP3).</strong>
 </p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="corn-2" class="section level5">
+<h5>Corn</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_corn_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="oilcrop" class="section level5">
+<h5>OilCrop</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_oilcrop_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="rice-2" class="section level5">
+<h5>Rice</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_rice_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="wheat-2" class="section level5">
+<h5>Wheat</h5>
+<br>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_wheat_im3_agyields_ssp3.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
 </div>
 <p><br></p>
 </div>
@@ -2078,7 +2185,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <div id="gcam-ssp5-1" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP5</h3>
-<div id="summary-6" class="section level4">
+<div id="summary-7" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2165,8 +2272,11 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <div id="aglu-6" class="section level4 tabset">
 <h4 class="tabset">AGLU</h4>
 <p><br></p>
-<div id="charts-1" class="section level5">
-<h5>Charts</h5>
+<div id="summary-8" class="section level5 tabset">
+<h5 class="tabset">Summary</h5>
+<p><br></p>
+<div id="charts-1" class="section level6">
+<h6>Charts</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
@@ -2185,8 +2295,8 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="maps-1" class="section level5">
-<h5>Maps</h5>
+<div id="maps-1" class="section level6">
+<h6>Maps</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
@@ -2212,6 +2322,87 @@ SSP5).</strong>
 socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
 SSP5).</strong>
 </p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="corn-3" class="section level5">
+<h5>Corn</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_corn_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="oilcrop-1" class="section level5">
+<h5>OilCrop</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_oilcrop_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="rice-3" class="section level5">
+<h5>Rice</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_rice_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="wheat-3" class="section level5">
+<h5>Wheat</h5>
+<br>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_wheat_im3_agyields_ssp5.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
 </div>
 <p><br></p>
 </div>
