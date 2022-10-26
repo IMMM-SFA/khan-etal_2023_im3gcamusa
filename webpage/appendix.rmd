@@ -975,7 +975,7 @@ Some preliminary trends we have observed:
 
 -   AgProdByCrop shows an increase from reference to cool and hot, especially for corn. However, we see the opposite trend in land use by crop. It goes down for crops.
 -   Water consumption and water withdrawal go down. Can these trends be explained by increasing crop yields which requires less land and water?
--   Rainfed agyields, especially for corn and wheat, seem quite high in some basins, such as California and Pacific NW. Will need to dig into this.
+-   Although rainfed ag yields for corn are high in some basins compared to irrigated, such as California and Pacific NW, this appears to be a relative measure of the trend and not necessarily the magnitude of crop production (possibly due to area of rfd vs irr not being considered here). For example, corn production actually drops in the California basin (based on ag production by tech query). The largest increase in corn production is in the Upper Mississippi Basin, which is also consistent with the aglu map.
 
 <br>
 
@@ -1011,6 +1011,10 @@ mytable = data.frame(
                     \n * configuration_rcp85hotter_ssp3_rcp85gdp_agyields.xml\
                     \n * configuration_rcp85cooler_ssp5_agyields.xml\
                     \n * configuration_rcp85hotter_ssp5_agyields.xml\
+                    \n * configuration_rcp45cooler_ssp3_rcp45gdp_agyields.xml\
+                    \n * configuration_rcp45hotter_ssp3_rcp45gdp_agyields.xml\
+                    \n * configuration_rcp45cooler_ssp5_agyields.xml\
+                    \n * configuration_rcp45hotter_ssp5_agyields.xml\
                     \n * gcam_parallel_im3.sh",
                   "* gcamDiagnostics_im3_agyields_ssp3.sh\
                     \n * gcamDiagnostics_im3_agyields_ssp5.sh"),
