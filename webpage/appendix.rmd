@@ -1011,8 +1011,8 @@ mytable = data.frame(
                     \n * configuration_rcp85hotter_ssp3_rcp85gdp_agyields.xml\
                     \n * configuration_rcp85cooler_ssp5_agyields.xml\
                     \n * configuration_rcp85hotter_ssp5_agyields.xml\
-                    \n * configuration_rcp45cooler_ssp3_rcp45gdp_agyields.xml\
-                    \n * configuration_rcp45hotter_ssp3_rcp45gdp_agyields.xml\
+                    \n * configuration_rcp45cooler_ssp3_rcp85gdp_agyields.xml\
+                    \n * configuration_rcp45hotter_ssp3_rcp85gdp_agyields.xml\
                     \n * configuration_rcp45cooler_ssp5_agyields.xml\
                     \n * configuration_rcp45hotter_ssp5_agyields.xml\
                     \n * gcam_parallel_im3.sh",
