@@ -1695,7 +1695,7 @@ knitr::include_graphics("images/compareNonCO2USA_im3_agyields_ssp5.png")
 
 ## Narratives
 
-Full details of the GCAM-USA model used for this study are available in [Binsted et al. 2022](https://doi.org/10.5194/gmd-15-2533-2022)<sup>1</sup>. The table below provides an overview of key characteristics of Shared Socioeconomic Pathways (SSP) Scenarios used in this study. This study uses SSP3 and SSP5 which is built off the baseline SSP2 scenario with additional files used to modify certain sectors to reflect the characteristics of SSP3 and SSP5. A summary figure from [O'Neill et al. 2014](https://link.springer.com/article/10.1007/s10584-013-0905-2)<sup>2</sup> show the mitigation and adaption challenges across all the SSPs. Details on SSP assumptions in GCAM can be found in the official documentation on the [SSP page](https://jgcri.github.io/gcam-doc/ssp.html#table3).
+Full details of the GCAM-USA model used for this study are available in [Binsted et al. 2022](https://doi.org/10.5194/gmd-15-2533-2022)<sup>1</sup>. The table below provides an overview of key characteristics of Shared Socioeconomic Pathways (SSP) Scenarios used in this study. This study uses SSP3 and SSP5 which is built off the baseline SSP2 scenario with additional files used to modify certain sectors to reflect the characteristics of SSP3 and SSP5. A summary figure from [O'Neill et al. 2014](https://link.springer.com/article/10.1007/s10584-013-0905-2)<sup>2</sup> shows the mitigation and adaptation challenges across all the SSPs. Additional details on SSP assumptions in GCAM can be found in the official documentation on the [SSP page](https://jgcri.github.io/gcam-doc/ssp.html#table3).
 
 <p style="font-size:0.8em; font-style: italic;"> <sup>1</sup>Binsted, M., Iyer, G., Patel, P., Graham, N. T., Ou, Y., Khan, Z., Kholod, N., Narayan, K., Hejazi, M., Kim, S., Calvin, K., and Wise, M.: GCAM-USA v5.3_water_dispatch: integrated modeling of subnational US energy, water, and land systems within a global framework, Geosci. Model Dev., 15, 2533–2559, https://doi.org/10.5194/gmd-15-2533-2022, 2022</p>
 
@@ -1714,7 +1714,7 @@ knitr::include_graphics("images/ssp_mitigation_adaptation.PNG")
 ```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
 library(pander)
 mytable = data.frame(
-  Detail  = c("**Overall Narratives**", 
+  Detail  = c("**Overall Narrative**", 
               "**Population**", 
               "**Economic Growth**",
               "**Emissions**",
@@ -1750,9 +1750,9 @@ mytable = data.frame(
               \n * **Power Supply:** Lower demands relative to SSP2 are met by supply from natural gas and renewables with no-new deployment of coal. Larger % of renewables in electricity mix compared to SSP2 by 2100."),
   SSP5    =  c("**Fossil-fueled Development:** (High challenges to mitigation, low challenges to adaptation\\) This world places increasing faith in competitive markets, innovation and participatory societies to produce rapid technological progress and development of human capital as the path to sustainable development. Global markets are increasingly integrated. There are also strong investments in health, education, and institutions to enhance human and social capital. At the same time, the push for economic and social development is coupled with the exploitation of abundant fossil fuel resources and the adoption of resource and energy intensive lifestyles around the world. All these factors lead to rapid growth of the global economy, while global population peaks and declines in the 21st century. Local environmental problems like air pollution are successfully managed. There is faith in the ability to effectively manage social and ecological systems, including by geo-engineering if necessary.",  
                 "* **Global**: Population peaks in about 2050 at 8 billion and then decreases to about 7.5 billion in 2100.\
-               \n * **US**: Population flattens out by 2040 and then decreases to about 300 million to 2100.", 
+               \n * **US**: Population increases steadily to about 650 million in 2100.", 
                "* **Global**: Increases faster than SSP2 to about 750 trillion (2015 USD\\) in 2100.\
-               \n * **US**: Increases slower than SSP2 to about 125 trillion (2015 USD\\) in 2100.",
+               \n * **US**: Increases faster than SSP2 to about 125 trillion (2015 USD\\) in 2100.",
                "* **Global**: Global cumulative emissions (2010 to 2100\\) rise to about 1500 GTC.\
                \n * **US**: Annual emissions in the US rise from about 5 billion to 8 billion tonnes of C per year in 2100.",
               "* **Service Demands:**: Increase in all end-use sectors driven by changes in the pop & gdp \
