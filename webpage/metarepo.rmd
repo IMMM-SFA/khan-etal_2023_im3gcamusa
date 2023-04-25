@@ -229,13 +229,13 @@ knitr::include_graphics("images/chart_param_all_summary_im3.png")
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of USA GDP and population for 8 climate and socioeconomic scenarios (absolute difference). **"}
-knitr::include_graphics("images/chart_param_socioecon_im3.png")
+knitr::include_graphics("images/chart_param_socioecon_USA_im3_global.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of Rest of World GDP and population for 8 climate and socioeconomic scenarios (absolute difference). **"}
-knitr::include_graphics("images/chart_param_socioecon_im3_global.png")
+knitr::include_graphics("images/chart_param_socioecon_ROW_im3_global.png")
 ```
 
 <br>

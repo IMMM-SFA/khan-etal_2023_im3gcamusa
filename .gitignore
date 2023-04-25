@@ -3,5 +3,4 @@
 .RData
 .Ruserdata
 
-webpage/site_libs/*
-
+webpage/site_libs
