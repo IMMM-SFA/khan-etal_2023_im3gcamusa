@@ -845,7 +845,7 @@ knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_s
 <br>
 
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp3.png")
 ```
 
@@ -926,7 +926,7 @@ knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_s
 <br>
 
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp5.png")
 ```
 
@@ -2486,7 +2486,7 @@ In addition, the following lines need to be updated accordingly in each configur
 
 <!-------------------------->
 <!-------------------------->
-# Nuclear Sensitivity
+# Nuclear Sensitivity {.tabset}
 <!-------------------------->
 <!-------------------------->
 <p align="center">![](images/divider.png)</p>
@@ -2498,4 +2498,1547 @@ knitr::include_graphics("images/nuclear_sensitivity_workflow.jpg")
 ```
 
 <br>
+
+## Table Workflow
+
+<br>
+
+```{r, results = 'show', eval=TRUE, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+library(pander)
+mytable = data.frame(
+  Step     = c("Create Nuclear Scenarios XML", 
+               "Run GCAM-USA scenario 1: current",
+               "Run GCAM-USA scenario 2: allow new nuclear",
+               "Run GCAM-USA scenario 3: nuclear moratorium",
+               "Run Diagnostics",
+               "Diagnostics Outputs"),
+  Description = c("* zchunk_batch_electricity_USA_xml.R",
+                  
+                  "* configuration_rcp45cooler_ssp3_im3.xml\
+                    \n* configuration_rcp45cooler_ssp5_im3.xml\
+                    \n* configuration_rcp45hotter_ssp3_im3.xml\
+                    \n* configuration_rcp45hotter_ssp5_im3.xml\
+                    \n* configuration_rcp85cooler_ssp3_rcp85gdp_im3.xml\
+                    \n* configuration_rcp85cooler_ssp5_im3.xml\
+                    \n* configuration_rcp85hotter_ssp3_rcp85gdp_im3.xml\
+                    \n* configuration_rcp85hotter_ssp5_im3.xml\
+                    \n \
+                    \n* gcam_parallel_im3_rcp45.sh\
+                    \n* gcam_parallel_im3_rcp85.sh",
+                  
+                  "* configuration_rcp45cooler_ssp3_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp45cooler_ssp5_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp45hotter_ssp3_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp45hotter_ssp5_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp85cooler_ssp3_rcp85gdp_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp85cooler_ssp5_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp85hotter_ssp3_rcp85gdp_im3_allow_new_nuc.xml\
+                    \n* configuration_rcp85hotter_ssp5_im3_allow_new_nuc.xml\
+                    \n \
+                    \n* gcam_parallel_im3_rcp45_allow_new_nuc.sh\
+                    \n* gcam_parallel_im3_rcp85_allow_new_nuc.sh",
+                  
+                  "* configuration_rcp45cooler_ssp3_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp45cooler_ssp5_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp45hotter_ssp3_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp45hotter_ssp5_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp85cooler_ssp3_rcp85gdp_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp85cooler_ssp5_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp85hotter_ssp3_rcp85gdp_im3_nuc_moratorium.xml\
+                    \n* configuration_rcp85hotter_ssp5_im3_nuc_moratorium.xml\
+                    \n \
+                    \n* gcam_parallel_im3_rcp45_nuc_moratorium.sh\
+                    \n* gcam_parallel_im3_rcp85_nuc_moratorium.sh",
+                  
+                  "* gcamDiagnostics_im3_nuclear.R\
+                  \n* prep_data_nuclear.R\
+                  \n* plot_data_nuclear.R\
+                  \n* gcamDiagnostics_im3_nuclear_parallel.sh",
+                  
+                  "* Each climate impact includes current, allow new nuclear, and nuclear moratorium scenarios"),
+  
+  Location     = c("[PNNL stash](https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3)",
+                   "(Constance) /pic/projects/im3/gcamusa/gcam-usa-im3/exe",
+                   "(Constance) /pic/projects/im3/gcamusa/gcam-usa-im3/exe",
+                   "(Constance) /pic/projects/im3/gcamusa/gcam-usa-im3/exe",
+                   "(Constance) /pic/projects/im3/gcamusa/diagnostics",
+                   "(Constance) /pic/projects/im3/gcamusa/diagnostics/outputs_im3_nuclear")
+)
+
+pander::pander(mytable, keep.line.breaks = TRUE, style = 'grid', justify = 'left', split.tables=Inf)
+```
+
+<br>
+
+
+## RCP4.5Cooler SSP3 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Cooler SSP3, (2) RCP4.5 Cooler SSP3 + Allow New Nuclear, and (3) RCP4.5 Cooler SSP3 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45cooler_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp45cooler_ssp3/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp45cooler_ssp3/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45cooler_ssp3/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp3/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+## RCP4.5Cooler SSP5 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Cooler SSP5, (2) RCP4.5 Cooler SSP5 + Allow New Nuclear, and (3) RCP4.5 Cooler SSP5 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45cooler_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp45cooler_ssp5/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp45cooler_ssp5/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45cooler_ssp5/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp45cooler_ssp5/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+
+## RCP4.5Hotter SSP3 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Hotter SSP3, (2) RCP4.5 Hotter SSP3 + Allow New Nuclear, and (3) RCP4.5 Hotter SSP3 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45hotter_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp45hotter_ssp3/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp45hotter_ssp3/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45hotter_ssp3/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp3/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+
+## RCP4.5Hotter SSP5 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Hotter SSP5, (2) RCP4.5 Hotter SSP5 + Allow New Nuclear, and (3) RCP4.5 Hotter SSP5 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45hotter_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp45hotter_ssp5/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp45hotter_ssp5/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp45hotter_ssp5/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp45hotter_ssp5/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+
+
+## RCP8.5Cooler SSP3 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Cooler SSP3, (2) RCP8.5 Cooler SSP3 + Allow New Nuclear, and (3) RCP8.5 Cooler SSP3 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85cooler_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp85cooler_ssp3/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp85cooler_ssp3/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85cooler_ssp3/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp3/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+## RCP8.5Cooler SSP5 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Cooler SSP5, (2) RCP8.5 Cooler SSP5 + Allow New Nuclear, and (3) RCP8.5 Cooler SSP5 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85cooler_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp85cooler_ssp5/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp85cooler_ssp5/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85cooler_ssp5/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp85cooler_ssp5/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+
+## RCP8.5Hotter SSP3 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Hotter SSP3, (2) RCP8.5 Hotter SSP3 + Allow New Nuclear, and (3) RCP8.5 Hotter SSP3 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85hotter_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp85hotter_ssp3/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp85hotter_ssp3/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85hotter_ssp3/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp3/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
+
+## RCP8.5Hotter SSP5 {.tabset}
+
+<br>
+
+
+### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Hotter SSP5, (2) RCP8.5 Hotter SSP5 + Allow New Nuclear, and (3) RCP8.5 Hotter SSP5 + Nuclear Moratorium.**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_param_all_summary_im3_nuclear.png")
+```
+
+<br>
+
+### Water
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_absolute_water_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_percent_water_im3_nuclear.png")
+```
+
+<br>
+
+### Energy
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_percent_energy_im3_nuclear.png")
+```
+
+<br>
+
+### Electricity {.tabset .tabset-pills}
+
+<br>
+
+#### Total Electricity
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png")
+```
+
+<br>
+
+#### Superpeak
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM superpeak outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_superpeak_electricity_load.png")
+```
+
+<br>
+
+### AGLU
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png")
+```
+
+<br>
+
+### Emissions
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85hotter_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs. **"}
+knitr::include_graphics("images/rcp85hotter_ssp5/compareCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputsS **"}
+knitr::include_graphics("images/rcp85hotter_ssp5/compareNonCO2global_im3_nuclear.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM emissions outputs **"}
+knitr::include_graphics("images/rcp85hotter_ssp5/compareNonCO2USA_im3_nuclear.png")
+```
+
+<br>
+
+### Nuclear Capacity {.tabset .tabset-pills}
+
+<br>
+
+#### Nuclear Capacity by States
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (absolute values).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/nuclear_cap_states.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by States (difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/nuclear_cap_states_diff.png")
+```
+
+<br>
+
+#### Nuclear Capacity by Technology
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/nuclear_cap_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity by Technology (difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/nuclear_cap_tech_diff.png")
+```
+
+<br>
+
+
+#### Nuclear Capacity for States with New Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/nuclear_cap_state_tech.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**"}
+knitr::include_graphics("images/rcp85hotter_ssp5/nuclear_cap_state_tech_diff.png")
+```
+
+<br>
+
+
 
