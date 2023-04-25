@@ -2482,3 +2482,20 @@ In addition, the following lines need to be updated accordingly in each configur
 
 `<Value name="scenarioName">rcp85hotter_ssp3_rcp85gdp_runoff</Value>`
 
+<br>
+
+<!-------------------------->
+<!-------------------------->
+# Nuclear Sensitivity
+<!-------------------------->
+<!-------------------------->
+<p align="center">![](images/divider.png)</p>
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Nuclear Sensitivity Workflow**"}
+knitr::include_graphics("images/nuclear_sensitivity_workflow.jpg")
+```
+
+<br>
+
