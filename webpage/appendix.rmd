@@ -870,12 +870,30 @@ knitr::include_graphics("images/hdcd_diagnostic_allYears_gradient_freeScale_rcp4
 
 ### GCAM SSP3 {.tabset .tabset-pills}
 
+<br>
+
 #### Summary
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) reference SSP3, (2) SSP3 with RCP8.5 Hotter, and (3) SSP3 with RCP8.5 Cooler.**"}
-knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp3.png")
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs for 5 GCMS.**"}
+knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp3_summary.png")
+```
+
+<br>
+
+#### Socioeconomics
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs.**"}
+knitr::include_graphics("images/chart_param_socioecon_im3_hdcd_ssp3_summary.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff.**"}
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_hdcd_ssp3_summary.png")
 ```
 
 <br>
@@ -1100,12 +1118,30 @@ knitr::include_graphics("images/compareNonCO2USA_im3_hdcd_ssp3_rcp85gdp.png")
 
 ### GCAM SSP5 {.tabset .tabset-pills}
 
+<br>
+
 #### Summary
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs under 3 scenarios: (1) reference SSP5, (2) SSP5 with RCP8.5 Hotter, and (3) SSP5 with RCP8.5 Cooler.**"}
-knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp5.png")
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs for 5 GCMS.**"}
+knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp5_summary.png")
+```
+
+<br>
+
+#### Socioeconomics
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs.**"}
+knitr::include_graphics("images/chart_param_socioecon_im3_hdcd_ssp5_summary.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff.**"}
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_hdcd_ssp5_summary.png")
 ```
 
 <br>
