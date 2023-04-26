@@ -13,7 +13,7 @@
 
 <title>khan_etal_2022_im3gcamusa</title>
 
-<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -37,8 +37,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -186,8 +186,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -195,9 +195,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -1493,42 +1500,84 @@ class="section level3 tabset tabset-pills">
 </div>
 <div id="gcam-ssp3" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP3</h3>
+<p><br></p>
 <div id="summary-3" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_hdcd_ssp3.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) reference SSP3, (2) SSP3 with RCP8.5 Hotter, and (3) SSP3 with RCP8.5 Cooler.**" width="100%" />
+<img src="images/chart_param_all_summary_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM outputs for 5 GCMS.**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs under 3 scenarios: (1) reference
-SSP3, (2) SSP3 with RCP8.5 Hotter, and (3) SSP3 with RCP8.5
-Cooler.</strong>
+<strong>Comparison of GCAM outputs for 5 GCMS.</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="water-3" class="section level4">
-<h4>Water</h4>
+<div id="socioeconomics-3" class="section level4">
+<h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<img src="images/chart_param_socioecon_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs.</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs % Diff.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-3" class="section level4 tabset">
+<h4 class="tabset">Water</h4>
+<p><br></p>
+<div id="rcp4.5" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM water outputs (absolute difference).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM water outputs (percent difference).</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="energy-3" class="section level4">
-<h4>Energy</h4>
+<div id="rcp8.5" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="energy-3" class="section level4 tabset">
+<h4 class="tabset">Energy</h4>
+<p><br></p>
+<div id="rcp4.5-1" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM energy outputs (absolute
 difference).</strong>
@@ -1536,18 +1585,41 @@ difference).</strong>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM energy outputs (percent difference).</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-3" class="section level4">
-<h4>Electricity</h4>
+<div id="rcp8.5-1" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="electricity-3" class="section level4 tabset">
+<h4 class="tabset">Electricity</h4>
+<p><br></p>
+<div id="rcp4.5-2" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM electricity outputs (absolute
 difference).</strong>
@@ -1555,70 +1627,234 @@ difference).</strong>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="aglu-3" class="section level4">
-<h4>AGLU</h4>
+<div id="rcp8.5-2" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-3" class="section level4 tabset">
+<h4 class="tabset">AGLU</h4>
+<p><br></p>
+<div id="rcp4.5-3" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
 </p>
 </div>
 <p><br></p>
+</div>
+<div id="rcp8.5-3" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="emission" class="section level4 tabset">
+<h4 class="tabset">Emission</h4>
+<p><br></p>
+<div id="rcp4.5-4" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_hdcd_ssp3_rcp45.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_hdcd_ssp3_rcp45.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_hdcd_ssp3_rcp45.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_hdcd_ssp3_rcp45.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-4" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_hdcd_ssp3_rcp85gdp.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_hdcd_ssp3_rcp85gdp.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_hdcd_ssp3_rcp85gdp.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_hdcd_ssp3_rcp85gdp.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+</div>
 </div>
 </div>
 <div id="gcam-ssp5" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP5</h3>
+<p><br></p>
 <div id="summary-4" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_hdcd_ssp5.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) reference SSP5, (2) SSP5 with RCP8.5 Hotter, and (3) SSP5 with RCP8.5 Cooler.**" width="100%" />
+<img src="images/chart_param_all_summary_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM outputs for 5 GCMS.**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs under 3 scenarios: (1) reference
-SSP5, (2) SSP5 with RCP8.5 Hotter, and (3) SSP5 with RCP8.5
-Cooler.</strong>
+<strong>Comparison of GCAM outputs for 5 GCMS.</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="water-4" class="section level4">
-<h4>Water</h4>
+<div id="socioeconomics-4" class="section level4">
+<h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<img src="images/chart_param_socioecon_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs.</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs % Diff.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-4" class="section level4 tabset">
+<h4 class="tabset">Water</h4>
+<p><br></p>
+<div id="rcp4.5-5" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM water outputs (absolute difference).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM water outputs (percent difference).</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="energy-4" class="section level4">
-<h4>Energy</h4>
+<div id="rcp8.5-5" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="energy-4" class="section level4 tabset">
+<h4 class="tabset">Energy</h4>
+<p><br></p>
+<div id="rcp4.5-6" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM energy outputs (absolute
 difference).</strong>
@@ -1626,18 +1862,41 @@ difference).</strong>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM energy outputs (percent difference).</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-4" class="section level4">
-<h4>Electricity</h4>
+<div id="rcp8.5-6" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="electricity-4" class="section level4 tabset">
+<h4 class="tabset">Electricity</h4>
+<p><br></p>
+<div id="rcp4.5-7" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM electricity outputs (absolute
 difference).</strong>
@@ -1645,32 +1904,154 @@ difference).</strong>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="aglu-4" class="section level4">
-<h4>AGLU</h4>
+<div id="rcp8.5-7" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-4" class="section level4 tabset">
+<h4 class="tabset">AGLU</h4>
+<p><br></p>
+<div id="rcp4.5-8" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
 </p>
 </div>
 <p><br></p>
+</div>
+<div id="rcp8.5-8" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="emission-1" class="section level4 tabset">
+<h4 class="tabset">Emission</h4>
+<p><br></p>
+<div id="rcp4.5-9" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_hdcd_ssp5_rcp45.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_hdcd_ssp5_rcp45.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_hdcd_ssp5_rcp45.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_hdcd_ssp5_rcp45.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-9" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_hdcd_ssp5_rcp85.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_hdcd_ssp5_rcp85.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_hdcd_ssp5_rcp85.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_hdcd_ssp5_rcp85.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
 <!-------------------------->
 <!-------------------------->
+</div>
 </div>
 </div>
 </div>
@@ -2217,7 +2598,7 @@ class="section level3 tabset tabset-pills">
 </div>
 <!--updated on 4/12/2022-->
 </div>
-<div id="socioeconomics-3" class="section level4">
+<div id="socioeconomics-5" class="section level4">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2239,7 +2620,7 @@ class="section level3 tabset tabset-pills">
 <div id="water-5" class="section level4 tabset">
 <h4 class="tabset">Water</h4>
 <p><br></p>
-<div id="rcp4.5" class="section level5">
+<div id="rcp4.5-10" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2257,7 +2638,7 @@ class="section level3 tabset tabset-pills">
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5" class="section level5">
+<div id="rcp8.5-10" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2279,7 +2660,7 @@ class="section level3 tabset tabset-pills">
 <div id="energy-5" class="section level4 tabset">
 <h4 class="tabset">Energy</h4>
 <p><br></p>
-<div id="rcp4.5-1" class="section level5">
+<div id="rcp4.5-11" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2297,7 +2678,7 @@ class="section level3 tabset tabset-pills">
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-1" class="section level5">
+<div id="rcp8.5-11" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2319,7 +2700,7 @@ class="section level3 tabset tabset-pills">
 <div id="electricity-5" class="section level4 tabset">
 <h4 class="tabset">Electricity</h4>
 <p><br></p>
-<div id="rcp4.5-2" class="section level5">
+<div id="rcp4.5-12" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2337,7 +2718,7 @@ class="section level3 tabset tabset-pills">
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-2" class="section level5">
+<div id="rcp8.5-12" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2466,7 +2847,7 @@ SSP3).</strong>
 <div id="corn-2" class="section level5 tabset">
 <h5 class="tabset">Corn</h5>
 <p><br></p>
-<div id="rcp4.5-3" class="section level6">
+<div id="rcp4.5-13" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2486,7 +2867,7 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-3" class="section level6">
+<div id="rcp8.5-13" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2510,7 +2891,7 @@ SSP3).</strong>
 <div id="oilcrop" class="section level5 tabset">
 <h5 class="tabset">OilCrop</h5>
 <p><br></p>
-<div id="rcp4.5-4" class="section level6">
+<div id="rcp4.5-14" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2530,7 +2911,7 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-4" class="section level6">
+<div id="rcp8.5-14" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2554,7 +2935,7 @@ SSP3).</strong>
 <div id="rice-2" class="section level5 tabset">
 <h5 class="tabset">Rice</h5>
 <p><br></p>
-<div id="rcp4.5-5" class="section level6">
+<div id="rcp4.5-15" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2574,7 +2955,7 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-5" class="section level6">
+<div id="rcp8.5-15" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2598,7 +2979,7 @@ SSP3).</strong>
 <div id="wheat-2" class="section level5 tabset">
 <h5 class="tabset">Wheat</h5>
 <p><br></p>
-<div id="rcp4.5-6" class="section level6">
+<div id="rcp4.5-16" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2618,7 +2999,7 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-6" class="section level6">
+<div id="rcp8.5-16" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2643,7 +3024,7 @@ SSP3).</strong>
 <div id="emissions-3" class="section level4 tabset">
 <h4 class="tabset">Emissions</h4>
 <p><br></p>
-<div id="rcp4.5-7" class="section level5">
+<div id="rcp4.5-17" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2680,7 +3061,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-7" class="section level5">
+<div id="rcp8.5-17" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2731,7 +3112,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <!--updated on 4/12/2022-->
 </div>
-<div id="socioeconomics-4" class="section level4">
+<div id="socioeconomics-6" class="section level4">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2753,7 +3134,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <div id="water-6" class="section level4 tabset">
 <h4 class="tabset">Water</h4>
 <p><br></p>
-<div id="rcp4.5-8" class="section level5">
+<div id="rcp4.5-18" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2771,7 +3152,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-8" class="section level5">
+<div id="rcp8.5-18" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2793,7 +3174,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <div id="energy-6" class="section level4 tabset">
 <h4 class="tabset">Energy</h4>
 <p><br></p>
-<div id="rcp4.5-9" class="section level5">
+<div id="rcp4.5-19" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2811,7 +3192,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-9" class="section level5">
+<div id="rcp8.5-19" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2833,7 +3214,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <div id="electricity-6" class="section level4 tabset">
 <h4 class="tabset">Electricity</h4>
 <p><br></p>
-<div id="rcp4.5-10" class="section level5">
+<div id="rcp4.5-20" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2851,7 +3232,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-10" class="section level5">
+<div id="rcp8.5-20" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2980,7 +3361,7 @@ ssp5).</strong>
 <div id="corn-3" class="section level5 tabset">
 <h5 class="tabset">Corn</h5>
 <p><br></p>
-<div id="rcp4.5-11" class="section level6">
+<div id="rcp4.5-21" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3000,7 +3381,7 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-11" class="section level6">
+<div id="rcp8.5-21" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3024,7 +3405,7 @@ ssp5).</strong>
 <div id="oilcrop-1" class="section level5 tabset">
 <h5 class="tabset">OilCrop</h5>
 <p><br></p>
-<div id="rcp4.5-12" class="section level6">
+<div id="rcp4.5-22" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3044,7 +3425,7 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-12" class="section level6">
+<div id="rcp8.5-22" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3068,7 +3449,7 @@ ssp5).</strong>
 <div id="rice-3" class="section level5 tabset">
 <h5 class="tabset">Rice</h5>
 <p><br></p>
-<div id="rcp4.5-13" class="section level6">
+<div id="rcp4.5-23" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3088,7 +3469,7 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-13" class="section level6">
+<div id="rcp8.5-23" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3112,7 +3493,7 @@ ssp5).</strong>
 <div id="wheat-3" class="section level5 tabset">
 <h5 class="tabset">Wheat</h5>
 <p><br></p>
-<div id="rcp4.5-14" class="section level6">
+<div id="rcp4.5-24" class="section level6">
 <h6>RCP4.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3132,7 +3513,7 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-14" class="section level6">
+<div id="rcp8.5-24" class="section level6">
 <h6>RCP8.5</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3157,7 +3538,7 @@ ssp5).</strong>
 <div id="emissions-4" class="section level4 tabset">
 <h4 class="tabset">Emissions</h4>
 <p><br></p>
-<div id="rcp4.5-15" class="section level5">
+<div id="rcp4.5-25" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3194,7 +3575,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-15" class="section level5">
+<div id="rcp8.5-25" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3609,8 +3990,8 @@ each configuration file (e.g. replace <code>rcp85hotter</code> by
 <!-------------------------->
 </div>
 </div>
-<div id="nuclear-sensitivity" class="section level1">
-<h1>Nuclear Sensitivity</h1>
+<div id="nuclear-sensitivity" class="section level1 tabset">
+<h1 class="tabset">Nuclear Sensitivity</h1>
 <!-------------------------->
 <!-------------------------->
 <p align="center">
@@ -3618,12 +3999,1749 @@ each configuration file (e.g. replace <code>rcp85hotter</code> by
 </p>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/nuclear_sensitivity_workflow.jpg" alt="**Nuclear Sensitivity Workflow.**" width="100%" />
+<img src="images/nuclear_sensitivity_workflow.jpg" alt="**Nuclear Sensitivity Workflow**" width="100%" />
 <p class="caption">
-<strong>Nuclear Sensitivity Workflow.</strong>
+<strong>Nuclear Sensitivity Workflow</strong>
 </p>
 </div>
 <p><br></p>
+<div id="table-workflow" class="section level2">
+<h2>Table Workflow</h2>
+<p><br></p>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="30%" />
+<col width="54%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create Nuclear Scenarios XML</td>
+<td><ul>
+<li>zchunk_batch_electricity_USA_xml.R</li>
+</ul></td>
+<td><a
+href="https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3">PNNL
+stash</a></td>
+</tr>
+<tr class="even">
+<td>Run GCAM-USA scenario 1: current</td>
+<td><ul>
+<li>configuration_rcp45cooler_ssp3_im3.xml</li>
+<li>configuration_rcp45cooler_ssp5_im3.xml</li>
+<li>configuration_rcp45hotter_ssp3_im3.xml</li>
+<li>configuration_rcp45hotter_ssp5_im3.xml</li>
+<li>configuration_rcp85cooler_ssp3_rcp85gdp_im3.xml</li>
+<li>configuration_rcp85cooler_ssp5_im3.xml</li>
+<li>configuration_rcp85hotter_ssp3_rcp85gdp_im3.xml</li>
+<li>configuration_rcp85hotter_ssp5_im3.xml</li>
+<li>gcam_parallel_im3_rcp45.sh</li>
+<li>gcam_parallel_im3_rcp85.sh</li>
+</ul></td>
+<td>(Constance) /pic/projects/im3/gcamusa/gcam-usa-im3/exe</td>
+</tr>
+<tr class="odd">
+<td>Run GCAM-USA scenario 2: allow new nuclear</td>
+<td><ul>
+<li>configuration_rcp45cooler_ssp3_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp45cooler_ssp5_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp45hotter_ssp3_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp45hotter_ssp5_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp85cooler_ssp3_rcp85gdp_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp85cooler_ssp5_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp85hotter_ssp3_rcp85gdp_im3_allow_new_nuc.xml</li>
+<li>configuration_rcp85hotter_ssp5_im3_allow_new_nuc.xml</li>
+<li>gcam_parallel_im3_rcp45_allow_new_nuc.sh</li>
+<li>gcam_parallel_im3_rcp85_allow_new_nuc.sh</li>
+</ul></td>
+<td>(Constance) /pic/projects/im3/gcamusa/gcam-usa-im3/exe</td>
+</tr>
+<tr class="even">
+<td>Run GCAM-USA scenario 3: nuclear moratorium</td>
+<td><ul>
+<li>configuration_rcp45cooler_ssp3_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp45cooler_ssp5_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp45hotter_ssp3_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp45hotter_ssp5_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp85cooler_ssp3_rcp85gdp_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp85cooler_ssp5_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp85hotter_ssp3_rcp85gdp_im3_nuc_moratorium.xml</li>
+<li>configuration_rcp85hotter_ssp5_im3_nuc_moratorium.xml</li>
+<li>gcam_parallel_im3_rcp45_nuc_moratorium.sh</li>
+<li>gcam_parallel_im3_rcp85_nuc_moratorium.sh</li>
+</ul></td>
+<td>(Constance) /pic/projects/im3/gcamusa/gcam-usa-im3/exe</td>
+</tr>
+<tr class="odd">
+<td>Run Diagnostics</td>
+<td><ul>
+<li>gcamDiagnostics_im3_nuclear.R</li>
+<li>prep_data_nuclear.R</li>
+<li>plot_data_nuclear.R</li>
+<li>gcamDiagnostics_im3_nuclear_parallel.sh</li>
+</ul></td>
+<td>(Constance) /pic/projects/im3/gcamusa/diagnostics</td>
+</tr>
+<tr class="even">
+<td>Diagnostics Outputs</td>
+<td><ul>
+<li>Each climate impact includes current, allow new nuclear, and nuclear
+moratorium scenarios</li>
+</ul></td>
+<td>(Constance)
+/pic/projects/im3/gcamusa/diagnostics/outputs_im3_nuclear</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="rcp4.5cooler-ssp3" class="section level2 tabset">
+<h2 class="tabset">RCP4.5Cooler SSP3</h2>
+<p><br></p>
+<div id="summary-9" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Cooler SSP3, (2) RCP4.5 Cooler SSP3 + Allow New Nuclear, and (3) RCP4.5 Cooler SSP3 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Cooler
+SSP3, (2) RCP4.5 Cooler SSP3 + Allow New Nuclear, and (3) RCP4.5 Cooler
+SSP3 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-7" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-7" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-7" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-7" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-5" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp3/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp4.5cooler-ssp5" class="section level2 tabset">
+<h2 class="tabset">RCP4.5Cooler SSP5</h2>
+<p><br></p>
+<div id="summary-10" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Cooler SSP5, (2) RCP4.5 Cooler SSP5 + Allow New Nuclear, and (3) RCP4.5 Cooler SSP5 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Cooler
+SSP5, (2) RCP4.5 Cooler SSP5 + Allow New Nuclear, and (3) RCP4.5 Cooler
+SSP5 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-8" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-8" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-8" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-1" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-1" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-8" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-6" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-1" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-1" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-1" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-1"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45cooler_ssp5/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp4.5hotter-ssp3" class="section level2 tabset">
+<h2 class="tabset">RCP4.5Hotter SSP3</h2>
+<p><br></p>
+<div id="summary-11" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Hotter SSP3, (2) RCP4.5 Hotter SSP3 + Allow New Nuclear, and (3) RCP4.5 Hotter SSP3 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Hotter
+SSP3, (2) RCP4.5 Hotter SSP3 + Allow New Nuclear, and (3) RCP4.5 Hotter
+SSP3 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-9" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-9" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-9" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-2" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-2" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-9" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-7" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-2" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-2" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-2" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-2"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp3/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp4.5hotter-ssp5" class="section level2 tabset">
+<h2 class="tabset">RCP4.5Hotter SSP5</h2>
+<p><br></p>
+<div id="summary-12" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Hotter SSP5, (2) RCP4.5 Hotter SSP5 + Allow New Nuclear, and (3) RCP4.5 Hotter SSP5 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP4.5 Hotter
+SSP5, (2) RCP4.5 Hotter SSP5 + Allow New Nuclear, and (3) RCP4.5 Hotter
+SSP5 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-10" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-10" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-10" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-3" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-3" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-10" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-8" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-3" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-3" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-3" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-3"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp45hotter_ssp5/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp8.5cooler-ssp3" class="section level2 tabset">
+<h2 class="tabset">RCP8.5Cooler SSP3</h2>
+<p><br></p>
+<div id="summary-13" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Cooler SSP3, (2) RCP8.5 Cooler SSP3 + Allow New Nuclear, and (3) RCP8.5 Cooler SSP3 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Cooler
+SSP3, (2) RCP8.5 Cooler SSP3 + Allow New Nuclear, and (3) RCP8.5 Cooler
+SSP3 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-11" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-11" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-11" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-4" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-4" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-11" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-9" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-4" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-4" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-4" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-4"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp3/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp8.5cooler-ssp5" class="section level2 tabset">
+<h2 class="tabset">RCP8.5Cooler SSP5</h2>
+<p><br></p>
+<div id="summary-14" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Cooler SSP5, (2) RCP8.5 Cooler SSP5 + Allow New Nuclear, and (3) RCP8.5 Cooler SSP5 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Cooler
+SSP5, (2) RCP8.5 Cooler SSP5 + Allow New Nuclear, and (3) RCP8.5 Cooler
+SSP5 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-12" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-12" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-12" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-5" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-5" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-12" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-10" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-5" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-5" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-5" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-5"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85cooler_ssp5/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp8.5hotter-ssp3" class="section level2 tabset">
+<h2 class="tabset">RCP8.5Hotter SSP3</h2>
+<p><br></p>
+<div id="summary-15" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Hotter SSP3, (2) RCP8.5 Hotter SSP3 + Allow New Nuclear, and (3) RCP8.5 Hotter SSP3 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Hotter
+SSP3, (2) RCP8.5 Hotter SSP3 + Allow New Nuclear, and (3) RCP8.5 Hotter
+SSP3 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-13" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-13" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-13" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-6" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-6" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-13" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-11" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-6" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-6" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-6" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-6"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp3/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="rcp8.5hotter-ssp5" class="section level2 tabset">
+<h2 class="tabset">RCP8.5Hotter SSP5</h2>
+<p><br></p>
+<div id="summary-16" class="section level3">
+<h3>Summary</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_param_all_summary_im3_nuclear.png" alt="**Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Hotter SSP5, (2) RCP8.5 Hotter SSP5 + Allow New Nuclear, and (3) RCP8.5 Hotter SSP5 + Nuclear Moratorium.**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM outputs under 3 scenarios: (1) RCP8.5 Hotter
+SSP5, (2) RCP8.5 Hotter SSP5 + Allow New Nuclear, and (3) RCP8.5 Hotter
+SSP5 + Nuclear Moratorium.</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-14" class="section level3">
+<h3>Water</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_absolute_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_percent_water_im3_nuclear.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-14" class="section level3">
+<h3>Energy</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_absolute_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_percent_energy_im3_nuclear.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="electricity-14" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Electricity</h3>
+<p><br></p>
+<div id="total-electricity-7" class="section level4">
+<h4>Total Electricity</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_absolute_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (absolute
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_percent_electricity_im3_nuclear.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-7" class="section level4">
+<h4>Superpeak</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_superpeak_electricity_load.png" alt="**Comparison of GCAM superpeak outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM superpeak outputs (percent
+difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-14" class="section level3">
+<h3>AGLU</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_absolute_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/chart_class_diff_percent_aglu_im3_nuclear.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="emissions-12" class="section level3">
+<h3>Emissions</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/compareCO2GlobalCumRCP_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/compareCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs. **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs. </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/compareNonCO2global_im3_nuclear.png" alt="**Comparison of GCAM emissions outputsS **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputsS </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/compareNonCO2USA_im3_nuclear.png" alt="**Comparison of GCAM emissions outputs **" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM emissions outputs </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-7" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Nuclear Capacity</h3>
+<p><br></p>
+<div id="nuclear-capacity-by-states-7" class="section level4">
+<h4>Nuclear Capacity by States</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/nuclear_cap_states.png" alt="**Comparison of GCAM Nuclear Capacity by States (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/nuclear_cap_states_diff.png" alt="**Comparison of GCAM Nuclear Capacity by States (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by States
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-by-technology-7" class="section level4">
+<h4>Nuclear Capacity by Technology</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/nuclear_cap_tech.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology (absolute
+values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/nuclear_cap_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity by Technology (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity by Technology
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear-capacity-for-states-with-new-nuclear-7"
+class="section level4">
+<h4>Nuclear Capacity for States with New Nuclear</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/nuclear_cap_state_tech.png" alt="**Comparison of GCAM Nuclear Capacity for Individual State (absolute values).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(absolute values).</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/rcp85hotter_ssp5/nuclear_cap_state_tech_diff.png" alt="**Comparison of GCAM Nuclear Capacity  for Individual State (difference).**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM Nuclear Capacity for Individual State
+(difference).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
 </div>
 
 
