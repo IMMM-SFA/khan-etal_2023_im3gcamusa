@@ -880,73 +880,222 @@ knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp3.png")
 
 <br>
 
-#### Water
+#### Water {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-#### Energy
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+#### Energy {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-#### Electricity
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+#### Electricity {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-#### AGLU
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+#### AGLU {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp3.png")
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+#### Emission {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_hdcd_ssp3_rcp45.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_hdcd_ssp3_rcp85gdp.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
 
 
 ### GCAM SSP5 {.tabset .tabset-pills}
@@ -961,70 +1110,218 @@ knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp5.png")
 
 <br>
 
-#### Water
+#### Water {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-#### Energy
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+#### Energy {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-#### Electricity
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+#### Electricity {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-#### AGLU
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+#### AGLU {.tabset}
+
+<br>
+
+##### RCP4.5
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
-knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
-knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5.png")
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+#### Emission {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_hdcd_ssp5_rcp45.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_hdcd_ssp5_rcp85.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_hdcd_ssp5_rcp85.png")
 ```
 
 <br>
