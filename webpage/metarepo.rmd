@@ -38,6 +38,7 @@ data.frame(
                   "gcam_v5p3_im3",
                  "gcamextractor",
                  "gcamextractor",
+                 "gcamextractor",
                  "gcamextractor"),
     Scenario = c("rcp85cooler_ssp3",
                  "rcp85cooler_ssp5",
@@ -47,6 +48,7 @@ data.frame(
                  "rcp45cooler_ssp5",
                  "rcp45hotter_ssp3",
                  "rcp45hotter_ssp5",
+                 "all",
                  "all",
                  "all",
                  "all"),
@@ -59,6 +61,7 @@ data.frame(
                   "gcamextractor",
                   "gcamextractor",
                   "n/a",
+                  "tell",
                   "cerf",
                   "go"),
     Location = c("/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp85cooler_ssp3_rcp85gdp",
@@ -70,6 +73,7 @@ data.frame(
                  "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp45hotter_ssp3",
                  "/pic/projects/im3/gcamusa/gcam-usa-im3/output/database_rcp45hotter_ssp5",
                  "/pic/projects/im3/gcamusa/diagnostics/outputs_im3",
+                 "/pic/projects/im3/gcamusa/diagnostics/outputs_im3/gcamDataTable.csv",
                  "/pic/projects/im3/gcamusa/diagnostics/outputs_CERF/dataGCAM_cerf.csv",
                  "/pic/projects/im3/gcamusa/diagnostics/outputs_GO/dataGCAM_go.csv")
     ) %>% 
