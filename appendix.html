@@ -13,7 +13,7 @@
 
 <title>khan_etal_2022_im3gcamusa</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -37,8 +37,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -149,11 +149,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -182,8 +186,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -191,16 +195,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -1038,16 +1035,16 @@ RCP8.5 hotter and RCP8.5 cooler</strong>
 </div>
 </div>
 </div>
-<div id="gcam-rcp85hotter_ssp3_runoff"
-class="section level3 tabset tabset-pills">
-<h3 class="tabset tabset-pills">GCAM rcp85hotter_ssp3_runoff</h3>
+<div id="gcam-ssp3" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM SSP3</h3>
+<p><br></p>
 <div id="summary-2" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_runoff.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<img src="images/chart_param_all_summary_im3_runoff_ssp3_summary.png" alt="**Comparison of GCAM global agyield outputs**" width="150%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+<strong>Comparison of GCAM global agyield outputs</strong>
 </p>
 </div>
 <!--updated on 4/12/2022-->
@@ -1056,7 +1053,7 @@ class="section level3 tabset tabset-pills">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_socioecon_im3_runoff.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
+<img src="images/chart_param_socioecon_im3_runoff_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM socioeconomic outputs</strong>
 </p>
@@ -1064,89 +1061,275 @@ class="section level3 tabset tabset-pills">
 <!--updated on 4/12/2022-->
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_diff_percent_socioecon_im3_runoff.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
+<img src="images/chart_param_diff_percent_socioecon_im3_runoff_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
 <p class="caption">
 <strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="water-2" class="section level4">
-<h4>Water</h4>
+<div id="water-2" class="section level4 tabset">
+<h4 class="tabset">Water</h4>
+<p><br></p>
+<div id="rcp4.5" class="section level5">
+<h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_runoff.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<img src="images/chart_class_water_im3_runoff_ssp3_rcp45.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM water outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_runoff.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<img src="images/chart_class_diff_percent_water_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM water outputs % Diff </strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="energy-2" class="section level4">
-<h4>Energy</h4>
+<div id="rcp8.5" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_runoff.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<img src="images/chart_class_water_im3_runoff_ssp3_rcp85gdp.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="energy-2" class="section level4 tabset">
+<h4 class="tabset">Energy</h4>
+<p><br></p>
+<div id="rcp4.5-1" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_energy_im3_runoff_ssp3_rcp45.png" alt="**Absolute GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-1" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_energy_im3_runoff_ssp3_rcp85gdp.png" alt="**Absolute GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="electricity-2" class="section level4 tabset">
+<h4 class="tabset">Electricity</h4>
+<p><br></p>
+<div id="rcp4.5-2" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_runoff_ssp3_rcp45.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM electricity outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_runoff.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<img src="images/chart_class_diff_percent_electricity_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM electricity outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-2" class="section level4">
-<h4>Electricity</h4>
+<div id="rcp8.5-2" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_runoff.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<img src="images/chart_class_electricity_im3_runoff_ssp3_rcp85gdp.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM electricity outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_runoff.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<img src="images/chart_class_diff_percent_electricity_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM electricity outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="aglu-2" class="section level4">
-<h4>AGLU</h4>
+</div>
+<div id="aglu-2" class="section level4 tabset">
+<h4 class="tabset">AGLU</h4>
+<p><br></p>
+<div id="rcp4.5-3" class="section level5">
+<h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_runoff.png" alt="**Comparison of GCAM AGLU outputs for 5 GCMS **" width="200%" />
+<img src="images/chart_class_aglu_im3_runoff_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs for 5 GCMS </strong>
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
 </p>
 </div>
 <p><br></p>
 <div class="img_large">
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_runoff.png" alt="**Comparison of GCAM AGLU outputs**" width="200%" />
+<img src="images/chart_class_diff_percent_aglu_im3_runoff_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs</strong>
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
 </p>
 </div>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-2" class="section level4">
-<h4>Emissions</h4>
+<div id="rcp8.5-3" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_runoff_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_runoff_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="emissions-2" class="section level4 tabset">
+<h4 class="tabset">Emissions</h4>
+<p><br></p>
+<div id="rcp4.5-4" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_runoff_ssp3_rcp45.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_runoff_ssp3_rcp45.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_runoff_ssp3_rcp45.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_runoff_ssp3_rcp45.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-4" class="section level5">
+<h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/compareCO2GlobalCumRCP_im3_runoff_ssp3_rcp85gdp.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
@@ -1158,7 +1341,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <!-- updated on 4/12/22 -->
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/compareCO2USA_im3_runoff.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<img src="images/compareCO2USA_im3_runoff_ssp3_rcp85gdp.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
 <p class="caption">
 <strong>Annual US carbon emissions under different combinations of
 SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
@@ -1166,7 +1349,7 @@ SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/compareNonCO2global_im3_runoff.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<img src="images/compareNonCO2global_im3_runoff_ssp3_rcp85gdp.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
 <p class="caption">
 <strong>Annual global non-CO<sub>2</sub> emissions under different
 combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
@@ -1174,7 +1357,339 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/compareNonCO2USA_im3_runoff.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<img src="images/compareNonCO2USA_im3_runoff_ssp3_rcp85gdp.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="gcam-ssp5" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">GCAM SSP5</h3>
+<p><br></p>
+<div id="summary-3" class="section level4">
+<h4>Summary</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_all_summary_im3_runoff_ssp5_summary.png" alt="**Comparison of GCAM global agyield outputs**" width="150%" />
+<p class="caption">
+<strong>Comparison of GCAM global agyield outputs</strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+</div>
+<div id="socioeconomics-3" class="section level4">
+<h4>Socioeconomics</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_socioecon_im3_runoff_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs</strong>
+</p>
+</div>
+<!--updated on 4/12/2022-->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_param_diff_percent_socioecon_im3_runoff_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
+<p class="caption">
+<strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="water-3" class="section level4 tabset">
+<h4 class="tabset">Water</h4>
+<p><br></p>
+<div id="rcp4.5-5" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_water_im3_runoff_ssp5_rcp45.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-5" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_water_im3_runoff_ssp5_rcp85.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_water_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="energy-3" class="section level4 tabset">
+<h4 class="tabset">Energy</h4>
+<p><br></p>
+<div id="rcp4.5-6" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_energy_im3_runoff_ssp5_rcp45.png" alt="**Absolute GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-6" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_energy_im3_runoff_ssp5_rcp85.png" alt="**Absolute GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="electricity-3" class="section level4 tabset">
+<h4 class="tabset">Electricity</h4>
+<p><br></p>
+<div id="rcp4.5-7" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_runoff_ssp5_rcp45.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-7" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_runoff_ssp5_rcp85.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_electricity_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="aglu-3" class="section level4 tabset">
+<h4 class="tabset">AGLU</h4>
+<p><br></p>
+<div id="rcp4.5-8" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_runoff_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_runoff_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-8" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_runoff_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_aglu_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
+</p>
+</div>
+<p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_runoff_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="emissions-3" class="section level4 tabset">
+<h4 class="tabset">Emissions</h4>
+<p><br></p>
+<div id="rcp4.5-9" class="section level5">
+<h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_runoff_ssp5_rcp45.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_runoff_ssp5_rcp45.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_runoff_ssp5_rcp45.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_runoff_ssp5_rcp45.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-9" class="section level5">
+<h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2GlobalCumRCP_im3_runoff_ssp5_rcp85.png" alt="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Cumulative global carbon emission pathways under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<!-- updated on 4/12/22 -->
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareCO2USA_im3_runoff_ssp5_rcp85.png" alt="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual US carbon emissions under different combinations of
+SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2global_im3_runoff_ssp5_rcp85.png" alt="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
+<p class="caption">
+<strong>Annual global non-CO<sub>2</sub> emissions under different
+combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/compareNonCO2USA_im3_runoff_ssp5_rcp85.png" alt="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **" width="100%" />
 <p class="caption">
 <strong>Annual US non-CO<sub>2</sub> emissions under different
 combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
@@ -1182,6 +1697,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <!-------------------------->
 <!-------------------------->
+</div>
 </div>
 </div>
 </div>
@@ -1494,208 +2010,263 @@ class="section level3 tabset tabset-pills">
 <p><br></p>
 </div>
 </div>
-<div id="gcam-ssp3" class="section level3 tabset tabset-pills">
+<div id="gcam-ssp3-1" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP3</h3>
 <p><br></p>
-<div id="summary-3" class="section level4">
+<div id="summary-4" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM outputs for 5 GCMS.**" width="100%" />
+<img src="images/chart_param_all_summary_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM global agyield outputs**" width="150%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs for 5 GCMS.</strong>
+<strong>Comparison of GCAM global agyield outputs</strong>
 </p>
 </div>
-<p><br></p>
+<!--updated on 4/12/2022-->
 </div>
-<div id="socioeconomics-3" class="section level4">
+<div id="socioeconomics-4" class="section level4">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_socioecon_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs.**" width="100%" />
+<img src="images/chart_param_socioecon_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM socioeconomic outputs.</strong>
+<strong>Comparison of GCAM socioeconomic outputs</strong>
 </p>
 </div>
+<!--updated on 4/12/2022-->
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_diff_percent_socioecon_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff.**" width="100%" />
+<img src="images/chart_param_diff_percent_socioecon_im3_hdcd_ssp3_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM socioeconomic outputs % Diff.</strong>
+<strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="water-3" class="section level4 tabset">
+<div id="water-4" class="section level4 tabset">
 <h4 class="tabset">Water</h4>
 <p><br></p>
-<div id="rcp4.5" class="section level5">
+<div id="rcp4.5-10" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_water_im3_hdcd_ssp3_rcp45.png" alt="**Absolute GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+<strong>Absolute GCAM water outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (percent difference).</strong>
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5" class="section level5">
+<div id="rcp8.5-10" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Absolute GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+<strong>Absolute GCAM water outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (percent difference).</strong>
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="energy-3" class="section level4 tabset">
+<div id="energy-4" class="section level4 tabset">
 <h4 class="tabset">Energy</h4>
 <p><br></p>
-<div id="rcp4.5-1" class="section level5">
+<div id="rcp4.5-11" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_energy_im3_hdcd_ssp3_rcp45.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-1" class="section level5">
+<div id="rcp8.5-11" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="electricity-3" class="section level4 tabset">
+<div id="electricity-4" class="section level4 tabset">
 <h4 class="tabset">Electricity</h4>
 <p><br></p>
-<div id="rcp4.5-2" class="section level5">
+<div id="rcp4.5-12" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM electricity outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (percent
-difference).</strong>
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-2" class="section level5">
+<div id="rcp8.5-12" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM electricity outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (percent
-difference).</strong>
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-3" class="section level4 tabset">
+<div id="aglu-4" class="section level4 tabset">
 <h4 class="tabset">AGLU</h4>
 <p><br></p>
-<div id="rcp4.5-3" class="section level5">
+<div id="rcp4.5-13" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+<strong>Absolute GCAM AGLU outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
 </p>
 </div>
 <p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
 </div>
-<div id="rcp8.5-3" class="section level5">
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-13" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+<strong>Absolute GCAM AGLU outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
 </p>
 </div>
 <p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
 </div>
 </div>
-<div id="emission" class="section level4 tabset">
-<h4 class="tabset">Emission</h4>
 <p><br></p>
-<div id="rcp4.5-4" class="section level5">
+</div>
+</div>
+<div id="emissions-4" class="section level4 tabset">
+<h4 class="tabset">Emissions</h4>
+<p><br></p>
+<div id="rcp4.5-14" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -1732,7 +2303,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-4" class="section level5">
+<div id="rcp8.5-14" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -1771,208 +2342,263 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 </div>
 </div>
-<div id="gcam-ssp5" class="section level3 tabset tabset-pills">
+<div id="gcam-ssp5-1" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP5</h3>
 <p><br></p>
-<div id="summary-4" class="section level4">
+<div id="summary-5" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM outputs for 5 GCMS.**" width="100%" />
+<img src="images/chart_param_all_summary_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM global agyield outputs**" width="150%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs for 5 GCMS.</strong>
+<strong>Comparison of GCAM global agyield outputs</strong>
 </p>
 </div>
-<p><br></p>
+<!--updated on 4/12/2022-->
 </div>
-<div id="socioeconomics-4" class="section level4">
+<div id="socioeconomics-5" class="section level4">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_socioecon_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs.**" width="100%" />
+<img src="images/chart_param_socioecon_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM socioeconomic outputs.</strong>
+<strong>Comparison of GCAM socioeconomic outputs</strong>
 </p>
 </div>
+<!--updated on 4/12/2022-->
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_diff_percent_socioecon_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff.**" width="100%" />
+<img src="images/chart_param_diff_percent_socioecon_im3_hdcd_ssp5_summary.png" alt="**Comparison of GCAM socioeconomic outputs % Diff**" width="100%" />
 <p class="caption">
-<strong>Comparison of GCAM socioeconomic outputs % Diff.</strong>
+<strong>Comparison of GCAM socioeconomic outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="water-4" class="section level4 tabset">
+<div id="water-5" class="section level4 tabset">
 <h4 class="tabset">Water</h4>
 <p><br></p>
-<div id="rcp4.5-5" class="section level5">
+<div id="rcp4.5-15" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_water_im3_hdcd_ssp5_rcp45.png" alt="**Absolute GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+<strong>Absolute GCAM water outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (percent difference).</strong>
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-5" class="section level5">
+<div id="rcp8.5-15" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_water_im3_hdcd_ssp5_rcp85.png" alt="**Absolute GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (absolute difference).</strong>
+<strong>Absolute GCAM water outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM water outputs (percent difference).</strong>
+<strong>Comparison of GCAM water outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs % Diff **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM water outputs % Diff </strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="energy-4" class="section level4 tabset">
+<div id="energy-5" class="section level4 tabset">
 <h4 class="tabset">Energy</h4>
 <p><br></p>
-<div id="rcp4.5-6" class="section level5">
+<div id="rcp4.5-16" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_energy_im3_hdcd_ssp5_rcp45.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-6" class="section level5">
+<div id="rcp8.5-16" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_energy_im3_hdcd_ssp5_rcp85.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM energy outputs (percent difference).</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="electricity-4" class="section level4 tabset">
+<div id="electricity-5" class="section level4 tabset">
 <h4 class="tabset">Electricity</h4>
 <p><br></p>
-<div id="rcp4.5-7" class="section level5">
+<div id="rcp4.5-17" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM electricity outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (percent
-difference).</strong>
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-7" class="section level5">
+<div id="rcp8.5-17" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (absolute
-difference).</strong>
+<strong>Absolute GCAM electricity outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs (percent
-difference).</strong>
+<strong>Comparison of GCAM electricity outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM electricity outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-4" class="section level4 tabset">
+<div id="aglu-5" class="section level4 tabset">
 <h4 class="tabset">AGLU</h4>
 <p><br></p>
-<div id="rcp4.5-8" class="section level5">
+<div id="rcp4.5-18" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+<strong>Absolute GCAM AGLU outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
 </p>
 </div>
 <p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
 </div>
-<div id="rcp8.5-8" class="section level5">
+</div>
+<p><br></p>
+</div>
+<div id="rcp8.5-18" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs (absolute difference).**" width="100%" />
+<img src="images/chart_class_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (absolute difference).</strong>
+<strong>Absolute GCAM AGLU outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs (percent difference).**" width="100%" />
+<img src="images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM AGLU outputs (percent difference).</strong>
+<strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
 </p>
 </div>
 <p><br></p>
+<div class="img_large">
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - percent difference**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM AGLU outputs - percent difference</strong>
+</p>
 </div>
 </div>
-<div id="emission-1" class="section level4 tabset">
-<h4 class="tabset">Emission</h4>
 <p><br></p>
-<div id="rcp4.5-9" class="section level5">
+</div>
+</div>
+<div id="emissions-5" class="section level4 tabset">
+<h4 class="tabset">Emissions</h4>
+<p><br></p>
+<div id="rcp4.5-19" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2009,7 +2635,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-9" class="section level5">
+<div id="rcp8.5-19" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2581,20 +3207,20 @@ class="section level3 tabset tabset-pills">
 </div>
 </div>
 </div>
-<div id="gcam-ssp3-1" class="section level3 tabset tabset-pills">
+<div id="gcam-ssp3-2" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP3</h3>
-<div id="summary-5" class="section level4">
+<div id="summary-6" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_agyields_ssp3_summary.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<img src="images/chart_param_all_summary_im3_agyields_ssp3_summary.png" alt="**Comparison of GCAM global agyield outputs**" width="150%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+<strong>Comparison of GCAM global agyield outputs</strong>
 </p>
 </div>
 <!--updated on 4/12/2022-->
 </div>
-<div id="socioeconomics-5" class="section level4">
+<div id="socioeconomics-6" class="section level4">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -2613,11 +3239,18 @@ class="section level3 tabset tabset-pills">
 </div>
 <p><br></p>
 </div>
-<div id="water-5" class="section level4 tabset">
+<div id="water-6" class="section level4 tabset">
 <h4 class="tabset">Water</h4>
 <p><br></p>
-<div id="rcp4.5-10" class="section level5">
+<div id="rcp4.5-20" class="section level5">
 <h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_water_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_water_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM water outputs**" width="200%" />
@@ -2634,8 +3267,15 @@ class="section level3 tabset tabset-pills">
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-10" class="section level5">
+<div id="rcp8.5-20" class="section level5">
 <h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_water_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_water_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM water outputs**" width="200%" />
@@ -2653,51 +3293,72 @@ class="section level3 tabset tabset-pills">
 <p><br></p>
 </div>
 </div>
-<div id="energy-5" class="section level4 tabset">
+<div id="energy-6" class="section level4 tabset">
 <h4 class="tabset">Energy</h4>
 <p><br></p>
-<div id="rcp4.5-11" class="section level5">
+<div id="rcp4.5-21" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<img src="images/chart_class_energy_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs % Diff</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-11" class="section level5">
+<div id="rcp8.5-21" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<img src="images/chart_class_energy_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs % Diff</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="electricity-5" class="section level4 tabset">
+<div id="electricity-6" class="section level4 tabset">
 <h4 class="tabset">Electricity</h4>
 <p><br></p>
-<div id="rcp4.5-12" class="section level5">
+<div id="rcp4.5-22" class="section level5">
 <h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_electricity_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
@@ -2714,8 +3375,15 @@ class="section level3 tabset tabset-pills">
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-12" class="section level5">
+<div id="rcp8.5-22" class="section level5">
 <h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_electricity_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
@@ -2733,14 +3401,21 @@ class="section level3 tabset tabset-pills">
 <p><br></p>
 </div>
 </div>
-<div id="aglu-5" class="section level4 tabset">
+<div id="aglu-6" class="section level4 tabset">
 <h4 class="tabset">AGLU</h4>
 <p><br></p>
-<div id="summary-6" class="section level5 tabset">
+<div id="summary-7" class="section level5 tabset">
 <h5 class="tabset">Summary</h5>
 <p><br></p>
 <div id="rcp4.5-charts" class="section level6">
 <h6>RCP4.5 Charts</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2763,6 +3438,13 @@ class="section level3 tabset tabset-pills">
 <h6>RCP8.5 Charts</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
@@ -2783,28 +3465,26 @@ class="section level3 tabset tabset-pills">
 <h6>RCP4.5 Maps</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp3_rcp45.png" alt="**Comparison of agriculture production for RCP4.5 scenarios.**" width="200%" />
 <p class="caption">
-<strong>Comparison of agriculture production for 4 climate and
-socioeconomic scenarios.</strong>
+<strong>Comparison of agriculture production for RCP4.5
+scenarios.</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3.png" alt="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3_rcp45.png" alt="**Absolute difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP3).**" width="200%" />
 <p class="caption">
-<strong>Absolute difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-SSP3).</strong>
+<strong>Absolute difference of agriculture production from RCP4.5 to
+Reference scenario (RCP4.5 - SSP3).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png" alt="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3_rcp45.png" alt="**Percent difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP3).**" width="200%" />
 <p class="caption">
-<strong>Percent difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-SSP3).</strong>
+<strong>Percent difference of agriculture production from RCP4.5 to
+Reference scenario (RCP4.5 - SSP3).</strong>
 </p>
 </div>
 <p><br></p>
@@ -2813,28 +3493,26 @@ SSP3).</strong>
 <h6>RCP8.5 Maps</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of agriculture production for RCP8.5 scenarios.**" width="200%" />
 <p class="caption">
-<strong>Comparison of agriculture production for 4 climate and
-socioeconomic scenarios.</strong>
+<strong>Comparison of agriculture production for RCP8.5
+scenarios.</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3.png" alt="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3_rcp85gdp.png" alt="**Absolute difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP3).**" width="200%" />
 <p class="caption">
-<strong>Absolute difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-SSP3).</strong>
+<strong>Absolute difference of agriculture production from RCP8.5 to
+Reference scenario (RCP8.5 - SSP3).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png" alt="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3_rcp85gdp.png" alt="**Percent difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP3).**" width="200%" />
 <p class="caption">
-<strong>Percent difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-SSP3).</strong>
+<strong>Percent difference of agriculture production from RCP8.5 to
+Reference scenario (RCP8.5 - SSP3).</strong>
 </p>
 </div>
 <p><br></p>
@@ -2843,8 +3521,15 @@ SSP3).</strong>
 <div id="corn-2" class="section level5 tabset">
 <h5 class="tabset">Corn</h5>
 <p><br></p>
-<div id="rcp4.5-13" class="section level6">
+<div id="rcp4.5-23" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_corn_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2863,8 +3548,15 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-13" class="section level6">
+<div id="rcp8.5-23" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_corn_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2887,8 +3579,15 @@ SSP3).</strong>
 <div id="oilcrop" class="section level5 tabset">
 <h5 class="tabset">OilCrop</h5>
 <p><br></p>
-<div id="rcp4.5-14" class="section level6">
+<div id="rcp4.5-24" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_oilcrop_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2907,8 +3606,15 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-14" class="section level6">
+<div id="rcp8.5-24" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_oilcrop_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2931,8 +3637,15 @@ SSP3).</strong>
 <div id="rice-2" class="section level5 tabset">
 <h5 class="tabset">Rice</h5>
 <p><br></p>
-<div id="rcp4.5-15" class="section level6">
+<div id="rcp4.5-25" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_rice_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2951,8 +3664,15 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-15" class="section level6">
+<div id="rcp8.5-25" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_rice_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2975,8 +3695,15 @@ SSP3).</strong>
 <div id="wheat-2" class="section level5 tabset">
 <h5 class="tabset">Wheat</h5>
 <p><br></p>
-<div id="rcp4.5-16" class="section level6">
+<div id="rcp4.5-26" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_wheat_im3_agyields_ssp3_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp3_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -2995,8 +3722,15 @@ SSP3).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-16" class="section level6">
+<div id="rcp8.5-26" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_wheat_im3_agyields_ssp3_rcp85gdp.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp3_rcp85gdp.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3017,10 +3751,10 @@ SSP3).</strong>
 </div>
 </div>
 </div>
-<div id="emissions-3" class="section level4 tabset">
+<div id="emissions-6" class="section level4 tabset">
 <h4 class="tabset">Emissions</h4>
 <p><br></p>
-<div id="rcp4.5-17" class="section level5">
+<div id="rcp4.5-27" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3057,7 +3791,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-17" class="section level5">
+<div id="rcp8.5-27" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3095,20 +3829,20 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 </div>
 </div>
-<div id="gcam-ssp5-1" class="section level3 tabset tabset-pills">
+<div id="gcam-ssp5-2" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">GCAM SSP5</h3>
-<div id="summary-7" class="section level4">
+<div id="summary-8" class="section level4">
 <h4>Summary</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_param_all_summary_im3_agyields_ssp5_summary.png" alt="**Comparison of GCAM outputs global runoff for 5 GCMS **" width="150%" />
+<img src="images/chart_param_all_summary_im3_agyields_ssp5_summary.png" alt="**Comparison of GCAM global agyield outputs**" width="150%" />
 <p class="caption">
-<strong>Comparison of GCAM outputs global runoff for 5 GCMS </strong>
+<strong>Comparison of GCAM global agyield outputs</strong>
 </p>
 </div>
 <!--updated on 4/12/2022-->
 </div>
-<div id="socioeconomics-6" class="section level4">
+<div id="socioeconomics-7" class="section level4">
 <h4>Socioeconomics</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3127,11 +3861,18 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-6" class="section level4 tabset">
+<div id="water-7" class="section level4 tabset">
 <h4 class="tabset">Water</h4>
 <p><br></p>
-<div id="rcp4.5-18" class="section level5">
+<div id="rcp4.5-28" class="section level5">
 <h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_water_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_water_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM water outputs**" width="200%" />
@@ -3148,8 +3889,15 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-18" class="section level5">
+<div id="rcp8.5-28" class="section level5">
 <h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_water_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM water outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM water outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_water_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM water outputs**" width="200%" />
@@ -3167,51 +3915,72 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <p><br></p>
 </div>
 </div>
-<div id="energy-6" class="section level4 tabset">
+<div id="energy-7" class="section level4 tabset">
 <h4 class="tabset">Energy</h4>
 <p><br></p>
-<div id="rcp4.5-19" class="section level5">
+<div id="rcp4.5-29" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<img src="images/chart_class_energy_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs % Diff</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-19" class="section level5">
+<div id="rcp8.5-29" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
+<img src="images/chart_class_energy_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs</strong>
+<strong>Absolute GCAM energy outputs</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs % Diff**" width="200%" />
+<img src="images/chart_class_diff_absolute_energy_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs**" width="200%" />
 <p class="caption">
-<strong>Comparison of GCAM electricity outputs % Diff</strong>
+<strong>Comparison of GCAM energy outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM energy outputs % Diff**" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs % Diff</strong>
 </p>
 </div>
 <p><br></p>
 </div>
 </div>
-<div id="electricity-6" class="section level4 tabset">
+<div id="electricity-7" class="section level4 tabset">
 <h4 class="tabset">Electricity</h4>
 <p><br></p>
-<div id="rcp4.5-20" class="section level5">
+<div id="rcp4.5-30" class="section level5">
 <h5>RCP4.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_electricity_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
@@ -3228,8 +3997,15 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-20" class="section level5">
+<div id="rcp8.5-30" class="section level5">
 <h5>RCP8.5</h5>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_electricity_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM electricity outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM electricity outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_electricity_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM electricity outputs**" width="200%" />
@@ -3247,14 +4023,21 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-6" class="section level4 tabset">
+<div id="aglu-7" class="section level4 tabset">
 <h4 class="tabset">AGLU</h4>
 <p><br></p>
-<div id="summary-8" class="section level5 tabset">
+<div id="summary-9" class="section level5 tabset">
 <h5 class="tabset">Summary</h5>
 <p><br></p>
 <div id="rcp4.5-charts-1" class="section level6">
 <h6>RCP4.5 Charts</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3277,6 +4060,13 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <h6>RCP8.5 Charts</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
 <p class="caption">
 <strong>Comparison of GCAM AGLU outputs - absolute difference</strong>
@@ -3297,28 +4087,26 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 <h6>RCP4.5 Maps</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp5_rcp45.png" alt="**Comparison of agriculture production for RCP4.5 scenarios.**" width="200%" />
 <p class="caption">
-<strong>Comparison of agriculture production for 4 climate and
-socioeconomic scenarios.</strong>
+<strong>Comparison of agriculture production for RCP4.5
+scenarios.</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5.png" alt="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5_rcp45.png" alt="**Absolute difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP5).**" width="200%" />
 <p class="caption">
-<strong>Absolute difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-ssp5).</strong>
+<strong>Absolute difference of agriculture production from RCP4.5 to
+Reference scenario (RCP4.5 - SSP5).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png" alt="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5_rcp45.png" alt="**Percent difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP5.**" width="200%" />
 <p class="caption">
-<strong>Percent difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-ssp5).</strong>
+<strong>Percent difference of agriculture production from RCP4.5 to
+Reference scenario (RCP4.5 - SSP5.</strong>
 </p>
 </div>
 <p><br></p>
@@ -3327,28 +4115,26 @@ ssp5).</strong>
 <h6>RCP8.5 Maps</h6>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png" alt="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANSim3_agyields_ssp5_rcp85.png" alt="**Comparison of agriculture production for RCP8.5 scenarios.**" width="200%" />
 <p class="caption">
-<strong>Comparison of agriculture production for 4 climate and
-socioeconomic scenarios.</strong>
+<strong>Comparison of agriculture production for RCP8.5
+scenarios.</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5.png" alt="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5_rcp85.png" alt="**Absolute difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP5).**" width="200%" />
 <p class="caption">
-<strong>Absolute difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-ssp5).</strong>
+<strong>Absolute difference of agriculture production from RCP8.5 to
+Reference scenario (RCP8.5 - SSP5).</strong>
 </p>
 </div>
 <p><br></p>
 <div class="figure" style="text-align: center">
-<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png" alt="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**" width="200%" />
+<img src="images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5_rcp85.png" alt="**Percent difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP5).**" width="200%" />
 <p class="caption">
-<strong>Percent difference of agriculture production from 3 climate and
-socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
-ssp5).</strong>
+<strong>Percent difference of agriculture production from RCP8.5 to
+Reference scenario (RCP8.5 - SSP5).</strong>
 </p>
 </div>
 <p><br></p>
@@ -3357,8 +4143,15 @@ ssp5).</strong>
 <div id="corn-3" class="section level5 tabset">
 <h5 class="tabset">Corn</h5>
 <p><br></p>
-<div id="rcp4.5-21" class="section level6">
+<div id="rcp4.5-31" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_corn_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3377,8 +4170,15 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-21" class="section level6">
+<div id="rcp8.5-31" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_corn_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_corn_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3401,8 +4201,15 @@ ssp5).</strong>
 <div id="oilcrop-1" class="section level5 tabset">
 <h5 class="tabset">OilCrop</h5>
 <p><br></p>
-<div id="rcp4.5-22" class="section level6">
+<div id="rcp4.5-32" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_oilcrop_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3421,8 +4228,15 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-22" class="section level6">
+<div id="rcp8.5-32" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_oilcrop_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3445,8 +4259,15 @@ ssp5).</strong>
 <div id="rice-3" class="section level5 tabset">
 <h5 class="tabset">Rice</h5>
 <p><br></p>
-<div id="rcp4.5-23" class="section level6">
+<div id="rcp4.5-33" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_rice_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3465,8 +4286,15 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-23" class="section level6">
+<div id="rcp8.5-33" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_rice_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3489,8 +4317,15 @@ ssp5).</strong>
 <div id="wheat-3" class="section level5 tabset">
 <h5 class="tabset">Wheat</h5>
 <p><br></p>
-<div id="rcp4.5-24" class="section level6">
+<div id="rcp4.5-34" class="section level6">
 <h6>RCP4.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_wheat_im3_agyields_ssp5_rcp45.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp5_rcp45.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3509,8 +4344,15 @@ ssp5).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-24" class="section level6">
+<div id="rcp8.5-34" class="section level6">
 <h6>RCP8.5</h6>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_aglu_wheat_im3_agyields_ssp5_rcp85.png" alt="**Absolute GCAM AGLU outputs**" width="200%" />
+<p class="caption">
+<strong>Absolute GCAM AGLU outputs</strong>
+</p>
+</div>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp5_rcp85.png" alt="**Comparison of GCAM AGLU outputs - absolute difference**" width="200%" />
@@ -3531,10 +4373,10 @@ ssp5).</strong>
 </div>
 </div>
 </div>
-<div id="emissions-4" class="section level4 tabset">
+<div id="emissions-7" class="section level4 tabset">
 <h4 class="tabset">Emissions</h4>
 <p><br></p>
-<div id="rcp4.5-25" class="section level5">
+<div id="rcp4.5-35" class="section level5">
 <h5>RCP4.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -3571,7 +4413,7 @@ combinations of SSP3/SSP5 and RCP4.5/RCP8.5 </strong>
 </div>
 <p><br></p>
 </div>
-<div id="rcp8.5-25" class="section level5">
+<div id="rcp8.5-35" class="section level5">
 <h5>RCP8.5</h5>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4101,7 +4943,7 @@ moratorium scenarios</li>
 <div id="rcp4.5cooler-ssp3" class="section level2 tabset">
 <h2 class="tabset">RCP4.5Cooler SSP3</h2>
 <p><br></p>
-<div id="summary-9" class="section level3">
+<div id="summary-10" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4114,7 +4956,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-7" class="section level3">
+<div id="water-8" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4132,7 +4974,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-7" class="section level3">
+<div id="energy-8" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4151,7 +4993,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-7" class="section level3 tabset tabset-pills">
+<div id="electricity-8" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity" class="section level4">
@@ -4187,7 +5029,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-7" class="section level3">
+<div id="aglu-8" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4205,7 +5047,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-5" class="section level3">
+<div id="emissions-8" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4306,7 +5148,7 @@ class="section level4">
 <div id="rcp4.5cooler-ssp5" class="section level2 tabset">
 <h2 class="tabset">RCP4.5Cooler SSP5</h2>
 <p><br></p>
-<div id="summary-10" class="section level3">
+<div id="summary-11" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4319,7 +5161,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-8" class="section level3">
+<div id="water-9" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4337,7 +5179,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-8" class="section level3">
+<div id="energy-9" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4356,7 +5198,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-8" class="section level3 tabset tabset-pills">
+<div id="electricity-9" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-1" class="section level4">
@@ -4392,7 +5234,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-8" class="section level3">
+<div id="aglu-9" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4410,7 +5252,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-6" class="section level3">
+<div id="emissions-9" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4511,7 +5353,7 @@ class="section level4">
 <div id="rcp4.5hotter-ssp3" class="section level2 tabset">
 <h2 class="tabset">RCP4.5Hotter SSP3</h2>
 <p><br></p>
-<div id="summary-11" class="section level3">
+<div id="summary-12" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4524,7 +5366,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-9" class="section level3">
+<div id="water-10" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4542,7 +5384,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-9" class="section level3">
+<div id="energy-10" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4561,7 +5403,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-9" class="section level3 tabset tabset-pills">
+<div id="electricity-10" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-2" class="section level4">
@@ -4597,7 +5439,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-9" class="section level3">
+<div id="aglu-10" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4615,7 +5457,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-7" class="section level3">
+<div id="emissions-10" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4716,7 +5558,7 @@ class="section level4">
 <div id="rcp4.5hotter-ssp5" class="section level2 tabset">
 <h2 class="tabset">RCP4.5Hotter SSP5</h2>
 <p><br></p>
-<div id="summary-12" class="section level3">
+<div id="summary-13" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4729,7 +5571,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-10" class="section level3">
+<div id="water-11" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4747,7 +5589,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-10" class="section level3">
+<div id="energy-11" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4766,7 +5608,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-10" class="section level3 tabset tabset-pills">
+<div id="electricity-11" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-3" class="section level4">
@@ -4802,7 +5644,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-10" class="section level3">
+<div id="aglu-11" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4820,7 +5662,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-8" class="section level3">
+<div id="emissions-11" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4921,7 +5763,7 @@ class="section level4">
 <div id="rcp8.5cooler-ssp3" class="section level2 tabset">
 <h2 class="tabset">RCP8.5Cooler SSP3</h2>
 <p><br></p>
-<div id="summary-13" class="section level3">
+<div id="summary-14" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4934,7 +5776,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-11" class="section level3">
+<div id="water-12" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4952,7 +5794,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-11" class="section level3">
+<div id="energy-12" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -4971,7 +5813,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-11" class="section level3 tabset tabset-pills">
+<div id="electricity-12" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-4" class="section level4">
@@ -5007,7 +5849,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-11" class="section level3">
+<div id="aglu-12" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5025,7 +5867,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-9" class="section level3">
+<div id="emissions-12" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5126,7 +5968,7 @@ class="section level4">
 <div id="rcp8.5cooler-ssp5" class="section level2 tabset">
 <h2 class="tabset">RCP8.5Cooler SSP5</h2>
 <p><br></p>
-<div id="summary-14" class="section level3">
+<div id="summary-15" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5139,7 +5981,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-12" class="section level3">
+<div id="water-13" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5157,7 +5999,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-12" class="section level3">
+<div id="energy-13" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5176,7 +6018,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-12" class="section level3 tabset tabset-pills">
+<div id="electricity-13" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-5" class="section level4">
@@ -5212,7 +6054,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-12" class="section level3">
+<div id="aglu-13" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5230,7 +6072,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-10" class="section level3">
+<div id="emissions-13" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5331,7 +6173,7 @@ class="section level4">
 <div id="rcp8.5hotter-ssp3" class="section level2 tabset">
 <h2 class="tabset">RCP8.5Hotter SSP3</h2>
 <p><br></p>
-<div id="summary-15" class="section level3">
+<div id="summary-16" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5344,7 +6186,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-13" class="section level3">
+<div id="water-14" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5362,7 +6204,7 @@ SSP3 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-13" class="section level3">
+<div id="energy-14" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5381,7 +6223,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-13" class="section level3 tabset tabset-pills">
+<div id="electricity-14" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-6" class="section level4">
@@ -5417,7 +6259,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-13" class="section level3">
+<div id="aglu-14" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5435,7 +6277,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-11" class="section level3">
+<div id="emissions-14" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5536,7 +6378,7 @@ class="section level4">
 <div id="rcp8.5hotter-ssp5" class="section level2 tabset">
 <h2 class="tabset">RCP8.5Hotter SSP5</h2>
 <p><br></p>
-<div id="summary-16" class="section level3">
+<div id="summary-17" class="section level3">
 <h3>Summary</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5549,7 +6391,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="water-14" class="section level3">
+<div id="water-15" class="section level3">
 <h3>Water</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5567,7 +6409,7 @@ SSP5 + Nuclear Moratorium.</strong>
 </div>
 <p><br></p>
 </div>
-<div id="energy-14" class="section level3">
+<div id="energy-15" class="section level3">
 <h3>Energy</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5586,7 +6428,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="electricity-14" class="section level3 tabset tabset-pills">
+<div id="electricity-15" class="section level3 tabset tabset-pills">
 <h3 class="tabset tabset-pills">Electricity</h3>
 <p><br></p>
 <div id="total-electricity-7" class="section level4">
@@ -5622,7 +6464,7 @@ difference).</strong>
 <p><br></p>
 </div>
 </div>
-<div id="aglu-14" class="section level3">
+<div id="aglu-15" class="section level3">
 <h3>AGLU</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
@@ -5640,7 +6482,7 @@ difference).</strong>
 </div>
 <p><br></p>
 </div>
-<div id="emissions-12" class="section level3">
+<div id="emissions-15" class="section level3">
 <h3>Emissions</h3>
 <p><br></p>
 <div class="figure" style="text-align: center">
