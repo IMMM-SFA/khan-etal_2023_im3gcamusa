@@ -492,15 +492,16 @@ knitr::include_graphics("images/map_param_2100_KMEANS_DiffPrcnt.png")
 
 
 
+### GCAM SSP3 {.tabset .tabset-pills}
 
-### GCAM rcp85hotter_ssp3_runoff {.tabset .tabset-pills}
+<br>
 
 #### Summary
 
 <br>
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
-knitr::include_graphics("images/chart_param_all_summary_im3_runoff.png")
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM global agyield outputs**"}
+knitr::include_graphics("images/chart_param_all_summary_im3_runoff_ssp3_summary.png")
 ```
 <!--updated on 4/12/2022-->
 
@@ -510,7 +511,7 @@ knitr::include_graphics("images/chart_param_all_summary_im3_runoff.png")
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs**"}
-knitr::include_graphics("images/chart_param_socioecon_im3_runoff.png")
+knitr::include_graphics("images/chart_param_socioecon_im3_runoff_ssp3_summary.png")
 ```
 <!--updated on 4/12/2022-->
 
@@ -518,78 +519,242 @@ knitr::include_graphics("images/chart_param_socioecon_im3_runoff.png")
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff**"}
-knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_runoff.png")
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_runoff_ssp3_summary.png")
 ```
 
 <br>
 
-#### Water
+#### Water {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_runoff_ssp3_rcp45.png")
+```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
-knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff_ssp3_rcp45.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
-knitr::include_graphics("images/chart_class_diff_percent_water_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_runoff_ssp3_rcp45.png")
 ```
 
 <br>
 
-#### Energy
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+#### Energy {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+#### Electricity {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_runoff_ssp3_rcp45.png")
+```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
-knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff_ssp3_rcp45.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
-knitr::include_graphics("images/chart_class_diff_percent_energy_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_runoff_ssp3_rcp45.png")
 ```
 
 <br>
 
-#### Electricity
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_runoff_ssp3_rcp85gdp.png")
+```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
-knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
-knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_runoff.png")
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_runoff_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-#### AGLU
+#### AGLU {.tabset}
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 5 GCMS **"}
-knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_runoff.png")
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_runoff_ssp3_rcp45.png")
 ```
 
 <br>
 
 <div class="img_large">
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs**"}
-knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_runoff.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_runoff_ssp3_rcp45.png")
 ```
 </div>
 
 <br>
 
-#### Emissions
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_runoff_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_runoff_ssp3_rcp85gdp.png")
+```
+</div>
+
+<br>
+
+#### Emissions {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_runoff_ssp3_rcp45.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_runoff_ssp3_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
 
 <br>
 
@@ -601,22 +766,315 @@ knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_runoff_ssp3_rcp85gdp.
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
-knitr::include_graphics("images/compareCO2USA_im3_runoff.png")
+knitr::include_graphics("images/compareCO2USA_im3_runoff_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
-knitr::include_graphics("images/compareNonCO2global_im3_runoff.png")
+knitr::include_graphics("images/compareNonCO2global_im3_runoff_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
-knitr::include_graphics("images/compareNonCO2USA_im3_runoff.png")
+knitr::include_graphics("images/compareNonCO2USA_im3_runoff_ssp3_rcp85gdp.png")
 ```
 
+<br>
+
+
+
+### GCAM SSP5 {.tabset .tabset-pills}
+
+<br>
+
+#### Summary
+
+<br>
+
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM global agyield outputs**"}
+knitr::include_graphics("images/chart_param_all_summary_im3_runoff_ssp5_summary.png")
+```
+<!--updated on 4/12/2022-->
+
+
+#### Socioeconomics
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs**"}
+knitr::include_graphics("images/chart_param_socioecon_im3_runoff_ssp5_summary.png")
+```
+<!--updated on 4/12/2022-->
+
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff**"}
+knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_runoff_ssp5_summary.png")
+```
+
+<br>
+
+#### Water {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_water_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
+knitr::include_graphics("images/chart_class_diff_percent_water_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+#### Energy {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+#### Electricity {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+#### AGLU {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_runoff_ssp5_rcp45.png")
+```
+</div>
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
+knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
+knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_runoff_ssp5_rcp85.png")
+```
+</div>
+
+<br>
+
+#### Emissions {.tabset}
+
+<br>
+
+##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_runoff_ssp5_rcp45.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_runoff_ssp5_rcp45.png")
+```
+
+<br>
+
+##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Cumulative global carbon emission pathways under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2GlobalCumRCP_im3_runoff_ssp5_rcp85.png")
+```
+<!-- updated on 4/12/22 -->
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US carbon emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareCO2USA_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual global non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2global_im3_runoff_ssp5_rcp85.png")
+```
+
+<br>
+
+
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Annual US non-CO~2~ emissions under different combinations of SSP3/SSP5 and RCP4.5/RCP8.5 **"}
+knitr::include_graphics("images/compareNonCO2USA_im3_runoff_ssp5_rcp85.png")
+```
 
 
 <!-------------------------->
@@ -876,23 +1334,25 @@ knitr::include_graphics("images/hdcd_diagnostic_allYears_gradient_freeScale_rcp4
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs for 5 GCMS.**"}
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM global agyield outputs**"}
 knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp3_summary.png")
 ```
+<!--updated on 4/12/2022-->
 
-<br>
 
 #### Socioeconomics
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs.**"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs**"}
 knitr::include_graphics("images/chart_param_socioecon_im3_hdcd_ssp3_summary.png")
 ```
+<!--updated on 4/12/2022-->
+
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff.**"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff**"}
 knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_hdcd_ssp3_summary.png")
 ```
 
@@ -906,14 +1366,19 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_hdcd_ssp3
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
 knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp45.png")
 ```
 
@@ -923,14 +1388,19 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
 knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
@@ -944,14 +1414,19 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp3_rcp
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp45.png")
 ```
 
@@ -961,14 +1436,19 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rc
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
@@ -982,14 +1462,19 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp3_rc
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp45.png")
 ```
 
@@ -999,14 +1484,19 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ss
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
@@ -1020,16 +1510,23 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ss
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_hdcd_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
 knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp45.png")
 ```
+</div>
 
 <br>
 
@@ -1037,20 +1534,27 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp4
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_hdcd_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
 knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp3_rcp85gdp.png")
 ```
+</div>
 
 <br>
 
-#### Emission {.tabset}
+#### Emissions {.tabset}
 
 <br>
 
@@ -1124,23 +1628,25 @@ knitr::include_graphics("images/compareNonCO2USA_im3_hdcd_ssp3_rcp85gdp.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM outputs for 5 GCMS.**"}
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM global agyield outputs**"}
 knitr::include_graphics("images/chart_param_all_summary_im3_hdcd_ssp5_summary.png")
 ```
+<!--updated on 4/12/2022-->
 
-<br>
 
 #### Socioeconomics
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs.**"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs**"}
 knitr::include_graphics("images/chart_param_socioecon_im3_hdcd_ssp5_summary.png")
 ```
+<!--updated on 4/12/2022-->
+
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff.**"}
+```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM socioeconomic outputs % Diff**"}
 knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_hdcd_ssp5_summary.png")
 ```
 
@@ -1154,14 +1660,19 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_hdcd_ssp5
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
 knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp45.png")
 ```
 
@@ -1171,14 +1682,19 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_hdcd_ssp5_rcp85.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM water outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs % Diff **"}
 knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp85.png")
 ```
 
@@ -1192,14 +1708,19 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_hdcd_ssp5_rcp
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp45.png")
 ```
 
@@ -1209,14 +1730,19 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rc
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_hdcd_ssp5_rcp85.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rcp85.png")
 ```
 
@@ -1230,14 +1756,19 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_hdcd_ssp5_rc
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp45.png")
 ```
 
@@ -1247,14 +1778,19 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ss
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_electricity_im3_hdcd_ssp5_rcp85.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs (percent difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ssp5_rcp85.png")
 ```
 
@@ -1268,16 +1804,23 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_hdcd_ss
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_hdcd_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp45.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
 knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp45.png")
 ```
+</div>
 
 <br>
 
@@ -1285,20 +1828,27 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp4
 
 <br>
 
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (absolute difference).**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_hdcd_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_hdcd_ssp5_rcp85.png")
 ```
 
 <br>
 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs (percent difference).**"}
+<div class="img_large">
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - percent difference**"}
 knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_hdcd_ssp5_rcp85.png")
 ```
+</div>
 
 <br>
 
-#### Emission {.tabset}
+#### Emissions {.tabset}
 
 <br>
 
@@ -1813,7 +2363,7 @@ knitr::include_graphics("images/agyield_OilCrop_RFD_rcp8p5.png")
 
 <br>
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM global agyield outputs**"}
 knitr::include_graphics("images/chart_param_all_summary_im3_agyields_ssp3_summary.png")
 ```
 <!--updated on 4/12/2022-->
@@ -1845,6 +2395,12 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_agyields_
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_agyields_ssp3_rcp45.png")
 ```
@@ -1858,6 +2414,12 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp3
 <br>
 
 ##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -1881,13 +2443,19 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp3
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_agyields_ssp3_rcp45.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp3_rcp45.png")
 ```
 
@@ -1897,13 +2465,19 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_agyields_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_agyields_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp3_rcp85gdp.png")
 ```
 
@@ -1914,6 +2488,12 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp
 <br>
 
 ##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_agyields_ssp3_rcp45.png")
+```
 
 <br>
 
@@ -1930,6 +2510,12 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyield
 <br>
 
 ##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -1957,6 +2543,12 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyield
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_agyields_ssp3_rcp45.png")
 ```
@@ -1972,6 +2564,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp3_
 <br>
 
 ###### RCP8.5 Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -1993,20 +2591,20 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp3_
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for RCP4.5 scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp3_rcp45.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP3).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3_rcp45.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP3).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3_rcp45.png")
 ```
 
 <br>
@@ -2015,20 +2613,20 @@ knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ss
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp3.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for RCP8.5 scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP3).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp3_rcp85gdp.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP3).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP3).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp3_rcp85gdp.png")
 ```
 
 <br>
@@ -2038,6 +2636,12 @@ knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ss
 <br>
 
 ###### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_corn_im3_agyields_ssp3_rcp45.png")
+```
 
 <br>
 
@@ -2056,6 +2660,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_corn_im3_agyields_
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_corn_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -2081,6 +2691,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_corn_im3_agyields_
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_oilcrop_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp3_rcp45.png")
 ```
@@ -2096,6 +2712,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_oilcrop_im3_agyiel
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_oilcrop_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -2121,6 +2743,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_oilcrop_im3_agyiel
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_rice_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp3_rcp45.png")
 ```
@@ -2136,6 +2764,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_rice_im3_agyields_
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_rice_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -2161,6 +2795,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_rice_im3_agyields_
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_wheat_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp3_rcp45.png")
 ```
@@ -2176,6 +2816,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_wheat_im3_agyields
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_wheat_im3_agyields_ssp3_rcp85gdp.png")
+```
 
 <br>
 
@@ -2261,7 +2907,7 @@ knitr::include_graphics("images/compareNonCO2USA_im3_agyields_ssp3_rcp85gdp.png"
 
 <br>
 
-```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM outputs global runoff for 5 GCMS **"}
+```{r, echo=FALSE, out.width="150%", fig.align='center', fig.cap="**Comparison of GCAM global agyield outputs**"}
 knitr::include_graphics("images/chart_param_all_summary_im3_agyields_ssp5_summary.png")
 ```
 <!--updated on 4/12/2022-->
@@ -2293,6 +2939,12 @@ knitr::include_graphics("images/chart_param_diff_percent_socioecon_im3_agyields_
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3_agyields_ssp5_rcp45.png")
 ```
@@ -2306,6 +2958,12 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp5
 <br>
 
 ##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM water outputs**"}
+knitr::include_graphics("images/chart_class_water_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
@@ -2329,13 +2987,19 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp5
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_agyields_ssp5_rcp45.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp5_rcp45.png")
 ```
 
@@ -2345,13 +3009,19 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM energy outputs**"}
+knitr::include_graphics("images/chart_class_energy_im3_agyields_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs**"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3_agyields_ssp5_rcp85.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs % Diff**"}
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs % Diff**"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp5_rcp85.png")
 ```
 
@@ -2362,6 +3032,12 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp
 <br>
 
 ##### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_agyields_ssp5_rcp45.png")
+```
 
 <br>
 
@@ -2378,6 +3054,12 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyield
 <br>
 
 ##### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM electricity outputs**"}
+knitr::include_graphics("images/chart_class_electricity_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
@@ -2405,6 +3087,12 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3_agyield
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_im3_agyields_ssp5_rcp45.png")
 ```
@@ -2420,6 +3108,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp5_
 <br>
 
 ###### RCP8.5 Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
@@ -2441,20 +3135,20 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_im3_agyields_ssp5_
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for RCP4.5 scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp5_rcp45.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5_rcp45.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from RCP4.5 to Reference scenario (RCP4.5 - SSP5.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5_rcp45.png")
 ```
 
 <br>
@@ -2463,20 +3157,20 @@ knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ss
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for 4 climate and socioeconomic scenarios.**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp5.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of agriculture production for RCP8.5 scenarios.**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANSim3_agyields_ssp5_rcp85.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffAbsim3_agyields_ssp5_rcp85.png")
 ```
 
 <br>
 
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from 3 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - ssp5).**"}
-knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5.png")
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of agriculture production from RCP8.5 to Reference scenario (RCP8.5 - SSP5).**"}
+knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ssp5_rcp85.png")
 ```
 
 <br>
@@ -2486,6 +3180,12 @@ knitr::include_graphics("images/map_agProdByCrop_KMEANS_DiffPrcntim3_agyields_ss
 <br>
 
 ###### RCP4.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_corn_im3_agyields_ssp5_rcp45.png")
+```
 
 <br>
 
@@ -2504,6 +3204,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_corn_im3_agyields_
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_corn_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
@@ -2529,6 +3235,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_corn_im3_agyields_
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_oilcrop_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_oilcrop_im3_agyields_ssp5_rcp45.png")
 ```
@@ -2544,6 +3256,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_oilcrop_im3_agyiel
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_oilcrop_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
@@ -2569,6 +3287,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_oilcrop_im3_agyiel
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_rice_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_rice_im3_agyields_ssp5_rcp45.png")
 ```
@@ -2584,6 +3308,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_rice_im3_agyields_
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_rice_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
@@ -2609,6 +3339,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_rice_im3_agyields_
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_wheat_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs - absolute difference**"}
 knitr::include_graphics("images/chart_class_diff_absolute_aglu_wheat_im3_agyields_ssp5_rcp45.png")
 ```
@@ -2624,6 +3360,12 @@ knitr::include_graphics("images/chart_class_diff_percent_aglu_wheat_im3_agyields
 <br>
 
 ###### RCP8.5
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Absolute GCAM AGLU outputs**"}
+knitr::include_graphics("images/chart_class_aglu_wheat_im3_agyields_ssp5_rcp85.png")
+```
 
 <br>
 
