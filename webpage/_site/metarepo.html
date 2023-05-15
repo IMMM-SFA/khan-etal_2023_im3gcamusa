@@ -13,7 +13,7 @@
 
 <title>khan_etal_2022_im3gcamusa</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -149,11 +149,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -1151,8 +1155,31 @@ SSP5).</strong>
 <div id="energy" class="section level2 tabset">
 <h2 class="tabset">Energy</h2>
 <p><br></p>
-<div id="charts-2" class="section level3">
-<h3>Charts</h3>
+<div id="charts-2" class="section level3 tabset tabset-pills">
+<h3 class="tabset tabset-pills">Charts</h3>
+<p><br></p>
+<div id="energy-demand" class="section level4">
+<h4>Energy Demand</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_energy_subsec_im3.png" alt="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs for 8 climate and
+socioeconomic scenarios (absolute difference). </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_energy_subsec_im3.png" alt="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference). **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs for 8 climate and
+socioeconomic scenarios (percent difference). </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="energy-consumption" class="section level4">
+<h4>Energy Consumption</h4>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/chart_class_diff_absolute_energy_im3.png" alt="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **" width="200%" />
@@ -1170,6 +1197,27 @@ socioeconomic scenarios (percent difference). </strong>
 </p>
 </div>
 <p><br></p>
+</div>
+<div id="transport" class="section level4">
+<h4>Transport</h4>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_absolute_transport_im3.png" alt="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs for 8 climate and
+socioeconomic scenarios (absolute difference). </strong>
+</p>
+</div>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_class_diff_percent_transport_im3.png" alt="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference). **" width="200%" />
+<p class="caption">
+<strong>Comparison of GCAM energy outputs for 8 climate and
+socioeconomic scenarios (percent difference). </strong>
+</p>
+</div>
+<p><br></p>
+</div>
 </div>
 <div id="maps-2" class="section level3">
 <h3>Maps</h3>
@@ -1225,18 +1273,6 @@ socioeconomic scenarios (percent difference). </strong>
 </div>
 <p><br></p>
 </div>
-<div id="lines" class="section level3">
-<h3>Lines</h3>
-<p><br></p>
-<div class="figure" style="text-align: center">
-<img src="images/chart_Superpeak%20Electricity%20Load%20(GW).png" alt="**Comparison of State-level Superpeak Electricity Load (GW) for 8 climate and socioeconomic scenarios. **" width="200%" />
-<p class="caption">
-<strong>Comparison of State-level Superpeak Electricity Load (GW) for 8
-climate and socioeconomic scenarios. </strong>
-</p>
-</div>
-<p><br></p>
-</div>
 <div id="maps-3" class="section level3">
 <h3>Maps</h3>
 <p><br></p>
@@ -1263,6 +1299,30 @@ SSP5).</strong>
 <strong>Percent difference of electricity generation from 7 climate and
 socioeconomic scenarios to Reference scenario (RCP8.5 HOT -
 SSP5).</strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="superpeak-load" class="section level3">
+<h3>Superpeak Load</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/chart_Superpeak%20Electricity%20Load%20(GW).png" alt="**Comparison of State-level Superpeak Electricity Load (GW) for 8 climate and socioeconomic scenarios. **" width="200%" />
+<p class="caption">
+<strong>Comparison of State-level Superpeak Electricity Load (GW) for 8
+climate and socioeconomic scenarios. </strong>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="nuclear" class="section level3">
+<h3>Nuclear</h3>
+<p><br></p>
+<div class="figure" style="text-align: center">
+<img src="images/nuclear_cap_tech_total.png" alt="**Comparison of Nuclear Capacity for 8 climate and socioeconomic scenarios. **" width="200%" />
+<p class="caption">
+<strong>Comparison of Nuclear Capacity for 8 climate and socioeconomic
+scenarios. </strong>
 </p>
 </div>
 <p><br></p>

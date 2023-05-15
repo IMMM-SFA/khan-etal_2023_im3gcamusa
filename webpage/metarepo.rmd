@@ -387,7 +387,27 @@ knitr::include_graphics("images/map_watConsumBySec_KMEANS_DiffPrcntim3.png")
 
 <br>
 
-### Charts
+### Charts {.tabset .tabset-pills}
+
+<br>
+
+#### Energy Demand
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_subsec_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference). **"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_subsec_im3.png")
+```
+
+<br>
+
+#### Energy Consumption
 
 <br>
 
@@ -399,6 +419,22 @@ knitr::include_graphics("images/chart_class_diff_absolute_energy_im3.png")
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference). **"}
 knitr::include_graphics("images/chart_class_diff_percent_energy_im3.png")
+```
+
+<br>
+
+#### Transport
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **"}
+knitr::include_graphics("images/chart_class_diff_absolute_transport_im3.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference). **"}
+knitr::include_graphics("images/chart_class_diff_percent_transport_im3.png")
 ```
 
 <br>
@@ -445,16 +481,6 @@ knitr::include_graphics("images/chart_class_diff_percent_electricity_im3.png")
 
 <br>
 
-### Lines
-
-<br>
-
-```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of State-level Superpeak Electricity Load (GW) for 8 climate and socioeconomic scenarios. **"}
-knitr::include_graphics("images/chart_Superpeak Electricity Load (GW).png")
-```
-
-<br>
-
 ### Maps
 
 <br>
@@ -473,6 +499,26 @@ knitr::include_graphics("images/map_elecByTechTWh_KMEANS_DiffAbsim3.png")
 
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Percent difference of electricity generation from 7 climate and socioeconomic scenarios to Reference scenario (RCP8.5 HOT - SSP5).**"}
 knitr::include_graphics("images/map_elecByTechTWh_KMEANS_DiffPrcntim3.png")
+```
+
+<br>
+
+### Superpeak Load
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of State-level Superpeak Electricity Load (GW) for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_Superpeak Electricity Load (GW).png")
+```
+
+<br>
+
+### Nuclear
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of Nuclear Capacity for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/nuclear_cap_tech_total.png")
 ```
 
 <br>
