@@ -301,6 +301,12 @@ knitr::include_graphics("images/map_pop_KMEANS_DiffPrcntim3.png")
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_class_water_im3.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM water outputs for 8 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_class_diff_absolute_water_im3.png")
 ```
@@ -395,6 +401,12 @@ knitr::include_graphics("images/map_watConsumBySec_KMEANS_DiffPrcntim3.png")
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_class_energy_subsec_im3.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_subsec_im3.png")
 ```
@@ -411,6 +423,12 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_subsec_im3.png")
 
 <br>
 
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_class_energy_im3.png")
+```
+
+<br>
+
 ```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference). **"}
 knitr::include_graphics("images/chart_class_diff_absolute_energy_im3.png")
 ```
@@ -424,6 +442,12 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3.png")
 <br>
 
 #### Transport
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_class_transport_im3.png")
+```
 
 <br>
 
@@ -466,6 +490,12 @@ knitr::include_graphics("images/map_energyFinalConsumBySecEJ_KMEANS_DiffPrcntim3
 <br>
 
 ### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM electricity outputs for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_class_electricity_im3.png")
+```
 
 <br>
 
@@ -528,6 +558,12 @@ knitr::include_graphics("images/nuclear_cap_tech_total.png")
 <br>
 
 ### Charts
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM AGLU outputs for 8 climate and socioeconomic scenarios. **"}
+knitr::include_graphics("images/chart_class_aglu_im3.png")
+```
 
 <br>
 
