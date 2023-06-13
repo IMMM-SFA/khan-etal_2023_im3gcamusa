@@ -2439,7 +2439,33 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp3
 
 <br>
 
-##### RCP4.5
+##### RCP4.5 {.tabset}
+
+<br>
+
+###### Energy Demand
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/chart_class_energy_subsec_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_subsec_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_subsec_im3_agyields_ssp3_rcp45.png")
+```
+
+<br>
+
+###### Energy Consumption
 
 <br>
 
@@ -2461,7 +2487,33 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp
 
 <br>
 
-##### RCP8.5
+##### RCP8.5 {.tabset}
+
+<br>
+
+###### Energy Demand
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/chart_class_energy_subsec_im3_agyields_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_subsec_im3_agyields_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_subsec_im3_agyields_ssp3_rcp85gdp.png")
+```
+
+<br>
+
+###### Energy Consumption
 
 <br>
 
@@ -2983,7 +3035,33 @@ knitr::include_graphics("images/chart_class_diff_percent_water_im3_agyields_ssp5
 
 <br>
 
-##### RCP4.5
+##### RCP4.5 {.tabset}
+
+<br>
+
+###### Energy Demand
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/chart_class_energy_subsec_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_subsec_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_subsec_im3_agyields_ssp5_rcp45.png")
+```
+
+<br>
+
+###### Energy Consumption
 
 <br>
 
@@ -3005,7 +3083,33 @@ knitr::include_graphics("images/chart_class_diff_percent_energy_im3_agyields_ssp
 
 <br>
 
-##### RCP8.5
+##### RCP8.5 {.tabset}
+
+<br>
+
+###### Energy Demand
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios.**"}
+knitr::include_graphics("images/chart_class_energy_subsec_im3_agyields_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (absolute difference).**"}
+knitr::include_graphics("images/chart_class_diff_absolute_energy_subsec_im3_agyields_ssp5_rcp85.png")
+```
+
+<br>
+
+```{r, echo=FALSE, out.width="200%", fig.align='center', fig.cap="**Comparison of GCAM energy outputs for 8 climate and socioeconomic scenarios (percent difference).**"}
+knitr::include_graphics("images/chart_class_diff_percent_energy_subsec_im3_agyields_ssp5_rcp85.png")
+```
+
+<br>
+
+###### Energy Consumption
 
 <br>
 
