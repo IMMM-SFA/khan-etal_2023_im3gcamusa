@@ -1,5 +1,5 @@
 navbar:
-  title: "khan_etal_2022_im3gcamusa"
+  title: "khan_etal_2023_im3gcamusa"
   left:
     - icon: fa-home
       href: index.html
@@ -13,7 +13,7 @@ navbar:
       text: Citation
       href: CITATION.html
     - icon: fab fa-github
-      href: https://github.com/IMMM-SFA/khan-etal_2022_im3gcamusa
+      href: https://github.com/IMMM-SFA/khan-etal_2023_im3gcamusa
 
 output:
   html_document:
