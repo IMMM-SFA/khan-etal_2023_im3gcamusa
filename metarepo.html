@@ -11,9 +11,9 @@
 
 
 
-<title>khan_etal_2022_im3gcamusa</title>
+<title>khan_etal_2023_im3gcamusa</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -37,8 +37,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -186,8 +186,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -195,16 +195,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -378,7 +371,7 @@ div.tocify {
 <style type="text/css">
 script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 </style>
-<script type="text/javascript">
+<script>
  $(document).ready(function() {
     $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
     // onClick function for all plots (img's)
@@ -393,7 +386,7 @@ script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
   });
 </script>
 <!-- Allow href to tabsets -->
-<script type="text/javascript">
+<script>
 function goToTab() {
   var hash = String(window.location.href.match("#.*$"));
   var target = document.querySelector("a[role = 'tab'][href='" + hash + "']");
@@ -763,7 +756,7 @@ Description
 Language
 </th>
 <th style="text-align:left;color: white !important;background-color: #2A2A2A !important;">
-Link
+DOI
 </th>
 </tr>
 </thead>
@@ -773,8 +766,8 @@ Link
 WRF
 </td>
 <td style="text-align:left;">
-<ul>
-<li></td>
+<a href="https://www.mmm.ucar.edu/weather-research-and-forecasting-model">WRF</a>
+</td>
 <td style="text-align:left;">
 Climate simulation model
 </td>
@@ -782,17 +775,16 @@ Climate simulation model
 <ul>
 <li></td>
 <td style="text-align:left;">
-<a
-href="https://www.mmm.ucar.edu/weather-research-and-forecasting-model"
-class="uri">https://www.mmm.ucar.edu/weather-research-and-forecasting-model</a>
-</td>
+<ul>
+<li></td>
 </tr>
 <tr>
 <td style="text-align:left;">
 GCAM
 </td>
 <td style="text-align:left;">
-gcam v5.3 (branch gcam-usa-im3)
+<a href="https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3">gcam
+v5.3 (branch gcam-usa-im3)</a>
 </td>
 <td style="text-align:left;">
 Global Change Analysis Model. Human-earth systems dynamic model.
@@ -801,9 +793,8 @@ Global Change Analysis Model. Human-earth systems dynamic model.
 C++/R
 </td>
 <td style="text-align:left;">
-<a
-href="https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3"
-class="uri">https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs%2Fheads%2Fzk%2Ffeature%2Fgcam-usa-im3</a>
+<a href="https://zenodo.org/record/8011341"
+class="uri">https://zenodo.org/record/8011341</a>
 </td>
 </tr>
 <tr>
@@ -811,7 +802,7 @@ class="uri">https://stash.pnnl.gov/projects/JGCRI/repos/gcam-core/browse?at=refs
 Xanthos
 </td>
 <td style="text-align:left;">
-xanthos v2.4.1
+<a href="https://github.com/JGCRI/xanthos">xanthos v2.4.1</a>
 </td>
 <td style="text-align:left;">
 Water runoff emulator at 0.5 degree grids and monthly timesteps.
@@ -820,8 +811,8 @@ Water runoff emulator at 0.5 degree grids and monthly timesteps.
 Python
 </td>
 <td style="text-align:left;">
-<a href="https://github.com/JGCRI/xanthos"
-class="uri">https://github.com/JGCRI/xanthos</a>
+<a href="https://doi.org/10.5281/zenodo.5177210"
+class="uri">https://doi.org/10.5281/zenodo.5177210</a>
 </td>
 </tr>
 <tr>
@@ -829,7 +820,7 @@ class="uri">https://github.com/JGCRI/xanthos</a>
 Helios
 </td>
 <td style="text-align:left;">
-helios v1.0.0
+<a href="https://github.com/JGCRI/helios">helios v1.0.0</a>
 </td>
 <td style="text-align:left;">
 Gridded Heating and cooling degree day calculator at multiple spatial
@@ -848,17 +839,17 @@ class="uri">https://github.com/JGCRI/helios</a>
 Osiris
 </td>
 <td style="text-align:left;">
-osiris v1.0.0
+<a href="https://github.com/JGCRI/osiris">osiris v1.0.0</a>
 </td>
 <td style="text-align:left;">
 Emulators to model agricultural yield impacts in response to climate
 </td>
 <td style="text-align:left;">
-?
+R
 </td>
 <td style="text-align:left;">
-<a href="https://github.com/JGCRI/osiris"
-class="uri">https://github.com/JGCRI/osiris</a>
+<a href="https://zenodo.org/record/7938714"
+class="uri">https://zenodo.org/record/7938714</a>
 </td>
 </tr>
 <tr>
@@ -866,7 +857,8 @@ class="uri">https://github.com/JGCRI/osiris</a>
 rpackageutils
 </td>
 <td style="text-align:left;">
-rpackageutils v1.0.0
+<a href="https://github.com/JGCRI/rpackageutils">rpackageutils
+v1.0.0</a>
 </td>
 <td style="text-align:left;">
 Utility functions to process, aggregate and reformat data.
@@ -875,16 +867,16 @@ Utility functions to process, aggregate and reformat data.
 R
 </td>
 <td style="text-align:left;">
-<a href="https://github.com/JGCRI/rpackageutils"
-class="uri">https://github.com/JGCRI/rpackageutils</a>
-</td>
+<ul>
+<li></td>
 </tr>
 <tr>
 <td style="text-align:left;">
 im3components
 </td>
 <td style="text-align:left;">
-im3components v1.0.0
+<a href="https://github.com/IMMM-SFA/im3components">im3components
+v1.0.0</a>
 </td>
 <td style="text-align:left;">
 Functions to process data between different IM3 models.
@@ -893,16 +885,16 @@ Functions to process data between different IM3 models.
 R/Python
 </td>
 <td style="text-align:left;">
-<a href="https://github.com/IMMM-SFA/im3components"
-class="uri">https://github.com/IMMM-SFA/im3components</a>
-</td>
+<ul>
+<li></td>
 </tr>
 <tr>
 <td style="text-align:left;">
 gcamextractor
 </td>
 <td style="text-align:left;">
-gcamextractor
+<a href="https://github.com/JGCRI/gcamextractor">gcamextractor
+v1.1.0</a>
 </td>
 <td style="text-align:left;">
 Model to extract and process data from GCAM output databases.
@@ -911,12 +903,14 @@ Model to extract and process data from GCAM output databases.
 R
 </td>
 <td style="text-align:left;">
-<a href="https://github.com/JGCRI/gcamextractor"
-class="uri">https://github.com/JGCRI/gcamextractor</a>
+<a href="https://zenodo.org/record/8132290"
+class="uri">https://zenodo.org/record/8132290</a>
 </td>
 </tr>
 </tbody>
 </table></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 <p><br></p>
