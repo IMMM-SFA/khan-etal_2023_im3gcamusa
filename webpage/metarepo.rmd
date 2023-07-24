@@ -93,7 +93,20 @@ data.frame(
                  "/pic/projects/im3/gcamusa/diagnostics/outputs_im3/gcamDataTable.csv",
                  "/pic/projects/im3/gcamusa/diagnostics/outputs_CERF/dataGCAM_cerf.csv",
                  "/pic/projects/im3/gcamusa/diagnostics/outputs_GO/dataGCAM_go.csv",
-                 "/pic/projects/im3/gcamusa/diagnostics/outputs_demeter/dataGCAM_demeter.csv")
+                 "/pic/projects/im3/gcamusa/diagnostics/outputs_demeter/dataGCAM_demeter.csv"),
+    DOI = c("https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "-",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373",
+            "https://doi.org/10.57931/1989373")
     ) %>% 
   kbl() %>%
   kable_styling(bootstrap_options = c("bordered","striped", "hover", "condensed", "responsive")) %>%
@@ -125,13 +138,19 @@ data.frame(
                   "GCAM",
                   "GCAM",
                   "GCAM",
-                  "GCAM"),
+                  "Helios"),
     Location = c("(NERSC) /global/cfs/cdirs/m2702/gsharing",
-                 "zenodo link",
-                  "zenodo link",
-                  "zenodo link",
-                  "zenodo link",
-                  "zenodo link")
+                 "/pic/projects/im3/gcamusa/gcam-usa-im3/input/im3scenarios",
+                  "/pic/projects/im3/gcamusa/gcam-usa-im3/input/im3scenarios",
+                  "/pic/projects/im3/gcamusa/gcam-usa-im3/input/im3scenarios",
+                  "/pic/projects/im3/gcamusa/gcam-usa-im3/input/im3scenarios",
+                  "/pic/projects/im3/gcamusa/gcam-usa-im3/input/im3scenarios"),
+   DOI = c("-",
+           "https://doi.org/10.57931/1960381",
+           "https://doi.org/10.57931/1960381",
+           "https://doi.org/10.57931/1960381",
+           "https://doi.org/10.5281/zenodo.3956703",
+           "https://doi.org/10.5281/zenodo.3756179")
     ) %>% 
   kbl() %>%
   kable_styling(bootstrap_options = c("bordered","striped", "hover", "condensed", "responsive")) %>%
@@ -196,9 +215,9 @@ data.frame(
                   "R/Python",
                   "R"),
     DOI = c("-",
-             "https://zenodo.org/record/8011341 ",
+             "https://doi.org/10.57931/1960381",
             "https://doi.org/10.5281/zenodo.5177210",
-            "https://github.com/JGCRI/helios",
+            "https://doi.org/10.5281/zenodo.8170311",
             "https://zenodo.org/record/7938714",
             "-",
             "-",
